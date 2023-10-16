@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>6. Functions of Several Variables &#8212; Mathematics for Natural Sciences 1 - Python Material</title>
+    <title>Functions of Several Variables &#8212; Mathematics for Natural Sciences 1 - Python Material</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,7 +52,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="5. Power Series" href="../5_taylor_series/notes.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -112,7 +111,7 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../1_introduction/week_1.html">
    1. Introduction to Computing
@@ -160,21 +159,6 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../3_complex_numbers/notes.html">
    3. Complex Numbers
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../4_sequences_series/notes.html">
-   4. Sequences and Series
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../5_taylor_series/notes.html">
-   5. Power Series
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   6. Functions of Several Variables
   </a>
  </li>
 </ul>
@@ -341,7 +325,7 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="functions-of-several-variables">
-<h1><span class="section-number">6. </span>Functions of Several Variables<a class="headerlink" href="#functions-of-several-variables" title="Permalink to this headline">#</a></h1>
+<h1>Functions of Several Variables<a class="headerlink" href="#functions-of-several-variables" title="Permalink to this headline">#</a></h1>
 <p>The function</p>
 <div class="math notranslate nohighlight">
 \[z(x, y) = x^2 + y^2\]</div>
@@ -380,7 +364,7 @@ title="Print to PDF"
 <p>which defines the function <span class="math notranslate nohighlight">\(z(x, y) = x^2 + y^2\)</span>.</p>
 <div class="exercise admonition" id="ex_partial_1">
 
-<p class="admonition-title"><span class="caption-number">Exercise 6.1 </span></p>
+<p class="admonition-title"></p>
 <section id="exercise-content">
 <p>By experimenting with the code, determine</p>
 <ol class="simple">
@@ -391,7 +375,7 @@ title="Print to PDF"
 </div>
 <div class="solution dropdown admonition" id="6_partial_differentiation/notes-solution-1">
 
-<p class="admonition-title">Solution to<a class="reference internal" href="#ex_partial_1"> Exercise 6.1</a></p>
+<p class="admonition-title">Solution to<a class="reference internal" href="#ex_partial_1"> Exercise </a></p>
 <section id="solution-content">
 <ol class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">levels=20</span></code> causes 20 level curves to be displayed</p></li>
@@ -406,7 +390,7 @@ title="Print to PDF"
 <p><img alt="" src="../_images/Saddle_point.svg.png" /></p>
 <div class="exercise admonition" id="ex_partial_2">
 
-<p class="admonition-title"><span class="caption-number">Exercise 6.2 </span></p>
+<p class="admonition-title"></p>
 <section id="exercise-content">
 <p>Plot the level curves of</p>
 <div class="math notranslate nohighlight">
@@ -415,7 +399,7 @@ title="Print to PDF"
 </div>
 <div class="solution dropdown admonition" id="6_partial_differentiation/notes-solution-3">
 
-<p class="admonition-title">Solution to<a class="reference internal" href="#ex_partial_2"> Exercise 6.2</a></p>
+<p class="admonition-title">Solution to<a class="reference internal" href="#ex_partial_2"> Exercise </a></p>
 <section id="solution-content">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">X0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span> <span class="c1"># set x limits</span>
 <span class="n">Y0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span> <span class="c1"># set y limits</span>
@@ -432,7 +416,7 @@ title="Print to PDF"
 </div>
 <div class="exercise admonition" id="ex_partial_3">
 
-<p class="admonition-title"><span class="caption-number">Exercise 6.3 </span></p>
+<p class="admonition-title"></p>
 <section id="exercise-content">
 <p>Plot the level curves of</p>
 <div class="math notranslate nohighlight">
@@ -469,13 +453,6 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../5_taylor_series/notes.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">5. </span>Power Series</p>
-        </div>
-    </a>
 </div>
             </footer>
         </div>
