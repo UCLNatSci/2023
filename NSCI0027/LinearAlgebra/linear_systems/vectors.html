@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>10. Vectors &#8212; Mathematics for Natural Sciences 2</title>
+    <title>Vectors &#8212; Mathematics for Natural Sciences 2</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -57,8 +57,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="11. Matrix Equation \(Ax = b\)" href="matrix_equations.html" />
-    <link rel="prev" title="9. Linear Systems of Equations" href="echelon_form.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -118,7 +116,7 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../integration/integration.html">
    1. Integration
@@ -157,24 +155,6 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../../VectorCalculus/vectorcalctheorems.html">
    8. Vector Calculus Theorems
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="echelon_form.html">
-   9. Linear Systems of Equations
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   10. Vectors
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="matrix_equations.html">
-   11. Matrix Equation
-   <span class="math notranslate nohighlight">
-    \(Ax = b\)
-   </span>
   </a>
  </li>
 </ul>
@@ -311,7 +291,7 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#vectors-in-mathbb-r-n">
-   10.1. Vectors in
+   Vectors in
    <span class="math notranslate nohighlight">
     \(\mathbb{R}^n\)
    </span>
@@ -319,22 +299,22 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#vector-addition-and-scalar-multiplication">
-   10.2. Vector Addition and Scalar Multiplication
+   Vector Addition and Scalar Multiplication
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#linear-combinations-of-vectors">
-   10.3. Linear Combinations of Vectors
+   Linear Combinations of Vectors
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#vector-equations">
-   10.4. Vector Equations
+   Vector Equations
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#spans">
-   10.5. Spans
+   Spans
   </a>
  </li>
 </ul>
@@ -358,7 +338,7 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#vectors-in-mathbb-r-n">
-   10.1. Vectors in
+   Vectors in
    <span class="math notranslate nohighlight">
     \(\mathbb{R}^n\)
    </span>
@@ -366,22 +346,22 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#vector-addition-and-scalar-multiplication">
-   10.2. Vector Addition and Scalar Multiplication
+   Vector Addition and Scalar Multiplication
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#linear-combinations-of-vectors">
-   10.3. Linear Combinations of Vectors
+   Linear Combinations of Vectors
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#vector-equations">
-   10.4. Vector Equations
+   Vector Equations
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#spans">
-   10.5. Spans
+   Spans
   </a>
  </li>
 </ul>
@@ -395,10 +375,10 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="vectors">
-<h1><span class="section-number">10. </span>Vectors<a class="headerlink" href="#vectors" title="Permalink to this headline">#</a></h1>
+<h1>Vectors<a class="headerlink" href="#vectors" title="Permalink to this headline">#</a></h1>
 <p>In this section we review the definition of a vector, how vectors can be interpreted geometrically, and how we can manipulate them algebraically.</p>
 <section id="vectors-in-mathbb-r-n">
-<h2><span class="section-number">10.1. </span>Vectors in <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span><a class="headerlink" href="#vectors-in-mathbb-r-n" title="Permalink to this headline">#</a></h2>
+<h2>Vectors in <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span><a class="headerlink" href="#vectors-in-mathbb-r-n" title="Permalink to this headline">#</a></h2>
 <p>A <strong>vector</strong> is simply point in <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span>, usually written as a vertical list of <span class="math notranslate nohighlight">\(n\)</span> elements representing the <span class="math notranslate nohighlight">\(n\)</span> coordinates. For example a vector <span class="math notranslate nohighlight">\(v\)</span> in <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span> has two elements:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}v = \begin{pmatrix}1\\3\end{pmatrix}.\end{split}\]</div>
@@ -407,7 +387,7 @@ title="Print to PDF"
 <p>The visual representation of vectors as an arrow will be crucial when understanding the linear algebra concepts we study in this course. Even though we are limited to two or three dimensions when visualising vectors, the geometrical intuition extends naturally to higher dimensional vectors.</p>
 </section>
 <section id="vector-addition-and-scalar-multiplication">
-<h2><span class="section-number">10.2. </span>Vector Addition and Scalar Multiplication<a class="headerlink" href="#vector-addition-and-scalar-multiplication" title="Permalink to this headline">#</a></h2>
+<h2>Vector Addition and Scalar Multiplication<a class="headerlink" href="#vector-addition-and-scalar-multiplication" title="Permalink to this headline">#</a></h2>
 <p>Two vectors can be added together by adding together individual coordinates:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{pmatrix}x_1\\x_2\\x_3\end{pmatrix}+\begin{pmatrix}y_1\\y_2\\y_3\end{pmatrix} = \begin{pmatrix}x_1+y_1\\x_2+y_2\\x_3+y_3\end{pmatrix}.\end{split}\]</div>
@@ -424,7 +404,7 @@ title="Print to PDF"
 <p><img alt="" src="../../_images/vector_scalar_multiples.png" /></p>
 </section>
 <section id="linear-combinations-of-vectors">
-<h2><span class="section-number">10.3. </span>Linear Combinations of Vectors<a class="headerlink" href="#linear-combinations-of-vectors" title="Permalink to this headline">#</a></h2>
+<h2>Linear Combinations of Vectors<a class="headerlink" href="#linear-combinations-of-vectors" title="Permalink to this headline">#</a></h2>
 <p>We can add and scale multiple vectors in a single expression.</p>
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
@@ -453,7 +433,7 @@ Definition</div>
 </div>
 </section>
 <section id="vector-equations">
-<h2><span class="section-number">10.4. </span>Vector Equations<a class="headerlink" href="#vector-equations" title="Permalink to this headline">#</a></h2>
+<h2>Vector Equations<a class="headerlink" href="#vector-equations" title="Permalink to this headline">#</a></h2>
 <p>Given <span class="math notranslate nohighlight">\(k\)</span> vectors <span class="math notranslate nohighlight">\(v_1, \ldots, v_k\)</span> and another vector <span class="math notranslate nohighlight">\(b\)</span> we can ask if <span class="math notranslate nohighlight">\(b\)</span> is a linear combination of <span class="math notranslate nohighlight">\(v_1, \ldots, v_k\)</span>. If so then we can find coefficients <span class="math notranslate nohighlight">\(c_1, \ldots, c_k\)</span> such that</p>
 <div class="math notranslate nohighlight">
 \[c_1v_1 + \cdots + c_kv_k = b.\]</div>
@@ -502,7 +482,7 @@ Definition</div>
 </div>
 </section>
 <section id="spans">
-<h2><span class="section-number">10.5. </span>Spans<a class="headerlink" href="#spans" title="Permalink to this headline">#</a></h2>
+<h2>Spans<a class="headerlink" href="#spans" title="Permalink to this headline">#</a></h2>
 <p>Given a set of vectors <span class="math notranslate nohighlight">\(v_1, v_2, \ldots, v_k\)</span> in <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span> in <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span>, we can consider the set of <em>all</em> of their linear combinations.</p>
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
@@ -570,20 +550,6 @@ v_1 &amp; v_2 &amp; \cdots &amp; v_k &amp;b \\
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="echelon_form.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">9. </span>Linear Systems of Equations</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="matrix_equations.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">11. </span>Matrix Equation <span class="math notranslate nohighlight">\(Ax = b\)</span></p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
 </div>
             </footer>
         </div>
