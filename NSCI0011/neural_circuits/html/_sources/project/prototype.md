@@ -12,6 +12,8 @@ x = [[3], [11, 6, 5], [4, 11, 5], [0], [2, 6, 6], [12, 19, 2, 1],
     [5], [], [7], [10, 11], [11], [6, 19], [], [5, 17]]
 ```
 
+Write Python code to determine the answers to the following questions.
+
 1\. The adjacency list of an undirected graph has the property that for any two nodes `i` and `j`, if `i` is a neighbour of `j` then `j` is a neighbour of `i`. Show that `x` is the adjacency list of an undirected graph.
 
 2\. Find a pair of nodes that are not connected by a path.
