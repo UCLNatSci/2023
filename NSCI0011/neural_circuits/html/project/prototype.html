@@ -351,11 +351,12 @@ document.write(`
 <h2><span class="section-number">7.2. </span>Part 2: Prototype<a class="headerlink" href="#part-2-prototype" title="Permalink to this headline">#</a></h2>
 <section id="step-1">
 <h3><span class="section-number">7.2.1. </span>Step 1<a class="headerlink" href="#step-1" title="Permalink to this headline">#</a></h3>
-<p>Generate a NetworkX object representing the directed graph of the <em>C Elegans</em> egg-laying circuit. Then use NetworkX to plot a network diagram of the graph.</p>
+<p>The provided file <code class="docutils literal notranslate"><span class="pre">sample_neural_circuit.csv</span></code> defines the graph of a sample neural circuit, where each row represents a synapse connecting two neurons from <code class="docutils literal notranslate"><span class="pre">bodyId_pre</span></code> to <code class="docutils literal notranslate"><span class="pre">bodyId_post</span></code>.</p>
+<p>Generate a NetworkX object representing the directed graph, then use NetworkX to plot a network diagram of the graph.</p>
 </section>
 <section id="step-2">
 <h3><span class="section-number">7.2.2. </span>Step 2<a class="headerlink" href="#step-2" title="Permalink to this headline">#</a></h3>
-<p>Write Python code to generate the two <a class="reference external" href="https://mathinsight.org/degree_distribution">degree distributions</a> of a general directed graph. Then plot histograms of the in-degree and out-degree distributions of the <em>C Elegans</em> egg-laying circuit.</p>
+<p>Write Python code to generate the two <a class="reference external" href="https://mathinsight.org/degree_distribution">degree distributions</a> of a general directed graph. Then plot histograms of the in-degree and out-degree distributions of the sample circuit.</p>
 </section>
 <section id="step-3">
 <h3><span class="section-number">7.2.3. </span>Step 3<a class="headerlink" href="#step-3" title="Permalink to this headline">#</a></h3>
@@ -366,11 +367,11 @@ document.write(`
 <li><p>Write a function <code class="docutils literal notranslate"><span class="pre">motif_number(H)</span></code> which checks whether graph <code class="docutils literal notranslate"><span class="pre">H</span></code> is isomorphic to any of the 13 order-3 graphs, and if so returns its motif number.</p></li>
 <li><p>Write a function <code class="docutils literal notranslate"><span class="pre">motif_spectrum(G)</span></code> which samples all order-3 subgraphs of <code class="docutils literal notranslate"><span class="pre">G</span></code>, determines the motif number of each, then returns the motif frequency spectrum.</p></li>
 </ol>
-<p>Plot the motif-frequency spectrum of the <em>C Elegans</em> egg-laying circuit.</p>
+<p>Plot the motif-frequency spectrum of the sample circuit.</p>
 </section>
 <section id="step-4">
 <h3><span class="section-number">7.2.4. </span>Step 4<a class="headerlink" href="#step-4" title="Permalink to this headline">#</a></h3>
-<p>Generate a <a class="reference external" href="https://en.wikipedia.org/wiki/Erd%C5%91s%E2%80%93R%C3%A9nyi_model">random graph</a> with the same number of edges and vertices as the <em>C Elegans</em> egg-laying circuit. Plot its two degree histograms and its motif frequency spectrum.</p>
+<p>Generate a <a class="reference external" href="https://en.wikipedia.org/wiki/Erd%C5%91s%E2%80%93R%C3%A9nyi_model">random graph</a> with the same number of edges and vertices as the sample circuit. Plot its two degree histograms and its motif frequency spectrum.</p>
 </section>
 </section>
 </section>

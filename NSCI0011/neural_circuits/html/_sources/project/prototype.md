@@ -28,11 +28,13 @@ Submit your answers to Part 1 as a single `.py` file.
 
 ### Step 1
 
-Generate a NetworkX object representing the directed graph of the *C Elegans* egg-laying circuit. Then use NetworkX to plot a network diagram of the graph.
+The provided file `sample_neural_circuit.csv` defines the graph of a sample neural circuit, where each row represents a synapse connecting two neurons from `bodyId_pre` to `bodyId_post`. 
+
+Generate a NetworkX object representing the directed graph, then use NetworkX to plot a network diagram of the graph.
 
 ### Step 2
 
-Write Python code to generate the two [degree distributions](https://mathinsight.org/degree_distribution) of a general directed graph. Then plot histograms of the in-degree and out-degree distributions of the *C Elegans* egg-laying circuit.
+Write Python code to generate the two [degree distributions](https://mathinsight.org/degree_distribution) of a general directed graph. Then plot histograms of the in-degree and out-degree distributions of the sample circuit.
 
 ### Step 3
 
@@ -44,11 +46,11 @@ Suggested steps:
 2. Write a function `motif_number(H)` which checks whether graph `H` is isomorphic to any of the 13 order-3 graphs, and if so returns its motif number.
 3. Write a function `motif_spectrum(G)` which samples all order-3 subgraphs of `G`, determines the motif number of each, then returns the motif frequency spectrum.
 
-Plot the motif-frequency spectrum of the *C Elegans* egg-laying circuit.
+Plot the motif-frequency spectrum of the sample circuit.
 
 ### Step 4
 
-Generate a [random graph](https://en.wikipedia.org/wiki/Erd%C5%91s%E2%80%93R%C3%A9nyi_model) with the same number of edges and vertices as the *C Elegans* egg-laying circuit. Plot its two degree histograms and its motif frequency spectrum.
+Generate a [random graph](https://en.wikipedia.org/wiki/Erd%C5%91s%E2%80%93R%C3%A9nyi_model) with the same number of edges and vertices as the sample circuit. Plot its two degree histograms and its motif frequency spectrum.
 
 
 
