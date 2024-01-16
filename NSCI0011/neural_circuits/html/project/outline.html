@@ -1,0 +1,522 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>5. Guidance &#8212; Neural Circuits</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'project/outline';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="6. Isomorphic Graphs" href="isomorphisms/graph_isomorphisms.html" />
+    <link rel="prev" title="4. Project Brief" href="neural_circuits_project_2.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/brain.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/brain.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Neural Circuits
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introductory Material</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../ws1/ws1.html">1. Introduction to Graphs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ws1/ws1_computing.html">2. Computing with Graphs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ws1/ws1_questions.html">3. Exercises</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Project</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="neural_circuits_project_2.html">4. Project Brief</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">5. Guidance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="isomorphisms/graph_isomorphisms.html">6. Isomorphic Graphs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="prototype.html">7. Prototype</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/project/outline.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Guidance</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#newtorkx">5.1. NewtorkX</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motif-frequency-analysis">5.2. Motif Frequency Analysis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#drosophila-connectome-data">5.3. Drosophila Connectome Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#null-models">5.4. Null Models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#schedule">5.5. Schedule</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">5.6. References</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="guidance">
+<h1><span class="section-number">5. </span>Guidance<a class="headerlink" href="#guidance" title="Permalink to this headline">#</a></h1>
+<p>The aim of this project is to perform a ‘motif frequency analysis’ of the <em>Drosophila Melanogaster</em> connectome. Motif analysis is described in Chapter 8.1 of <span id="id1">[<a class="reference internal" href="#id7" title="Alex Fornito, Andrew Zalesky, and Edward Bullmore. Fundamentals of brain network analysis. Academic Press, 2016.">1</a>]</span> and you should read this chapter carefully for essential background. Some of the cited articles may also prove useful.</p>
+<p>A motif is a small graph with a specific structure, and motif analysis involves counting the frequency that a particular set of motifs appear as a subgraph of a graph of interest (in our case, a graph representing a brain circuit). You should perform a motif analysis for the motifs of order 3 (as shown in the project brief).</p>
+<p>Motif analysis requires us to determine whether two graphs (a motif and a subgraph of the connectome) are ‘the same’. In graph theory, two graphs are the same if they are <em>isomorphic</em>. Graph isomorphisms are explained in <a class="reference internal" href="isomorphisms/graph_isomorphisms.html#graph-isomorphisms-section"><span class="std std-numref">Section 6</span></a> of these notes. Checking if two graphs are isomporphic is a <a class="reference external" href="https://en.wikipedia.org/wiki/Graph_isomorphism_problem">hard</a> computational problem, but fortunately you don’t need to write this algorithm yourself since you can make use of a Python library <a class="reference external" href="https://networkx.org/">NetworkX</a> which contains functions for checking graph isomorphism, as well as other useful functions.</p>
+<p>You’ll need to determine how to sample subgraphs from a connectome graph. If the connectome graph is small enough, it’s possible to sample <em>every</em> triplet of nodes but this may be infeasible for larger connectome graphs. In this case a strategy of random sampling might prove more effective.</p>
+<p>The graph of the <em>Drosophila Melanogaster</em> connectome can be downloaded from <a class="reference external" href="https://neuprint.janelia.org/">https://neuprint.janelia.org/</a> as a text file. It can be tricky to access it from the web site, so it will also be made available here. You will have to determine how best to interpret the data as a directed graph and how to load it into Python using NetworkX.</p>
+<p>Lastly, in order to determine whether any of the motifs appear at a higher or lower frequency than expected, you should build a <em>null model</em> which acts as a ‘reference’ or ‘control’. The easiest way to do this is by generating a suitable <a class="reference external" href="https://en.wikipedia.org/wiki/Random_graph">random graph</a>.</p>
+<section id="newtorkx">
+<h2><span class="section-number">5.1. </span>NewtorkX<a class="headerlink" href="#newtorkx" title="Permalink to this headline">#</a></h2>
+<p>You will also need to understand how to use the <a class="reference external" href="https://networkx.org/">NetworkX</a> Python package. Work through the <a class="reference external" href="https://networkx.org/documentation/stable/tutorial.html">tutorial</a> first.</p>
+<p>Check that you understand how to use the NewtorkX function <code class="docutils literal notranslate"><span class="pre">is_isomorphic</span></code>. The following exercise would be good a good (and useful) exercise to get you started.</p>
+<div class="exercise admonition" id="project/outline-exercise-0">
+
+<p class="admonition-title"><span class="caption-number">Exercise 5.1 </span></p>
+<section id="exercise-content">
+<p>Write Python code which uses <code class="docutils literal notranslate"><span class="pre">NetworkX</span></code> to calculate and graph the <a class="reference external" href="https://mathinsight.org/degree_distribution">node degree histogram</a> of an arbitrary graph.</p>
+</section>
+</div>
+</section>
+<section id="motif-frequency-analysis">
+<h2><span class="section-number">5.2. </span>Motif Frequency Analysis<a class="headerlink" href="#motif-frequency-analysis" title="Permalink to this headline">#</a></h2>
+<p>The core programming task is to develop code which calculates the triplet motif frequency spectrum of a given graph. Think about how to split this problem up into discrete funcions. For example,</p>
+<ol class="arabic simple">
+<li><p>A function which determines whether a subgraph (identified by a list of nodes) of a given graph (identified by an adjacency list or NetworkX object) is isomorphic to a second given graph. Test your function against a known graph (eg the <em>C Elegans</em> Egg-laying circuit). You can use NetworkX to test for graph isomorphism.</p></li>
+<li><p>A function which determines whether a given subgraph of given graph is isomorphic to one of the triplet motifs.</p></li>
+</ol>
+<p>Don’t get too stuck with this part! If you’re not sure how to proceed then please come to me for guidance.</p>
+</section>
+<section id="drosophila-connectome-data">
+<h2><span class="section-number">5.3. </span>Drosophila Connectome Data<a class="headerlink" href="#drosophila-connectome-data" title="Permalink to this headline">#</a></h2>
+<p>The connectome data can be found <a class="reference external" href="https://dvid.io/blog/release-v1.2/#downloads">here</a>. Select the link ‘a compact (44MB) data model’ to download the dataset. First you’ll need to uncompress the file - you may need to download a utility such as 7Zip to do this.</p>
+<p>Inside you will find three files <code class="docutils literal notranslate"><span class="pre">traced-neurons.csv</span></code>, <code class="docutils literal notranslate"><span class="pre">traced-roi-connections.csv</span></code> and <code class="docutils literal notranslate"><span class="pre">traced-total-connections.csv</span></code>. <code class="docutils literal notranslate"><span class="pre">traced-neurons.csv</span></code> contains information just about the neurons (the nodes of the graph) and the other two contain the graph connectivity data in edge list form. <code class="docutils literal notranslate"><span class="pre">traced-roi-connections.csv</span></code> contains additional information about each synapse (which are the graph edges) indicating which brain region it resides in.</p>
+<p>The Paper <span id="id2">[<a class="reference internal" href="#id6" title="C Shan Xu, Michal Januszewski, Zhiyuan Lu, Shin-ya Takemura, Kenneth J Hayworth, Gary Huang, Kazunori Shinomiya, Jeremy Maitin-Shepard, David Ackerman, Stuart Berg, and others. A connectome of the adult drosophila central brain. BioRxiv, 2020.">3</a>]</span> describes how the data was collected. The researchers collected a huge amount of data by imaging brain slices, and from this they determined the connectivity data. The paper contains a lot of information about how the data was collected, most of which you do not need to read in any detail; however you should definitely read Section 1 (Introduction) which contains useful background.</p>
+<p>The complete graph is gigantic so I suggest that you pick a single brain region to analyse. The file <code class="docutils literal notranslate"><span class="pre">traced-roi-connections.csv</span></code> breaks down the graph by brain region.</p>
+<p>The data files are in <code class="docutils literal notranslate"><span class="pre">csv</span></code> (‘comma separated values’) format. You should open the files in a text editor to understand how they are formatted. Your computer might try to open then in Excel or another spreadsheet program — avoid this and instead use a text editor so that you can view the raw data.</p>
+<p>The easiest way to import the data into Python is to use the <code class="docutils literal notranslate"><span class="pre">Pandas</span></code> Library. Use the function <code class="docutils literal notranslate"><span class="pre">Pandas.read_csv</span></code> to import the data as a DataFrame, then <code class="docutils literal notranslate"><span class="pre">NetworkX</span></code> has a function <code class="docutils literal notranslate"><span class="pre">from_pandas_dataframe</span></code> which will convert it to a graph.</p>
+<p>You will notice that the data contains a column called ‘weight’. This column describes the strength of each synaptic connection, so you’ll have to decide how best to handle this value (perhaps by setting a threshold).</p>
+</section>
+<section id="null-models">
+<h2><span class="section-number">5.4. </span>Null Models<a class="headerlink" href="#null-models" title="Permalink to this headline">#</a></h2>
+<p>A <em>null model</em> serves as a reference to which we can compare the statistics calculated from the <em>drosophila</em> connectome. By comparing the motif frequency histograms of the connectome data and the null model, we can begin to establish which motifs appear more (or less) frequently than chance. The simplest null model is a random graph with the same number of nodes and edges as the graph derived from the connectome data. You should start off by constructing a <a class="reference external" href="https://en.wikipedia.org/wiki/Erd%C5%91s%E2%80%93R%C3%A9nyi_model">random graph</a> matched by number of nodes and edges, but could consider more sophisticated null models. Read Chapter 10 of <span id="id3">[<a class="reference internal" href="#id7" title="Alex Fornito, Andrew Zalesky, and Edward Bullmore. Fundamentals of brain network analysis. Academic Press, 2016.">1</a>]</span> for more details.</p>
+</section>
+<section id="schedule">
+<h2><span class="section-number">5.5. </span>Schedule<a class="headerlink" href="#schedule" title="Permalink to this headline">#</a></h2>
+<p>You should expect to spend no more than 1 or 2 weeks developing code to calculate the motif frequency spectrum. Understanding how to convert the <em>drosophila</em> data into a graph might take another week, and the rest of the time should be spent generating results and writing your report.</p>
+</section>
+<section id="references">
+<h2><span class="section-number">5.6. </span>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
+<div class="docutils container" id="id4">
+<dl class="citation">
+<dt class="label" id="id7"><span class="brackets">1</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id3">2</a>)</span></dt>
+<dd><p>Alex Fornito, Andrew Zalesky, and Edward Bullmore. <em>Fundamentals of brain network analysis</em>. Academic Press, 2016.</p>
+</dd>
+<dt class="label" id="id5"><span class="brackets">2</span></dt>
+<dd><p>Olaf Sporns and Rolf Kötter. Motifs in brain networks. <em>PLoS biology</em>, 2(11):e369, 2004.</p>
+</dd>
+<dt class="label" id="id6"><span class="brackets"><a class="fn-backref" href="#id2">3</a></span></dt>
+<dd><p>C Shan Xu, Michal Januszewski, Zhiyuan Lu, Shin-ya Takemura, Kenneth J Hayworth, Gary Huang, Kazunori Shinomiya, Jeremy Maitin-Shepard, David Ackerman, Stuart Berg, and others. A connectome of the adult drosophila central brain. <em>BioRxiv</em>, 2020.</p>
+</dd>
+</dl>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./project"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="neural_circuits_project_2.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>Project Brief</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="isomorphisms/graph_isomorphisms.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">6. </span>Isomorphic Graphs</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#newtorkx">5.1. NewtorkX</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motif-frequency-analysis">5.2. Motif Frequency Analysis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#drosophila-connectome-data">5.3. Drosophila Connectome Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#null-models">5.4. Null Models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#schedule">5.5. Schedule</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">5.6. References</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Natural Sciences
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
