@@ -10,7 +10,7 @@ R_{\mu\,\nu} - \frac{1}{2}R\,g_{\mu\,\nu} = \frac{8 \pi G}{c^4}T_{\mu\,\nu}
 
 We can simplify by constructing a universe that expands in a way that is homogeneous and isotropic (something we observe on large scales), we do this using the Friedman Lemaitre Robertson Walker (FLRW) metric, which we can write as:
 ```{math}
-\mathrm{d}s^2 = g_{\mu\,\nu} \mathrm{d}x^{\mu}\,\mathrm{d}x^\nu = -c^2\mathrm{d}t^2 + a(t) \left[ \frac{\mathrm{d}r^2}{1-kr^2} + r^2\left( \mathrm{d}\theta^2 + \sin^2(\phi)^2\,\mathrm{d}\phi^2\right)\right]
+\mathrm{d}s^2 = g_{\mu\,\nu}\, \mathrm{d}x^{\mu}\,\mathrm{d}x^\nu = -c^2\mathrm{d}t^2 + a(t) \left[ \frac{\mathrm{d}r^2}{1-kr^2} + r^2\left( \mathrm{d}\theta^2 + \sin^2(\phi)^2\,\mathrm{d}\phi^2\right)\right]
 ```
 and by assuming a *perfect fluid* form of the stress-energy tensor:
 ```{math}
