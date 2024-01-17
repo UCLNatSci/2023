@@ -14,15 +14,27 @@ We can simplify by constructing a universe that expands in a way that is homogen
 ```
 and by assuming a *perfect fluid* form of the stress-energy tensor:
 ```{math}
-T_{\mu\,\nu} = \begin{pmatrix} \rho & & & \\ & P & & \\ & & P & \\ & & & P \end{pmatrix}
+T_{\mu\,\nu} = \begin{pmatrix} -\rho\,c^2 & & & \\ & P & & \\ & & P & \\ & & & P \end{pmatrix}
 ```
 we find the equations of matter and energy reduce down to the Friedmann equations.
 
 ```{math}
 H^2 = \left(\frac{\dot{a}}{a}\right)^2 &= \frac{8 \pi G}{3} \rho - \frac{kc^2}{a^2} + \frac{\Lambda c^2}{3} \\ 
-\frac{\ddot{a}}{a} &= - \frac{4 \pi G}{3}\left(\rho
-+ \frac{3P}{c^2}\right) + \frac{\Lambda c^2}{3} \\ 
+\frac{\ddot{a}}{a} &= - \frac{4 \pi G}{3}\left(\rho + \frac{3P}{c^2}\right) + \frac{\Lambda c^2}{3} \\ 
 \dot{\rho} &= -3\frac{\dot{a}}{a} \left(\rho + \frac{P}{c^2}\right)
 ```
 
 where $a(t)$ is the scaling factor space, $\rho$ is the matter/energy density, $P$ is the pressure, $k$ is the curvature parameter, $c$ is the speed of light and $\Lambda$ is the cosmological constant.  
+
+The first equation is often called the *energy equation* (F1), the second equation is often called the *acceleration equation* (F2) and the final equation the *conservation equation* (F3).  These equations are not three independent equations however, if we take F1, rearrange and differentiate with respect to time:
+
+```{math}
+\dot{a}^2 &= \frac{8 \pi G}{3}\rho a^2 - \frac{kc^2}{a^2} + \frac{\Lambda c^2}{3}a^2 \\
+2 \ddot{a}\dot{a} &= \frac{8 \pi G}{3}\left(\dot{\rho} a^2 + 2 \dot{a}a\rho\right) + 2 \dot{a} a \frac{\Lambda c^2}{3} \\
+```
+then using F3 we can find:
+```{math}
+\frac{\dot{\rho}a}{2\dot{a}} &= -\frac{3}{2}\left(\rho + \frac{P}{c^2}\right) \\
+\frac{\ddot{a}}{a} &= -\frac{4\pi G}{3}\left(\rho + \frac{P}{c^2}\right) + \frac{\Lambda c^2}{3}
+```
+which is exactly the form of F2.

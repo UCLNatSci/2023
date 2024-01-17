@@ -378,13 +378,15 @@ title="Print to PDF"
 <section id="first-go">
 <h2><span class="section-number">2.1. </span>First Go<a class="headerlink" href="#first-go" title="Permalink to this headline">#</a></h2>
 <p>Solving the Friedmann equations is in general <em>hard</em> because the equation contains a non-linear ODE term.  However by simplifying the system a little (and tracking your assumptions), finding some solutions with analytical methods is straightforward.</p>
-<p>A first assumption is to make the pressure <span class="math notranslate nohighlight">\(P\)</span> here zero, <span class="math notranslate nohighlight">\(P= 0\)</span>, this simplifies the system to:</p>
+<p>A first assumption is to make the pressure <span class="math notranslate nohighlight">\(P\)</span> here zero, <span class="math notranslate nohighlight">\(P= 0\)</span>, this simplifies the third equation to:</p>
 <div class="math notranslate nohighlight">
 \[\dot{\rho} = -3 \frac{\dot{a}}{a}\rho\]</div>
 <p>this is a separable ODE:</p>
 <div class="math notranslate nohighlight">
 \[\int \frac{\mathrm{d}\rho}{\rho} = -3 \int \frac{\mathrm{d}a}{a} \Rightarrow \rho = C a^{-3} \]</div>
-<p>which we can then use to solve the Friedmann equations.  Lets further assume that <span class="math notranslate nohighlight">\(k = \Lambda = 0\)</span> and <span class="math notranslate nohighlight">\(8 \pi G  = c = 1\)</span>:</p>
+<p>which we can then use to solve the Friedmann equations.</p>
+<p>Lets further assume that <span class="math notranslate nohighlight">\(k = \Lambda = 0\)</span> and <span class="math notranslate nohighlight">\(8 \pi G  = c = 1\)</span> - we call this assumption using <em>natural units</em>, it helps us to get solutions to the problems without worrying about scales.</p>
+<p>Hence we can find a seperable solution to the ODEs as we can substitute in <span class="math notranslate nohighlight">\(\rho(a)\)</span> into the first equation and then solve it.</p>
 <div class="math notranslate nohighlight">
 \[\left(\frac{\dot{a}}{a}\right)^2 = \frac{a^{-3}}{3} \Rightarrow a = C t^{2/3}\]</div>
 <p>Note that we used <span class="math notranslate nohighlight">\(a(t=0) = 0\)</span> here - this is actually the Big Bang in this models.</p>
@@ -397,6 +399,7 @@ title="Print to PDF"
 <p>We can the most general solution to the Friedmann equations for no curvative, no cosmological constant and a constant <span class="math notranslate nohighlight">\(w\)</span>, it looks like:</p>
 <div class="math notranslate nohighlight">
 \[a \sim t^{2/3(1+w)}\]</div>
+<p>which is a valid solution for every value of <span class="math notranslate nohighlight">\(w\)</span>, except <span class="math notranslate nohighlight">\(w=-1\)</span>.</p>
 </section>
 <section id="cosmological-constant-domination">
 <h2><span class="section-number">2.3. </span>Cosmological Constant Domination<a class="headerlink" href="#cosmological-constant-domination" title="Permalink to this headline">#</a></h2>
@@ -408,10 +411,10 @@ title="Print to PDF"
 <div class="math notranslate nohighlight">
 \[a = a_0 e^{\sqrt{\Lambda/3} t}\]</div>
 <p>which obviously means an exponetially growing universe - we call this phase <span class="math notranslate nohighlight">\(\Lambda\)</span> or dark energy domination.</p>
-<p>It is thought the <span class="math notranslate nohighlight">\(w = -1\)</span> produces the same solutions - is this true? (think about where you would divide by zero in your <span class="math notranslate nohighlight">\(w\)</span> solutions).</p>
+<p>It is thought the <span class="math notranslate nohighlight">\(w = -1\)</span> produces the same form of solutions - is this true? (think about where you would divide by zero in your <span class="math notranslate nohighlight">\(w\)</span> solutions).</p>
 <div class="admonition-exercise-for-week-2 admonition">
 <p class="admonition-title">Exercise for week 2</p>
-<p>Solve the Friedmann equations for <span class="math notranslate nohighlight">\(P = w \rho\)</span> and <span class="math notranslate nohighlight">\(k \neq 0\)</span> - how do the solutions now change?</p>
+<p>Solve the Friedmann equations for <span class="math notranslate nohighlight">\(P = w \rho\)</span>, <span class="math notranslate nohighlight">\(\Lambda = 0\)</span> and <span class="math notranslate nohighlight">\(k \neq 0\)</span> - how do the solutions now change?</p>
 <p>You will need to submit these pen and paper solutions, so write something neatly!</p>
 </div>
 </section>

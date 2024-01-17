@@ -328,14 +328,22 @@ fate of the entire universe.  The equations of Einstein’s theory of general re
 \[\mathrm{d}s^2 = g_{\mu\,\nu}\, \mathrm{d}x^{\mu}\,\mathrm{d}x^\nu = -c^2\mathrm{d}t^2 + a(t) \left[ \frac{\mathrm{d}r^2}{1-kr^2} + r^2\left( \mathrm{d}\theta^2 + \sin^2(\phi)^2\,\mathrm{d}\phi^2\right)\right]\]</div>
 <p>and by assuming a <em>perfect fluid</em> form of the stress-energy tensor:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}T_{\mu\,\nu} = \begin{pmatrix} \rho &amp; &amp; &amp; \\ &amp; P &amp; &amp; \\ &amp; &amp; P &amp; \\ &amp; &amp; &amp; P \end{pmatrix}\end{split}\]</div>
+\[\begin{split}T_{\mu\,\nu} = \begin{pmatrix} -\rho\,c^2 &amp; &amp; &amp; \\ &amp; P &amp; &amp; \\ &amp; &amp; P &amp; \\ &amp; &amp; &amp; P \end{pmatrix}\end{split}\]</div>
 <p>we find the equations of matter and energy reduce down to the Friedmann equations.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}H^2 = \left(\frac{\dot{a}}{a}\right)^2 &amp;= \frac{8 \pi G}{3} \rho - \frac{kc^2}{a^2} + \frac{\Lambda c^2}{3} \\ 
-\frac{\ddot{a}}{a} &amp;= - \frac{4 \pi G}{3}\left(\rho
-+ \frac{3P}{c^2}\right) + \frac{\Lambda c^2}{3} \\ 
+\frac{\ddot{a}}{a} &amp;= - \frac{4 \pi G}{3}\left(\rho + \frac{3P}{c^2}\right) + \frac{\Lambda c^2}{3} \\ 
 \dot{\rho} &amp;= -3\frac{\dot{a}}{a} \left(\rho + \frac{P}{c^2}\right)\end{split}\]</div>
 <p>where <span class="math notranslate nohighlight">\(a(t)\)</span> is the scaling factor space, <span class="math notranslate nohighlight">\(\rho\)</span> is the matter/energy density, <span class="math notranslate nohighlight">\(P\)</span> is the pressure, <span class="math notranslate nohighlight">\(k\)</span> is the curvature parameter, <span class="math notranslate nohighlight">\(c\)</span> is the speed of light and <span class="math notranslate nohighlight">\(\Lambda\)</span> is the cosmological constant.</p>
+<p>The first equation is often called the <em>energy equation</em> (F1), the second equation is often called the <em>acceleration equation</em> (F2) and the final equation the <em>conservation equation</em> (F3).  These equations are not three independent equations however, if we take F1, rearrange and differentiate with respect to time:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\dot{a}^2 &amp;= \frac{8 \pi G}{3}\rho a^2 - \frac{kc^2}{a^2} + \frac{\Lambda c^2}{3}a^2 \\
+2 \ddot{a}\dot{a} &amp;= \frac{8 \pi G}{3}\left(\dot{\rho} a^2 + 2 \dot{a}a\rho\right) + 2 \dot{a} a \frac{\Lambda c^2}{3} \\\end{split}\]</div>
+<p>then using F3 we can find:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\frac{\dot{\rho}a}{2\dot{a}} &amp;= -\frac{3}{2}\left(\rho + \frac{P}{c^2}\right) \\
+\frac{\ddot{a}}{a} &amp;= -\frac{4\pi G}{3}\left(\rho + \frac{P}{c^2}\right) + \frac{\Lambda c^2}{3}\end{split}\]</div>
+<p>which is exactly the form of F2.</p>
 </section>
 
     <script type="text/x-thebe-config">
