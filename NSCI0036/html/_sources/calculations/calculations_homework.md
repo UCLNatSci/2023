@@ -68,7 +68,7 @@ Given two integers $n$ and $m$ it is possible to perform division-with-remainder
 :::
 
 :::{exercise}
-
+:label: calculations_extra_duration
 A duration `t` in seconds can be converted to days, hours, minutes and seconds using integer division:
 
 1. Divide `t` by 60; set `t` to the quotient and call the remainder `s`.
@@ -83,6 +83,7 @@ Calculate the number of days, hours, minutes and seconds in one million seconds.
 :::
 
 :::{exercise}
+:label: calculations_extra_primes
 A student has written the pseudocode below to test if a number $n$ is a prime number.
 1. There are **two** errors in the pseudocode. Find them and fix them.
 2. Use the corrected pseudocode to write Python code which tests if a whole number `n` is prime.
