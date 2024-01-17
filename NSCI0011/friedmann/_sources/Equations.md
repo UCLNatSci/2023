@@ -1,6 +1,6 @@
 # The Friedmann Equations
 
-
+## General Relativity
 Relativistic cosmology is the study of the beginnings, expansion and inevitable
 fate of the entire universe.  The equations of Einstein's theory of general relativity are complicated:
 
@@ -18,6 +18,7 @@ T_{\mu\,\nu} = \begin{pmatrix} -\rho\,c^2 & & & \\ & P & & \\ & & P & \\ & & & P
 ```
 we find the equations of matter and energy reduce down to the Friedmann equations.
 
+## The three Friedmann equations
 ```{math}
 H^2 = \left(\frac{\dot{a}}{a}\right)^2 &= \frac{8 \pi G}{3} \rho - \frac{kc^2}{a^2} + \frac{\Lambda c^2}{3} \\ 
 \frac{\ddot{a}}{a} &= - \frac{4 \pi G}{3}\left(\rho + \frac{3P}{c^2}\right) + \frac{\Lambda c^2}{3} \\ 
@@ -38,3 +39,26 @@ then using F3 we can find:
 \frac{\ddot{a}}{a} &= -\frac{4\pi G}{3}\left(\rho + \frac{P}{c^2}\right) + \frac{\Lambda c^2}{3}
 ```
 which is exactly the form of F2.
+
+## Curvature 
+
+The curvature of the universe is important in solving these equations, we find the the parameter $k$ is related to this.  We can see graphically that the different cases of $k$:
+
+```{figure} ./figures/curvature.png
+---
+name: curvature
+---
+```
+When the curvature is positive, $k > 0$ and this represents spaces that look like a ball and can only represent a finite sized universe.  When the curvature is zero, $k=0$, the space is flat, which can represent either a finite or an infinite universe.  When the curvature is negative, $k < 0$, the space is saddle shaped and can represent either a finite or infinite universe.
+
+## Cosmological Constant
+
+The term $\Lambda$ in these equations represents a cosmological constant.  This was a term first added to the Einstein equations by Einstein himself when it was realised that without it the solutions for a universe would not be static (this represented the current thinking at the time).  When Edwin Hubble made observations that produced his celebrated Hubbles law $v = H d$, which suggests that more distant galaxies have more red-shifted light (and therefore are moving faster) than closer galaxies, Einstein removed this term and famously called it the greatest blunder in his career.  From about 1990 onwards, observations of so-called standard candle type 1A super novae (that are thought to always produce light of roughly the same luminsity) suggested that the light from distant galaxies was not just affected by the expansion of the universe, but that this expansion was **accelerating**!  This would require a significant additional effect within the friedmann equations, which we model through the term $\Lambda$.
+
+We believe that the universe underwent many different regimes of scaling behaviour in the scale factor:
+```{figure} ./figures/domination_regimes.png
+---
+name: domination_regimes
+---
+The panels left to right shows the effect of radiation domiation, then matter domination and finally $\Lambda$ domination.
+```
