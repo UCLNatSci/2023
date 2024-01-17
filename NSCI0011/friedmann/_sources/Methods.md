@@ -46,7 +46,11 @@ a = a_0 e^{\sqrt{\Lambda/3} t}
 
 which obviously means an exponetially growing universe - we call this phase $\Lambda$ or dark energy domination.
 
+It is throught the $w = -1$ produces the same solutions - is this true?
+
 ```{admonition} Exercise for week 2
 
-Write a Python code that solves the matter dominated assumptions for the Friedmann equations.
+Solve the Friedmann equations for $P = w \rho$ and $k \neq 0$ - how do the solutions now change?
+
+You will need to submit these pen and paper solutions, so write something neatly!
 ```
