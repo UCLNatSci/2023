@@ -62,7 +62,7 @@ It is thought the $w = -1$ produces the same form of solutions - is this true? (
 
 ```{admonition} Exercise for week 2
 
-Solve the Friedmann equations for $P = w \rho$, $\Lambda = 0$ and $k \neq 0$ - how do the solutions now change?
+Solve the Friedmann equations for $P = w \rho$, $\Lambda = 0$ and $k \neq 0$ - how do the solutions now change for the radiation dominated case?
 
 You will need to submit these pen and paper solutions, so write something neatly!
 ```
