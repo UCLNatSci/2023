@@ -6,7 +6,7 @@ They were first derived by Alexander Friedmann in 1922 from Einstein's field equ
 
 The Friedmann equations form the basis of the $\Lambda$CDM model, which posits that the universe is filled with:
 
-```{figure} ../figures/makeup.jpg
+```{figure} ./figures/makeup.jpeg
 ---
 name: makeup
 ---
