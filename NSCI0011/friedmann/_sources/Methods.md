@@ -1,5 +1,7 @@
 # Friedmann Equation Methods
 
+## First Go
+
 Solving the Friedmann equations is in general *hard* because the equation contains a non-linear ODE term.  However by simplifying the system a little (and tracking your assumptions), finding some solutions with analytical methods is straightforward.
 
 A firs assumption is to make the pressure $P$ here zero, $P= 0$, this simplifies the system to:
@@ -22,6 +24,29 @@ we can further look at other examples of pressure relations, for radiation $P = 
 
 If we solve this system, we find $a = C t^{1/2}$ (try this yourself).
 
+## Equation of State 
 We can make a more general relation, $P = w \rho$ where $w$ is known as the equation of state paramater and in the first instance is a constant.
 
-Find the most general solution to the Friedmann equations for no curvative, cosmological constant and constant $w$
+Find the most general solution to the Friedmann equations for no curvative, no cosmological constant and a constant $w$.
+
+## Cosmological Constant Domination
+
+What about if our cosmological constant is large (we expect at this point in the current universes history it is!), how does this change our solutions?
+
+Solve the equation given by:
+```{math}
+\left( \frac{\dot{a}}{a}\right)^2 \simeq \frac{\Lambda}{3}
+```
+
+which hopefully we can see has an expontential solution:
+
+```{math}
+a = a_0 e^{\sqrt{\Lambda/3} t}
+```
+
+which obviously means an exponetially growing universe - we call this phase $\Lambda$ or dark energy domination.
+
+```{admonition} Exercise for week 2
+
+Write a Python code that solves the matter dominated assumptions for the Friedmann equations.
+```
