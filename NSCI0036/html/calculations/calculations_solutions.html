@@ -171,7 +171,7 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="calculations_homework.html">1.4. Exercises</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="calculations_digits_solutions.html">Solutions (1.16)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="calculations_homework_solutions.html">Solutions (1.17 to 1.19)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="calculations_homework_solutions.html">Solutions (1.17 to 1.21)</a></li>
 </ul>
 </li>
 </ul>
@@ -179,6 +179,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 has-children"><a class="reference internal" href="../rate_equations/rate_equations_intro.html">2. Modelling Change</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../rate_equations/rate_equations_notes.html">2.2. Notes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../rate_equations/rate_equations.html">2.3. Workshop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rate_equations/rate_equations_extra.html">2.4. Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -469,7 +470,22 @@ document.write(`
 </div>
 <div class="solution admonition" id="calculations/calculations_solutions-solution-6">
 
-<p class="admonition-title">Solution to<a class="reference internal" href="calculations.html#exercise_1_12"> Exercise 1.13</a></p>
+<p class="admonition-title">Solution to<a class="reference internal" href="calculations.html#exercise_1_12"> Exercise 1.12</a></p>
+<section id="solution-content">
+<div class="pseudocode docutils">
+<p>set n to 5<br />
+repeat while n is greater than 1:<br />
+    if n is even:<br />
+         set n to n/2<br />
+    if n is odd:<br />
+         set n to 3n + 1<br />
+    display n</p>
+</div>
+</section>
+</div>
+<div class="solution admonition" id="calculations/calculations_solutions-solution-7">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="calculations.html#exercise_1_13"> Exercise 1.13</a></p>
 <section id="solution-content">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">5</span>
 
@@ -486,9 +502,9 @@ document.write(`
 </div>
 </section>
 </div>
-<div class="solution admonition" id="calculations/calculations_solutions-solution-7">
+<div class="solution admonition" id="calculations/calculations_solutions-solution-8">
 
-<p class="admonition-title">Solution to<a class="reference internal" href="calculations.html#exercise_1_13"> Exercise 1.14</a></p>
+<p class="admonition-title">Solution to<a class="reference internal" href="calculations.html#exercise_1_14"> Exercise 1.14</a></p>
 <section id="solution-content">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">5</span>
 <span class="n">collatz_num</span> <span class="o">=</span> <span class="mi">1</span>
@@ -512,9 +528,9 @@ document.write(`
 </div>
 </section>
 </div>
-<div class="solution admonition" id="calculations/calculations_solutions-solution-8">
+<div class="solution admonition" id="calculations/calculations_solutions-solution-9">
 
-<p class="admonition-title">Solution to<a class="reference internal" href="calculations.html#exercise_1_14"> Exercise 1.15 (Challenge)</a></p>
+<p class="admonition-title">Solution to<a class="reference internal" href="calculations.html#exercise_1_15"> Exercise 1.15 (Challenge)</a></p>
 <section id="solution-content">
 <p>To do this we need to ‘nest’ one while loop (to calculate Collatz numbers) inside another one (to check each if each integer meets the condition).</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">k</span> <span class="o">=</span> <span class="mi">1</span>
