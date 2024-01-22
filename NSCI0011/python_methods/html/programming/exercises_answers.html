@@ -337,7 +337,114 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="answers">
 <h1><span class="section-number">3.1. </span>Answers<a class="headerlink" href="#answers" title="Permalink to this headline">#</a></h1>
-<p>Answers will be available here.</p>
+<div class="solution admonition" id="programming/exercises_answers-solution-0">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="exercises.html#exercise_increase_by_one"> Exercise 3.1</a></p>
+<section id="solution-content">
+<p>a.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">val</span> <span class="o">=</span> <span class="mf">5.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">increase_by_one</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+<span class="go">6.0</span>
+</pre></div>
+</div>
+<p>This is not possible because the variable <code class="docutils literal notranslate"><span class="pre">val</span></code> is of type <code class="docutils literal notranslate"><span class="pre">float</span></code> which is an immutable type. The attempt below won’t work. Even though the local variable <code class="docutils literal notranslate"><span class="pre">x</span></code> and the global variable <code class="docutils literal notranslate"><span class="pre">val</span></code> reference the same object <code class="docutils literal notranslate"><span class="pre">5.0</span></code>, the line <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">+=</span> <span class="pre">1</span></code> creates a <em>new</em> local variable <code class="docutils literal notranslate"><span class="pre">x</span></code> rather than mutating the value of the object <code class="docutils literal notranslate"><span class="pre">5.0</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">increase_by_one</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>b.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">val</span> <span class="o">=</span> <span class="s2">&quot;hello&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">increase_by_one</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+<span class="go">hello1</span>
+</pre></div>
+</div>
+<p>This is not possible for the same reason as a. Strings are immutable and so any attempt to change the value of the string will either fail,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">increase_by_one</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">x</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>…or result in the local variable <code class="docutils literal notranslate"><span class="pre">x</span></code> referencing a new object.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">increase_by_one</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">+=</span> <span class="s2">&quot;1&quot;</span>
+</pre></div>
+</div>
+<p>c.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">val</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">increase_by_one</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+<span class="go">[0, 0, 0, 1]</span>
+</pre></div>
+</div>
+<p>This is possible. The <code class="docutils literal notranslate"><span class="pre">append</span></code> method mutates the list. The local variable <code class="docutils literal notranslate"><span class="pre">x</span></code> and global variable <code class="docutils literal notranslate"><span class="pre">val</span></code> both reference the same list and mutating the list affects both variables.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">increase_by_one</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">x</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>d.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">val</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">increase_by_one</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+<span class="go">[0 0 0 1]</span>
+</pre></div>
+</div>
+<p>This is not possible. Even though the Numpy array is a mutable type, it is <em>not</em> possible to change the size of a Numpy array.</p>
+<p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html">https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html</a></p>
+<p>For example, the function <code class="docutils literal notranslate"><span class="pre">numpy.append</span></code> <em>doesn’t</em> mutate arrays, but returns a new one. This won’t work:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">increase_by_one</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</div>
+<!--
+
+**Marks**  
+**1 mark** for identifying this case [c].  
+[a, b] **1 mark** for stating that floats/strings are immutable and **1 mark** for stating that the value referenced by immutable variables cannot be changed (or similar).  
+[c] **1 mark**  for a correct function definition. No marks if a `return` statment included, or if the function call has been changed (eg `val = increase_by_one(val)`)  
+[d] Even though arrays are mutable **1 mark** they are of fixed size (or do not have an append function or similar) **1 mark**  
+-->
+<div class="solution admonition" id="programming/exercises_answers-solution-1">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="exercises.html#exercise_swap_lists"> Exercise 3.4</a></p>
+<section id="solution-content">
+<p>One way to swap the two arrays is to make a temporary copy of the values. Perhaps the simplest way to do this is to copy all of the value into a temporary array first. This works:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">swap_lists</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="n">x</span><span class="p">[:]</span> <span class="c1"># create temporary copy of x</span>
+    <span class="n">x</span><span class="p">[:]</span> <span class="o">=</span> <span class="n">y</span> <span class="c1"># mutate value of x</span>
+    <span class="n">y</span><span class="p">[:]</span> <span class="o">=</span> <span class="n">z</span> <span class="c1"># mutate value of y</span>
+</pre></div>
+</div>
+<p>Note that this works because <code class="docutils literal notranslate"><span class="pre">x[:]</span></code> makes a copy of the values of <code class="docutils literal notranslate"><span class="pre">x</span></code>. Another way to do the exact same is <code class="docutils literal notranslate"><span class="pre">x.copy()</span></code>.</p>
+<p>This solution is fine, but we might like to consider if there are other solutions which don’t require making a copy of the list elements. For example, the following code moves one value at a time from <code class="docutils literal notranslate"><span class="pre">x</span></code> to <code class="docutils literal notranslate"><span class="pre">y</span></code> then one item at a time from <code class="docutils literal notranslate"><span class="pre">y</span></code> to <code class="docutils literal notranslate"><span class="pre">x</span></code>. Note that we must be careful to move items in the correct order - otherwise we end up revering the list!</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">swap_lists</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+    <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">item</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> 
+        <span class="n">x</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">item</span><span class="p">)</span> <span class="c1"># remove first element of x</span>
+        <span class="n">y</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span> <span class="c1"># append to end of y</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">item</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">y</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">item</span><span class="p">)</span> <span class="c1"># remove first element of y</span>
+        <span class="n">x</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span> <span class="c1"># append to end of x  </span>
+</pre></div>
+</div>
+<p>In most applications this second method is probably not better (it is certainly more complicated) but it has one key advantage: it doesn’t copy any data and therefore doesn’t use any extra memory.</p>
+<p>It is not possible to write a function which swaps two strings because strings are immutable (see Question 1d).</p>
+<!--
+**Marks**
+
+**4 marks** for a function which correctly swaps the arrays in place.  **2 marks** if the function works correctly except to reverse the order of the elements.
+Deduct 1 mark if a redundant `return` statement is included or an attempt is made to change global variables from inside the function, but the function otherwise works.
+
+**0 marks** if the function does not swap the lists in-place or if the function call is changed to an assignment (eg `x, y = swap_lists(x, y)`).
+
+**1 mark** for stating that strings are immutable.
+-->
+</section>
+</div>
 </section>
 
     <script type="text/x-thebe-config">
