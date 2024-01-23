@@ -68,7 +68,7 @@ Given two integers $n$ and $m$ it is possible to perform division-with-remainder
 :::
 
 :::{exercise}
-
+:label: calculations_extra_duration
 A duration `t` in seconds can be converted to days, hours, minutes and seconds using integer division:
 
 1. Divide `t` by 60; set `t` to the quotient and call the remainder `s`.
@@ -80,4 +80,33 @@ Calculate the number of days, hours, minutes and seconds in one million seconds.
 1000000 seconds is xx days H:M:S
 ```
 
+:::
+
+:::{exercise}
+:label: calculations_extra_primes
+A student has written the pseudocode below to test if a number $n$ is a prime number.
+1. There are **two** errors in the pseudocode. Find them and fix them.
+2. Use the corrected pseudocode to write Python code which tests if a whole number `n` is prime.
+2. Extend your Python code so that it calculates the number of prime numbers strictly less than a given number `n`. For example, if `n = 7` then your program should print `3`  since there are three prime numbers strictly less than 7 (2, 3, and 5).
+
+NB Python has keywords `True` and `False` which represent Boolean (True/False) values:
+```
+x = True
+print(x)
+```
+:::
+
+:::{card}
+Prime number test
+^^^
+```{div} pseudocode
+set value of n  
+set result to True  
+set i to 1  
+repeat while i is less than n:  
+&nbsp;&nbsp;&nbsp;&nbsp;if n is divisible by i  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; set result to False  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; increase i by 1  
+display result
+```
 :::

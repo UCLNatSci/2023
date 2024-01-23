@@ -1,0 +1,787 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Solution (4.12) &#8212; Scientific Computing Workbook</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom_styles.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '2d_arrays/2d_arrays_extra_answers';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="5. Cellular Automata" href="../cellular_automata/cellular_automata_intro.html" />
+    <link rel="prev" title="4.4. Exercises" href="2d_arrays_extra.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/nsci0036_logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/nsci0036_logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Before You Begin</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Before_you_begin/getting_started.html">Set up your Cocalc Account</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Before_you_begin/getting_started_workshop.html">Jupyter Notebooks (Optional)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Programming with Python</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../calculations/calculations_intro.html">1. Fundamentals</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../calculations/calculations_notes.html">1.2. Notes</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../calculations/calculations.html">1.3. Workshop</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../calculations/calculations_solutions.html">Solutions</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../calculations/calculations_homework.html">1.4. Exercises</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../calculations/calculations_digits_solutions.html">Solutions (1.16)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../calculations/calculations_homework_solutions.html">Solutions (1.17 to 1.21)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../rate_equations/rate_equations_intro.html">2. Modelling Change</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../rate_equations/rate_equations_notes.html">2.2. Notes</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../rate_equations/rate_equations.html">2.3. Workshop</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../rate_equations/rate_equations_solutions.html">Solutions</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../rate_equations/rate_equations_extra.html">2.4. Exercises</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../rate_equations/rate_equations_homework_answers.html">Solution (2.16)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../rate_equations/rate_equations_extra_solutions.html">Solutions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../functions/functions_intro.html">3. Functions</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../functions/functions_notes.html">3.2. Notes</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../functions/functions.html">3.3. Workshop</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../functions/functions_solutions.html">Solutions</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../functions/functions_extra.html">3.4. Exercises</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../functions/functions_homework_answers.html">Solutions (3.13)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="2d_arrays_intro.html">4. Modelling Space</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="2d_arrays_notes.html">4.2. Notes</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="2d_arrays.html">4.3. Workshop</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="2d_arrays_answers.html">Solutions</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="2d_arrays_extra.html">4.4. Exercises</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Solution (4.12)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../cellular_automata/cellular_automata_intro.html">5. Cellular Automata</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../cellular_automata/cellular_automata_notes.html">5.2. Notes</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../cellular_automata/cellular_automata.html">5.3. Workshop</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../cellular_automata/cellular_automata_answers.html">Solutions</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../cellular_automata/cellular_automata_extra.html">5.4. Exercises</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../cellular_automata/cellular_automata_homework_answers.html">Solution (5.6)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Projects</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../projects/projects_about.html">About the Project</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../projects/epidemic.html">Viral Epidemics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../projects/neurosphere.html">Neurosphere Growth</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../projects/modules/Modules.html">Modules</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/2d_arrays/2d_arrays_extra_answers.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/2d_arrays/2d_arrays_extra_answers.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Solution (4.12)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#downsampling">Downsampling</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#turning-into-a-function">Turning into a function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#upsampling">Upsampling</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="solution-4-12">
+<h1>Solution (4.12)<a class="headerlink" href="#solution-4-12" title="Permalink to this headline">#</a></h1>
+<div class="solution admonition" id="2d_arrays/2d_arrays_extra_answers-solution-0">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="2d_arrays_extra.html#ex_2d_arrays_downsampling"> Exercise 4.12</a></p>
+<section id="solution-content">
+</section>
+</div>
+<section id="downsampling">
+<h2>Downsampling<a class="headerlink" href="#downsampling" title="Permalink to this headline">#</a></h2>
+<p>Let’s think about the approach we will take to downsampling the image. To downsample by a factor of two, the pseudocode might look like this:</p>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Load necessary libraries
+
+Load image to downsample
+
+Calculate shape of new image
+
+For each cell in new image:
+    Set value as average of cells in original image
+    
+Display new image
+</pre></div>
+</div>
+</div>
+</div>
+<p>This pseudocode is written to be succinct - each step may correspond to multiple lines of code, but this provides a framework to work from. We could write more detailed pseudocode for each step.
+The most complicated steps will be to calculate the shape of the new image and to calculate the values of the new image.</p>
+<p>To load the necessary libraries and the image we can do:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s2">&quot;falling_cat.txt&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>To calculate the shape of the new image, we can use the function <code class="docutils literal notranslate"><span class="pre">np.shape</span></code> - like we saw in the workshop. As we want to downsample by a factor of 2, we will divide the image into 2 by 2 blocks and reduce each one to a single block. So every 2 rows become a single row, and every two columns become a single column. If the image has an odd number of rows or columns, we will ignore the extra row/column. To calculate the number of new rows and columns we will need we can use floor division. We can pass these values to <code class="docutils literal notranslate"><span class="pre">np.zeros</span></code> to create the new image that we will fill in</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="p">,</span> <span class="n">m</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span>
+
+<span class="n">n_out</span> <span class="o">=</span> <span class="n">n</span> <span class="o">//</span> <span class="mi">2</span>
+<span class="n">m_out</span> <span class="o">=</span> <span class="n">m</span> <span class="o">//</span> <span class="mi">2</span>
+
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n_out</span><span class="p">,</span> <span class="n">m_out</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Now for each cell in the new image, we need to find the corresponding cells in the old image and take the average. We iterate throught the cells in the new image using two nested for loops. To work out the index of the subarray we want let’s think about some examples:</p>
+<ul class="simple">
+<li><p>The new cell at <span class="math notranslate nohighlight">\((0, 0)\)</span> will contain the average of the old cells <span class="math notranslate nohighlight">\((0, 0), (0, 1), (1, 0), (1, 1)\)</span>;</p></li>
+<li><p>the new cell at <span class="math notranslate nohighlight">\((1, 0)\)</span> will contain the average of the old cells <span class="math notranslate nohighlight">\((2, 0), (2, 1), (3, 0), (3, 1)\)</span>.</p></li>
+</ul>
+<p>So the new cell at <span class="math notranslate nohighlight">\((i, j)\)</span> will contain the average of the old cells <span class="math notranslate nohighlight">\((2i, 2j), (2i, 2j+1), (2i+1, 2j), (2i+1, 2j+1)\)</span>. For array <code class="docutils literal notranslate"><span class="pre">x</span></code>, we can select  this subarray using <code class="docutils literal notranslate"><span class="pre">x[2*i:2*(i+1),</span> <span class="pre">2*j:2*(j+1)]</span></code>. We can use <code class="docutils literal notranslate"><span class="pre">np.average</span></code> to calculate the average of the subarray.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_out</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m_out</span><span class="p">):</span>
+        <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="p">:</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="mi">2</span><span class="o">*</span><span class="n">j</span><span class="p">:</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">)])</span>
+        
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">cmap</span> <span class="o">=</span> <span class="s2">&quot;gray&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Putting this altogether we get:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load necessary libraries</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Load image</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s2">&quot;falling_cat.txt&quot;</span><span class="p">)</span>
+
+<span class="c1"># Calculate shape of new image</span>
+<span class="n">n</span><span class="p">,</span> <span class="n">m</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span>
+
+<span class="n">n_out</span> <span class="o">=</span> <span class="n">n</span> <span class="o">//</span> <span class="mi">2</span>
+<span class="n">m_out</span> <span class="o">=</span> <span class="n">m</span> <span class="o">//</span> <span class="mi">2</span>
+
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n_out</span><span class="p">,</span> <span class="n">m_out</span><span class="p">))</span>
+
+<span class="c1"># Set value for each cell in new image</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_out</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m_out</span><span class="p">):</span>
+        <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="p">:</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="mi">2</span><span class="o">*</span><span class="n">j</span><span class="p">:</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">)])</span>
+
+<span class="c1"># Display new image</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x166e5178ac8&gt;
+</pre></div>
+</div>
+<img alt="../_images/40bf9bb1869f795cb3a935f9daf3e0d708a774abbbf7ea15b133668797ae920a.png" src="../_images/40bf9bb1869f795cb3a935f9daf3e0d708a774abbbf7ea15b133668797ae920a.png" />
+</div>
+</div>
+</section>
+<section id="turning-into-a-function">
+<h2>Turning into a function<a class="headerlink" href="#turning-into-a-function" title="Permalink to this headline">#</a></h2>
+<p>Now we need to write a function that is able to downsample by a factor <code class="docutils literal notranslate"><span class="pre">k</span></code>. Let’s think about how we need to change the code above to work for any value of <code class="docutils literal notranslate"><span class="pre">k</span></code>:</p>
+<ul class="simple">
+<li><p>The size of the new image will be <code class="docutils literal notranslate"><span class="pre">n_out</span> <span class="pre">//</span> <span class="pre">k</span></code> by <code class="docutils literal notranslate"><span class="pre">m_out</span> <span class="pre">//</span> <span class="pre">k</span></code></p></li>
+<li><p>The subarray that we need the average of will be <code class="docutils literal notranslate"><span class="pre">x[k*i:k*(i+1),</span> <span class="pre">k*j:k*(j+1)]</span></code></p></li>
+</ul>
+<p>Otherwise, the bulk of the code remains the same.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">downsample</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+    <span class="n">n</span><span class="p">,</span> <span class="n">m</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span>
+
+    <span class="n">n_out</span> <span class="o">=</span> <span class="n">n</span> <span class="o">//</span> <span class="n">k</span>
+    <span class="n">m_out</span> <span class="o">=</span> <span class="n">m</span> <span class="o">//</span> <span class="n">k</span>
+
+    <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n_out</span><span class="p">,</span> <span class="n">m_out</span><span class="p">))</span>
+
+    <span class="c1"># Set value for each cell in new image</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_out</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m_out</span><span class="p">):</span>
+            <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">k</span><span class="o">*</span><span class="n">i</span><span class="p">:</span><span class="n">k</span><span class="o">*</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="n">k</span><span class="o">*</span><span class="n">j</span><span class="p">:</span><span class="n">k</span><span class="o">*</span><span class="p">(</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">)])</span>
+
+    <span class="c1"># Display new image</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>To test the function, we know that when <code class="docutils literal notranslate"><span class="pre">k=1</span></code> we should just get the original image. When <code class="docutils literal notranslate"><span class="pre">k=2</span></code> we should see the image we generated in part 1. If we make <code class="docutils literal notranslate"><span class="pre">k</span></code> quite large (say 10) the image should get quite pixelated, and if we keep growing <code class="docutils literal notranslate"><span class="pre">k</span></code> eventually we will just get a single pixel.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">downsample</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/5a2290dd69fc4997e799236399679b923b3774f7fd3a1bc1d58a5680249c6263.png" src="../_images/5a2290dd69fc4997e799236399679b923b3774f7fd3a1bc1d58a5680249c6263.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">downsample</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/40bf9bb1869f795cb3a935f9daf3e0d708a774abbbf7ea15b133668797ae920a.png" src="../_images/40bf9bb1869f795cb3a935f9daf3e0d708a774abbbf7ea15b133668797ae920a.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">downsample</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/1df0d717d74adeebb30d52742a39471db2e6703a7484a76a7e1f98da8202cccf.png" src="../_images/1df0d717d74adeebb30d52742a39471db2e6703a7484a76a7e1f98da8202cccf.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">downsample</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/847e5022136d3a0bc6298edf85cc3a9b3f8ea367e484540f189eb67e889ff97c.png" src="../_images/847e5022136d3a0bc6298edf85cc3a9b3f8ea367e484540f189eb67e889ff97c.png" />
+</div>
+</div>
+</section>
+<section id="upsampling">
+<h2>Upsampling<a class="headerlink" href="#upsampling" title="Permalink to this headline">#</a></h2>
+<p>The idea is similar here, but we want to make the image larger rather than smaller. The size of the new image will be <code class="docutils literal notranslate"><span class="pre">n*k</span></code> rows by <code class="docutils literal notranslate"><span class="pre">m*k</span></code> columns. The tricky part is assigning the subarray. When we downsample we want to take lots of cells from the old image and map them to one in the new image. For upsampling we want to take one cells from the image and map it onto many in the new image. We can either iterate through each individual cell in the new array and try and find the corresponding cell in the old array, or iterate through each individual cell in the old array and try and find the corresponding cells in the new array. Both approaches will end up with the same result.</p>
+<p>To iterate through the new array, the code is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_out</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m_out</span><span class="p">):</span>
+        <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="n">i</span> <span class="o">//</span> <span class="n">k</span><span class="p">,</span> <span class="n">j</span> <span class="o">//</span> <span class="n">k</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>To iterate through the old array, the code is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+        <span class="n">y</span><span class="p">[</span><span class="n">k</span><span class="o">*</span><span class="n">i</span><span class="p">:</span><span class="n">k</span><span class="o">*</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="n">k</span><span class="o">*</span><span class="n">j</span><span class="p">:</span><span class="n">k</span><span class="o">*</span><span class="p">(</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>This approach works because python allows us to assign multiple cells to have the same value.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">upsample</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+    <span class="n">n</span><span class="p">,</span> <span class="n">m</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span>
+
+    <span class="n">n_out</span> <span class="o">=</span> <span class="n">n</span> <span class="o">*</span> <span class="n">k</span>
+    <span class="n">m_out</span> <span class="o">=</span> <span class="n">m</span> <span class="o">*</span> <span class="n">k</span>
+
+    <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n_out</span><span class="p">,</span> <span class="n">m_out</span><span class="p">))</span>
+
+    <span class="c1"># For each cell of new image retrieve corresponding cell from old image</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_out</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m_out</span><span class="p">):</span>
+            <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="n">i</span> <span class="o">//</span> <span class="n">k</span><span class="p">,</span> <span class="n">j</span> <span class="o">//</span> <span class="n">k</span><span class="p">]</span>
+
+    <span class="c1"># Display new image</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>It is harder to check that this works, because python displays all the figures at the same size regardless of the value of <code class="docutils literal notranslate"><span class="pre">k</span></code>, so whilst there are more cells the image appears unchanged. But notice that if we make <code class="docutils literal notranslate"><span class="pre">k</span></code> larger, the scale on the axes grows correspondingly, so the function must be working.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">upsample</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/5a2290dd69fc4997e799236399679b923b3774f7fd3a1bc1d58a5680249c6263.png" src="../_images/5a2290dd69fc4997e799236399679b923b3774f7fd3a1bc1d58a5680249c6263.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">upsample</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/e1e8cefdfe4229cabbc63c2e74518d3cc8346fd68d50be069972e1f541af4f84.png" src="../_images/e1e8cefdfe4229cabbc63c2e74518d3cc8346fd68d50be069972e1f541af4f84.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">upsample</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/70760b63a21c82f6ad68cb661c8da01b1e655f314317840fd6f91c56f5e434ec.png" src="../_images/70760b63a21c82f6ad68cb661c8da01b1e655f314317840fd6f91c56f5e434ec.png" />
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./2d_arrays"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="2d_arrays_extra.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">4.4. </span>Exercises</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../cellular_automata/cellular_automata_intro.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>Cellular Automata</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#downsampling">Downsampling</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#turning-into-a-function">Turning into a function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#upsampling">Upsampling</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Natural Sciences
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
