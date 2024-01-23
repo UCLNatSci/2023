@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>5. Isomorphic Graphs &#8212; Neural Circuits</title>
+    <title>6. Isomorphic Graphs &#8212; Neural Circuits</title>
   
   
   
@@ -63,8 +63,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'project/isomorphisms/graph_isomorphisms';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="6. Prototype" href="../prototype.html" />
-    <link rel="prev" title="4. Guidance" href="../outline.html" />
+    <link rel="next" title="7. Prototype" href="../prototype.html" />
+    <link rel="prev" title="5. Guidance" href="../outline.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -157,15 +157,22 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introductory Material</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../ws1/ws1.html">1. Introduction to Graphs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../ws1/ws1_computing.html">2. Computing with Graphs</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../ws1/ws1.html">1. Introduction to Graphs</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../ws1/ws1_answers.html">1.7. Answers</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../ws1/ws1_computing.html">2. Computing with Graphs</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../ws1/ws1_computing_answers.html">2.5. Answers</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../ws1/ws1_questions.html">3. Exercises [Optional]</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Project</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../neural_circuits_project_2.html">3. Project Brief</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../outline.html">4. Guidance</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">5. Isomorphic Graphs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../prototype.html">6. Prototype</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../neural_circuits_project_2.html">4. Project Brief</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../outline.html">5. Guidance</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">6. Isomorphic Graphs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../prototype.html">7. Prototype</a></li>
 </ul>
 
     </div>
@@ -312,16 +319,16 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example">5.1. Example</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1">5.2. Question 1</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">5.3. Example</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2">5.4. Question 2</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#isomorphism-from-adjacency-matrix">5.4.1. Isomorphism from Adjacency Matrix</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example">6.1. Example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1">6.2. Question 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">6.3. Example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2">6.4. Question 2</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#isomorphism-from-adjacency-matrix">6.4.1. Isomorphism from Adjacency Matrix</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3">5.5. Question 3</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graph-invariants">5.6. Graph Invariants</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question">5.7. Question</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3">6.5. Question 3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graph-invariants">6.6. Graph Invariants</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question">6.7. Question</a></li>
 </ul>
             </nav>
         </div>
@@ -334,7 +341,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="isomorphic-graphs">
-<span id="graph-isomorphisms-section"></span><h1><span class="section-number">5. </span>Isomorphic Graphs<a class="headerlink" href="#isomorphic-graphs" title="Permalink to this headline">#</a></h1>
+<span id="graph-isomorphisms-section"></span><h1><span class="section-number">6. </span>Isomorphic Graphs<a class="headerlink" href="#isomorphic-graphs" title="Permalink to this headline">#</a></h1>
 <p>We say that two graphs are <em>isomorphic</em> if they have the same network structure. Graphs <span class="math notranslate nohighlight">\(G_1\)</span> and <span class="math notranslate nohighlight">\(G_2\)</span> are isomorphic if there exists a matching between their nodes such that two nodes are connected by an edge in <span class="math notranslate nohighlight">\(G_1\)</span> if and only if their corresponding nodes are connected by an edge in <span class="math notranslate nohighlight">\(G_2\)</span>.</p>
 <div class="admonition-definition admonition">
 <p class="admonition-title">Definition</p>
@@ -345,14 +352,14 @@ document.write(`
 <p>If an isomorphism exists between two graphs, we say that the graphs are <strong>isomorphic</strong>.</p>
 </div>
 <section id="example">
-<h2><span class="section-number">5.1. </span>Example<a class="headerlink" href="#example" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">6.1. </span>Example<a class="headerlink" href="#example" title="Permalink to this headline">#</a></h2>
 <p>Find an isomorphism between the following two graphs.</p>
 <p><img alt="" src="../../_images/isomorphic_graphs.png" /></p>
 <p><strong>Solution</strong></p>
 <p>These two graphs are isomorphic under the isomorphism <span class="math notranslate nohighlight">\(f\colon \{1, 2, 3\}\to \{A, B, C\}\)</span> where <span class="math notranslate nohighlight">\(f(1) = C, f(2) = B \)</span> and <span class="math notranslate nohighlight">\(f(3) = A\)</span>.</p>
 </section>
 <section id="question-1">
-<h2><span class="section-number">5.2. </span>Question 1<a class="headerlink" href="#question-1" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">6.2. </span>Question 1<a class="headerlink" href="#question-1" title="Permalink to this headline">#</a></h2>
 <p>1. Find an isomorphism between the following two directed graphs:</p>
 <p><img alt="" src="../../_images/isomorphic_graphs_2.png" /></p>
 <p>2. Find a subgraph of the egg-laying circuit isomorphic to the directed graph below.</p>
@@ -360,28 +367,28 @@ document.write(`
 <p>3. Use NetworkX functions <code class="docutils literal notranslate"><span class="pre">subgraph</span></code> and <code class="docutils literal notranslate"><span class="pre">is_isomorphic</span></code> to confirm your answer to 2.</p>
 </section>
 <section id="id1">
-<h2><span class="section-number">5.3. </span>Example<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">6.3. </span>Example<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
 <p>How many simple directed graphs are there with 3 nodes and two edges?</p>
 <p><strong>Solution</strong></p>
 <p>There are 4. Any other simple directed digraph with 3 nodes and 2 edges is isomorphic to one of these.</p>
 <p><img alt="" src="../../_images/triplet_motifs_2.png" /></p>
 </section>
 <section id="question-2">
-<h2><span class="section-number">5.4. </span>Question 2<a class="headerlink" href="#question-2" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">6.4. </span>Question 2<a class="headerlink" href="#question-2" title="Permalink to this headline">#</a></h2>
 <p>Draw all simple directed graphs with 3 nodes and 3 edges.</p>
 <section id="isomorphism-from-adjacency-matrix">
-<h3><span class="section-number">5.4.1. </span>Isomorphism from Adjacency Matrix<a class="headerlink" href="#isomorphism-from-adjacency-matrix" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">6.4.1. </span>Isomorphism from Adjacency Matrix<a class="headerlink" href="#isomorphism-from-adjacency-matrix" title="Permalink to this headline">#</a></h3>
 <p>Given two graphs <span class="math notranslate nohighlight">\(G_1\)</span> and <span class="math notranslate nohighlight">\(G_2\)</span>, we can check whether they are isomorphic by calculating the adjacency matrix of every permutation of the nodes of <span class="math notranslate nohighlight">\(G_1\)</span>. If one of them is equal to the adjacency matrix of <span class="math notranslate nohighlight">\(G_2\)</span>, then the two graphs are isomorphic.</p>
 <p>There are <span class="math notranslate nohighlight">\(n!\)</span> permutations of <span class="math notranslate nohighlight">\(n\)</span> nodes, so even for relatively small graphs, checking for isomorphism can take a long time. There are <span class="math notranslate nohighlight">\(2.4\times 10^{24}\)</span> possible permutations of a graph with 20 nodes.</p>
 </section>
 </section>
 <section id="question-3">
-<h2><span class="section-number">5.5. </span>Question 3<a class="headerlink" href="#question-3" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">6.5. </span>Question 3<a class="headerlink" href="#question-3" title="Permalink to this headline">#</a></h2>
 <p>Write down all <span class="math notranslate nohighlight">\(3! = 6\)</span> adjacency matrices of the following digraph.</p>
 <p><img alt="" src="../../_images/triplet_adj.png" /></p>
 </section>
 <section id="graph-invariants">
-<h2><span class="section-number">5.6. </span>Graph Invariants<a class="headerlink" href="#graph-invariants" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">6.6. </span>Graph Invariants<a class="headerlink" href="#graph-invariants" title="Permalink to this headline">#</a></h2>
 <p>Fortunately, the problem of checking whether two graphs are <em>not</em> isomorphic is often easier. For example, if <span class="math notranslate nohighlight">\(G_1\)</span> has 5 nodes and <span class="math notranslate nohighlight">\(G_2\)</span> has 6 nodes, they certainly are not isomorphic. A graph property which is preserved by isomorphism is called a <strong>graph invariant</strong>.</p>
 <p>Some examples of graph invariants:</p>
 <ol class="arabic simple">
@@ -393,7 +400,7 @@ document.write(`
 </ol>
 </section>
 <section id="question">
-<h2><span class="section-number">5.7. </span>Question<a class="headerlink" href="#question" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">6.7. </span>Question<a class="headerlink" href="#question" title="Permalink to this headline">#</a></h2>
 <p>1. Show that the following pairs of graphs are not isomorphic by finding an invariant that they do not share.
 <img alt="" src="../../_images/question_invariant_1.png" /> <img alt="" src="../../_images/question_invariant_2.png" /></p>
 <p>2. Write down two more graph invariants.</p>
@@ -437,7 +444,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">4. </span>Guidance</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>Guidance</p>
       </div>
     </a>
     <a class="right-next"
@@ -445,7 +452,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">6. </span>Prototype</p>
+        <p class="prev-next-title"><span class="section-number">7. </span>Prototype</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -467,16 +474,16 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example">5.1. Example</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1">5.2. Question 1</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">5.3. Example</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2">5.4. Question 2</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#isomorphism-from-adjacency-matrix">5.4.1. Isomorphism from Adjacency Matrix</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example">6.1. Example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1">6.2. Question 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">6.3. Example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2">6.4. Question 2</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#isomorphism-from-adjacency-matrix">6.4.1. Isomorphism from Adjacency Matrix</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3">5.5. Question 3</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graph-invariants">5.6. Graph Invariants</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question">5.7. Question</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3">6.5. Question 3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graph-invariants">6.6. Graph Invariants</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question">6.7. Question</a></li>
 </ul>
   </nav></div>
 
