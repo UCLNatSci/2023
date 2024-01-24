@@ -1,10 +1,12 @@
-# Looking at Numerical Solutions
+# Looking at Numerical Solutions to ODEs
+
+## Using odeint
 
 We can think further about solutions to the Friedmann equations by using an ODE solver, however since these equations are non-linear in the first instance we have to be careful about how we write them in order to do this.
 
 We can look at a code that solves a simple harmonic system for a mass on a spring, $m \ddot{x} + k x = 0$:
 
-````{admonition} ODE code
+````{admonition} ODE code using odeint
 :class: dropdown
 
 ```python
@@ -23,8 +25,8 @@ def shm_system(y, t, m, k):
 initial_conditions = [1.0, 0.0]  # initial displacement and velocity
 
 # Parameters
-mass = 1.0
-spring_constant = 10.0
+m = 1.0  # Mass
+k = 10.0  # Spring constant
 
 # Time span
 t_span = np.linspace(0, 10, 1000)
@@ -34,7 +36,7 @@ solution = odeint(
     shm_system,
     initial_conditions,
     t_span,
-    args=(mass, spring_constant)
+    args=(m, k)
 )
 
 # Extract displacement and velocity from the solution
@@ -111,3 +113,72 @@ displacement, velocity = solution.T
 ```
 
 and finally we plot the results.
+
+## Using solve_ivp
+
+It turns out that python has *other* ODE packages - `odeint` is problably the most widespread one, but it only has one sort of solver, but there is a more versatile package - `solve_ivp`.
+
+````{admonition} ODE code in solve_ivp
+:class: dropdown
+```python
+import numpy as np
+from scipy.integrate import solve_ivp
+import matplotlib.pyplot as plt
+
+# Define the differential equation for the mass-spring system
+def mass_spring_system(t, y, k, m):
+    x, v = y
+    dxdt = v
+    dvdt = -k / m * x
+    return [dxdt, dvdt]
+
+# Set up initial conditions and parameters
+initial_conditions = [1.0, 0.0]  # Initial displacement and velocity
+m = 1.0  # Mass
+k = 10.0  # Spring constant
+
+
+# Set up time range
+t_span = (0, 10)
+
+# Solve the differential equation using solve_ivp
+solution = solve_ivp(
+    mass_spring_system, 
+    t_span, 
+    initial_conditions, 
+    args=(k, m), 
+    dense_output=True)
+
+# Evaluate the solution at specific time points
+t_eval = np.linspace(0, 10, 1000)
+y_eval = solution.sol(t_eval)
+
+# Extract displacement and velocity from the solution
+x, v = y_eval
+
+# Plot the results
+plt.figure(figsize=(10, 4))
+plt.plot(t_eval, x, label='Displacement (x)')
+plt.plot(t_eval, v, label='Velocity (v)')
+plt.xlabel('Time')
+plt.ylabel('Amplitude')
+plt.legend()
+plt.title('Simple Harmonic Motion (SHM) System')
+plt.grid(True)
+plt.show()
+```
+````
+## Exercises 
+
+````{admonition} Exercise with ODE solvers
+
+1\. Write a code to solve a damped harmonic oscillator:
+```{math}
+\ddot{x} + 2 \omega_0 \zeta \dot{x} + \omega_0^2 x = 0
+```
+
+where $\omega_0^2 = k/m$ and the damping ratio $\zeta$ can take different values.  
+
+2\. Plot solutions for $\zeta = 0,\, \zeta = 0.5, \zeta = 1, \zeta = 2$ and pick sensible values of other parameters.
+````
+

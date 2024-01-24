@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>1. The Friedmann Equations &#8212; Friedmann Equation Modelling</title>
+    <title>4. Friedmann Equations Numerical Methods &#8212; Friedmann Equation Modelling</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -54,8 +54,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="2. Friedmann Equation Methods" href="Methods.html" />
-    <link rel="prev" title="Introduction" href="intro.html" />
+    <link rel="prev" title="3. Looking at Numerical Solutions to ODEs" href="Numerical.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -120,9 +119,9 @@ const thebe_selector_output = ".output, .cell_output"
   Introductory Material
  </span>
 </p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Equations.html">
    1. The Friedmann Equations
   </a>
  </li>
@@ -132,7 +131,7 @@ const thebe_selector_output = ".output, .cell_output"
   Project Material
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="Methods.html">
    2. Friedmann Equation Methods
@@ -143,8 +142,8 @@ const thebe_selector_output = ".output, .cell_output"
    3. Looking at Numerical Solutions to ODEs
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Numerical_friedmann.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    4. Friedmann Equations Numerical Methods
   </a>
  </li>
@@ -238,7 +237,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FEquations.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FNumerical_friedmann.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -266,7 +265,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="_sources/Equations.md"
+        <a href="_sources/Numerical_friedmann.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -303,90 +302,23 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#general-relativity">
-   1.1. General Relativity
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-three-friedmann-equations">
-   1.2. The three Friedmann equations
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#curvature">
-   1.3. Curvature
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#cosmological-constant">
-   1.4. Cosmological Constant
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>The Friedmann Equations</h1>
+                <h1>Friedmann Equations Numerical Methods</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#general-relativity">
-   1.1. General Relativity
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-three-friedmann-equations">
-   1.2. The three Friedmann equations
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#curvature">
-   1.3. Curvature
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#cosmological-constant">
-   1.4. Cosmological Constant
-  </a>
- </li>
-</ul>
-
-                        </nav>
                     </div>
                 </div>
             </div>
@@ -394,58 +326,39 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="the-friedmann-equations">
-<h1><span class="section-number">1. </span>The Friedmann Equations<a class="headerlink" href="#the-friedmann-equations" title="Permalink to this headline">#</a></h1>
-<section id="general-relativity">
-<h2><span class="section-number">1.1. </span>General Relativity<a class="headerlink" href="#general-relativity" title="Permalink to this headline">#</a></h2>
-<p>Relativistic cosmology is the study of the beginnings, expansion and inevitable
-fate of the entire universe.  The equations of Einstein’s theory of general relativity are complicated:</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="friedmann-equations-numerical-methods">
+<h1><span class="section-number">4. </span>Friedmann Equations Numerical Methods<a class="headerlink" href="#friedmann-equations-numerical-methods" title="Permalink to this headline">#</a></h1>
+<p>Before we can put our system of equations into Python, we should look at ways to rewrite them.</p>
+<p>For the simplest solutions, with <span class="math notranslate nohighlight">\(k = \lambda = 0\)</span>, using equation of state <span class="math notranslate nohighlight">\(P = w \rho\)</span> and in the units of <span class="math notranslate nohighlight">\(8 \pi G = c = 1\)</span>, so we can try:</p>
 <div class="math notranslate nohighlight">
-\[R_{\mu\,\nu} - \frac{1}{2}R\,g_{\mu\,\nu} = \frac{8 \pi G}{c^4}T_{\mu\,\nu}\]</div>
-<p>We can simplify by constructing a universe that expands in a way that is homogeneous and isotropic (something we observe on large scales), we do this using the Friedman Lemaitre Robertson Walker (FLRW) metric, which we can write as:</p>
+\[\begin{split}\dot{a}^2 &amp;= \frac{\rho\,a^2}{3} \\
+\ddot{a} &amp;= -\frac{\rho \,a}{6} (1+3w) \\
+\dot{\rho} &amp;= -\frac{\dot{a}}{a}\rho\,(1+w)\end{split}\]</div>
+<p>If we use the third equation, then we can find:</p>
 <div class="math notranslate nohighlight">
-\[\mathrm{d}s^2 = g_{\mu\,\nu}\, \mathrm{d}x^{\mu}\,\mathrm{d}x^\nu = -c^2\mathrm{d}t^2 + a(t) \left[ \frac{\mathrm{d}r^2}{1-kr^2} + r^2\left( \mathrm{d}\theta^2 + \sin^2(\phi)^2\,\mathrm{d}\phi^2\right)\right]\]</div>
-<p>and by assuming a <em>perfect fluid</em> form of the stress-energy tensor:</p>
+\[\int \frac{\mathrm{d} \rho}{\rho} = -3\int \frac{(1+w)}{a}\,\mathrm{d}a\]</div>
+<p>We could integrate this up as usual and insert an integration constant, but an easier way to use equations here is to write the solutions in a dimension-less form:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}T_{\mu\,\nu} = \begin{pmatrix} -\rho\,c^2 &amp; &amp; &amp; \\ &amp; P &amp; &amp; \\ &amp; &amp; P &amp; \\ &amp; &amp; &amp; P \end{pmatrix}\end{split}\]</div>
-<p>we find the equations of matter and energy reduce down to the Friedmann equations.</p>
-</section>
-<section id="the-three-friedmann-equations">
-<h2><span class="section-number">1.2. </span>The three Friedmann equations<a class="headerlink" href="#the-three-friedmann-equations" title="Permalink to this headline">#</a></h2>
+\[\frac{\rho}{\rho_0} = \left(\frac{a}{a_0} \right)^{-3(1+w)}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\rho_0\)</span> and <span class="math notranslate nohighlight">\(a_0\)</span> are some initial values of <span class="math notranslate nohighlight">\(\rho\)</span> and <span class="math notranslate nohighlight">\(a\)</span> respectively.</p>
+<p>If we insert this into equation 1, it will turn into:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}H^2 = \left(\frac{\dot{a}}{a}\right)^2 &amp;= \frac{8 \pi G}{3} \rho - \frac{kc^2}{a^2} + \frac{\Lambda c^2}{3} \\ 
-\frac{\ddot{a}}{a} &amp;= - \frac{4 \pi G}{3}\left(\rho + \frac{3P}{c^2}\right) + \frac{\Lambda c^2}{3} \\ 
-\dot{\rho} &amp;= -3\frac{\dot{a}}{a} \left(\rho + \frac{P}{c^2}\right)\end{split}\]</div>
-<p>where <span class="math notranslate nohighlight">\(a(t)\)</span> is the scaling factor space, <span class="math notranslate nohighlight">\(\rho\)</span> is the matter/energy density, <span class="math notranslate nohighlight">\(P\)</span> is the pressure, <span class="math notranslate nohighlight">\(k\)</span> is the curvature parameter, <span class="math notranslate nohighlight">\(c\)</span> is the speed of light and <span class="math notranslate nohighlight">\(\Lambda\)</span> is the cosmological constant.</p>
-<p>The first equation is often called the <em>energy equation</em> (F1), the second equation is often called the <em>acceleration equation</em> (F2) and the final equation the <em>conservation equation</em> (F3).  These equations are not three independent equations however, if we take F1, rearrange and differentiate with respect to time:</p>
+\[\dot{a} = \left( \frac{\rho_0\,a_0^{3(1+w)}}{3}\right)^{1/2}a^{-(1+3w)/2}\]</div>
+<p>So integrating this up, we find:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\dot{a}^2 &amp;= \frac{8 \pi G}{3}\rho a^2 - \frac{kc^2}{a^2} + \frac{\Lambda c^2}{3}a^2 \\
-2 \ddot{a}\dot{a} &amp;= \frac{8 \pi G}{3}\left(\dot{\rho} a^2 + 2 \dot{a}a\rho\right) + 2 \dot{a} a \frac{\Lambda c^2}{3} \\\end{split}\]</div>
-<p>then using F3 we can find:</p>
+\[\begin{split}\int a^{(1+3w)/2}\,\mathrm{d}a &amp;= \int \left(\dots \right)\,\mathrm{d}t \\
+\Rightarrow \left(\frac{a}{a_0}\right)^{3(1+w)/2}&amp;= \frac{t}{t_0} \\
+\frac{a}{a_0} &amp;= \left(\frac{t}{t_0} \right)^{2/3(1+w)}\end{split}\]</div>
+<p>This sort of form is most useful for numerically solving the system, because it allows us to integrate over a range <span class="math notranslate nohighlight">\(t \in [t_i,\, t_f]\)</span>.</p>
+<div class="admonition-exercises-for-week-3 admonition">
+<p class="admonition-title">Exercises for week 3</p>
+<p>1. In our system, the ODE equations look like:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\frac{\dot{\rho}a}{2\dot{a}} &amp;= -\frac{3}{2}\left(\rho + \frac{P}{c^2}\right) \\
-\frac{\ddot{a}}{a} &amp;= -\frac{4\pi G}{3}\left(\rho + \frac{P}{c^2}\right) + \frac{\Lambda c^2}{3}\end{split}\]</div>
-<p>which is exactly the form of F2.</p>
-</section>
-<section id="curvature">
-<h2><span class="section-number">1.3. </span>Curvature<a class="headerlink" href="#curvature" title="Permalink to this headline">#</a></h2>
-<p>The curvature of the universe is important in solving these equations, we find the the parameter <span class="math notranslate nohighlight">\(k\)</span> is related to this.  We can see graphically that the different cases of <span class="math notranslate nohighlight">\(k\)</span>:</p>
-<figure class="align-default" id="id1">
-<img alt="_images/curvature.png" src="_images/curvature.png" />
-</figure>
-<p>When the curvature is positive, <span class="math notranslate nohighlight">\(k &gt; 0\)</span> and this represents spaces that look like a ball and can only represent a finite sized universe.  When the curvature is zero, <span class="math notranslate nohighlight">\(k=0\)</span>, the space is flat, which can represent either a finite or an infinite universe.  When the curvature is negative, <span class="math notranslate nohighlight">\(k &lt; 0\)</span>, the space is saddle shaped and can represent either a finite or infinite universe.</p>
-</section>
-<section id="cosmological-constant">
-<h2><span class="section-number">1.4. </span>Cosmological Constant<a class="headerlink" href="#cosmological-constant" title="Permalink to this headline">#</a></h2>
-<p>The term <span class="math notranslate nohighlight">\(\Lambda\)</span> in these equations represents a cosmological constant.  This was a term first added to the Einstein equations by Einstein himself when it was realised that without it the solutions for a universe would not be static (this represented the current thinking at the time).  When Edwin Hubble made observations that produced his celebrated Hubbles law <span class="math notranslate nohighlight">\(v = H d\)</span>, which suggests that more distant galaxies have more red-shifted light (and therefore are moving faster) than closer galaxies, Einstein removed this term and famously called it the greatest blunder in his career.  From about 1990 onwards, observations of so-called standard candle type 1A super novae (that are thought to always produce light of roughly the same luminsity) suggested that the light from distant galaxies was not just affected by the expansion of the universe, but that this expansion was <strong>accelerating</strong>!  This would require a significant additional effect within the friedmann equations, which we model through the term <span class="math notranslate nohighlight">\(\Lambda\)</span>.</p>
-<p>We believe that the universe underwent many different regimes of scaling behaviour in the scale factor:</p>
-<figure class="align-default" id="domination-regimes">
-<img alt="_images/domination_regimes.png" src="_images/domination_regimes.png" />
-<figcaption>
-<p><span class="caption-number">Fig. 1.1 </span><span class="caption-text">The panels left to right shows the effect of radiation domiation, then matter domination and finally <span class="math notranslate nohighlight">\(\Lambda\)</span> domination.</span><a class="headerlink" href="#domination-regimes" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
-</section>
+\[\begin{split}\dot{a} &amp;= \sqrt{\frac{\rho}{3}}a \\
+\dot{\rho} &amp;= -\frac{\dot{a}}{a}\rho\,(1+w)\end{split}\]</div>
+<p>Input these into a Python code and solve for the values of <span class="math notranslate nohighlight">\(w = 0,\, \frac{1}{3}\)</span> - check these against the analytical solutions.</p>
+<p>2. Start making the system more complicated - try <span class="math notranslate nohighlight">\(k = -1\)</span> and also try <span class="math notranslate nohighlight">\(\Lambda &gt; 0\)</span>$.</p>
+</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -475,19 +388,12 @@ fate of the entire universe.  The equations of Einstein’s theory of general re
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="intro.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="Numerical.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Introduction</p>
+            <p class="prev-next-title"><span class="section-number">3. </span>Looking at Numerical Solutions to ODEs</p>
         </div>
-    </a>
-    <a class='right-next' id="next-link" href="Methods.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">2. </span>Friedmann Equation Methods</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             </footer>
