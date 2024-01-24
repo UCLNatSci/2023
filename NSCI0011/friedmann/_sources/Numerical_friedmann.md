@@ -44,8 +44,12 @@ This sort of form is most useful for numerically solving the system, because it 
 \dot{\rho} &= -\frac{\dot{a}}{a}\rho\,(1+w)
 ```
 
-Input these into a Python code and solve for the values of $w = 0,\, \frac{1}{3}$ - check these against the analytical solutions.
+Input these into a Python code and solve for the values of $w = 0,\, \frac{1}{3}$ - check these against the analytical solutions.  Plot $a(t)$ vs $t$ and aso $\rho(t)$ vs $t$.  
 
-2\. Start making the system more complicated - try $k = -1$ and also try $\Lambda > 0$$.
+2\. Start making the system more complicated - try $k = -1$ and $\Lambda > 0$.
+
+(extra) Try getting a phase portrait - either $a$ vs $\dot{a}$ and/or $\rho$ vs $\dot{\rho}$.
+
+3\. Look through the different approaches for solving these systems in the project brief - think about the equations that you will need to solve in each case and which approach you would like to explore.  (Hint, some are first order ODEs, some are second order ODEs).
 
 ````
