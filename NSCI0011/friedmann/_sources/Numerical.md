@@ -170,15 +170,24 @@ plt.show()
 ````
 ## Exercises 
 
-````{admonition} Exercise with ODE solvers
+````{admonition} Exercises with ODE solvers
 
 1\. Write a code to solve a damped harmonic oscillator:
 ```{math}
 \ddot{x} + 2 \omega_0 \zeta \dot{x} + \omega_0^2 x = 0
 ```
-
 where $\omega_0^2 = k/m$ and the damping ratio $\zeta$ can take different values.  
 
-2\. Plot solutions for $\zeta = 0,\, \zeta = 0.5, \zeta = 1, \zeta = 2$ and pick sensible values of other parameters.
+2\. Plot solutions for $\zeta = 0,\, \zeta = 0.5, \zeta = 1, \zeta = 2$ and pick sensible values of other parameters, plotting a time series $x(t)$ vs $t$.
+
+Also try plotting a phase portrait here - i.e. $x(t)$ vs $\dot{x}(t)$.
+
+3\. Add a source term to the ODE:
+```{math}
+\ddot{x} + 2 \omega_0 \zeta \dot{x} + \omega_0^2 x = F_0\,\cos(\Omega t)
+```
+where we can add in an oscilating term with amplitude $F_0$ and frequency $\Omega$.
+
+
 ````
 

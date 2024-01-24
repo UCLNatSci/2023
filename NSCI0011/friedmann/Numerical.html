@@ -537,13 +537,18 @@ title="Print to PDF"
 </section>
 <section id="exercises">
 <h2><span class="section-number">3.3. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">#</a></h2>
-<div class="admonition-exercise-with-ode-solvers admonition">
-<p class="admonition-title">Exercise with ODE solvers</p>
+<div class="admonition-exercises-with-ode-solvers admonition">
+<p class="admonition-title">Exercises with ODE solvers</p>
 <p>1. Write a code to solve a damped harmonic oscillator:</p>
 <div class="math notranslate nohighlight">
 \[\ddot{x} + 2 \omega_0 \zeta \dot{x} + \omega_0^2 x = 0\]</div>
 <p>where <span class="math notranslate nohighlight">\(\omega_0^2 = k/m\)</span> and the damping ratio <span class="math notranslate nohighlight">\(\zeta\)</span> can take different values.</p>
-<p>2. Plot solutions for <span class="math notranslate nohighlight">\(\zeta = 0,\, \zeta = 0.5, \zeta = 1, \zeta = 2\)</span> and pick sensible values of other parameters.</p>
+<p>2. Plot solutions for <span class="math notranslate nohighlight">\(\zeta = 0,\, \zeta = 0.5, \zeta = 1, \zeta = 2\)</span> and pick sensible values of other parameters, plotting a time series <span class="math notranslate nohighlight">\(x(t)\)</span> vs <span class="math notranslate nohighlight">\(t\)</span>.</p>
+<p>Also try plotting a phase portrait here - i.e. <span class="math notranslate nohighlight">\(x(t)\)</span> vs <span class="math notranslate nohighlight">\(\dot{x}(t)\)</span>.</p>
+<p>3. Add a source term to the ODE:</p>
+<div class="math notranslate nohighlight">
+\[\ddot{x} + 2 \omega_0 \zeta \dot{x} + \omega_0^2 x = F_0\,\cos(\Omega t)\]</div>
+<p>where we can add in an oscilating term with amplitude <span class="math notranslate nohighlight">\(F_0\)</span> and frequency <span class="math notranslate nohighlight">\(\Omega\)</span>.</p>
 </div>
 </section>
 </section>
