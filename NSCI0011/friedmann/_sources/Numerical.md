@@ -114,6 +114,8 @@ displacement, velocity = solution.T
 
 and finally we plot the results.
 
+We can look up all the parameters of `odeint` [here](https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.OdeSolver.html#scipy.integrate.OdeSolver).  
+
 ## Using solve_ivp
 
 It turns out that python has *other* ODE packages - `odeint` is problably the most widespread one, but it only has one sort of solver, but there is a more versatile package - `solve_ivp`.
@@ -168,6 +170,8 @@ plt.grid(True)
 plt.show()
 ```
 ````
+The parameters for `solve_ivp` are 
+`scipy.integrate.solve_ivp(fun, t_span, y0, method='RK45', t_eval=None, dense_output=False, events=None, vectorized=False, args=None, **options)`  and the method can be changed here.  We can look up these parameters [here](https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.solve_ivp.html), but the default method is usually fine.
 ## Exercises 
 
 ````{admonition} Exercises with ODE solvers
