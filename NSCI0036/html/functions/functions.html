@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>3. Functions &#8212; Scientific Computing Workbook</title>
+    <title>3.3. Workshop 3: Functions &#8212; Scientific Computing Workbook</title>
   
   
   
@@ -59,11 +59,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'functions/functions_intro';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'functions/functions';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="3.2. Functions" href="functions_notes.html" />
-    <link rel="prev" title="Solutions" href="../rate_equations/rate_equations_extra_solutions.html" />
+    <link rel="prev" title="3.2. Functions" href="functions_notes.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -187,9 +188,9 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">3. Functions</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="functions_intro.html">3. Functions</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="functions_notes.html">3.2. Notes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="functions.html">3.3. Workshop</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">3.3. Workshop</a></li>
 </ul>
 </li>
 </ul>
@@ -246,7 +247,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/functions/functions_intro.ipynb" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/functions/functions.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onBinder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -277,7 +278,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/functions/functions_intro.ipynb" target="_blank"
+      <li><a href="../_sources/functions/functions.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -359,7 +360,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Functions</h1>
+    <h1>Workshop 3: Functions</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -369,7 +370,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#this-week">3.1. This Week</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-collatz-problem-revisited">The Collatz Problem Revisited</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#investigating-the-sir-model">Investigating the SIR Model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#taking-it-further">Taking it Further</a></li>
 </ul>
             </nav>
         </div>
@@ -381,26 +384,144 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="functions">
-<h1><span class="section-number">3. </span>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">#</a></h1>
-<p>As we start writing longer and more complicated programs, it becomes necessary to organise them by breaking them down into modular chunks. The tool we use for this is a <em>function</em> - a block of code that performs a specific task. In this section we will learn how to write and use functions in Python.</p>
-<div class="tip admonition">
-<p class="admonition-title">What you’ll learn</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="workshop-3-functions">
+<h1><span class="section-number">3.3. </span>Workshop 3: Functions<a class="headerlink" href="#workshop-3-functions" title="Permalink to this headline">#</a></h1>
+<section id="the-collatz-problem-revisited">
+<h2>The Collatz Problem Revisited<a class="headerlink" href="#the-collatz-problem-revisited" title="Permalink to this headline">#</a></h2>
+<p>Recall the Collatz Operation from Tutorial 1. Given an integer <span class="math notranslate nohighlight">\(n\)</span>, the next number in the Collatz sequence is:</p>
 <ul class="simple">
-<li><p>How to call functions</p></li>
-<li><p>Function definition, arguments and return values</p></li>
-<li><p>Repeating code with functions and loops</p></li>
-<li><p>Combining functions</p></li>
+<li><p>if <span class="math notranslate nohighlight">\(n\)</span> is even, divide it by two</p></li>
+<li><p>if <span class="math notranslate nohighlight">\(n\)</span> is odd, triple it and add one</p></li>
 </ul>
+<p>Repeatedly applying the Collatz Operation results in a Collatz Sequence, which terminates once it reaches the number <span class="math notranslate nohighlight">\(1\)</span>.</p>
+<p>The number of terms in the Collatz Sequence starting with <span class="math notranslate nohighlight">\(n\)</span> is the Collatz Number of <span class="math notranslate nohighlight">\(n\)</span>. For example, for <span class="math notranslate nohighlight">\(n = 5\)</span> the Collatz Sequence is <span class="math notranslate nohighlight">\(5, 16, 8, 4, 2, 1\)</span> and the Collatz Number is <span class="math notranslate nohighlight">\(6\)</span>.</p>
+<div class="exercise admonition" id="exercise_3_6">
+
+<p class="admonition-title"><span class="caption-number">Exercise 3.6 </span></p>
+<section id="exercise-content">
+<p>Define a function <code class="docutils literal notranslate"><span class="pre">collatz_op(n)</span></code> that returns the next number in the Collatz Sequence. Check that your function returns the correct result for <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">=</span> <span class="pre">5</span></code> and <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">=</span> <span class="pre">6</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">collatz_op</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="c1"># replace with your code</span>
+</pre></div>
 </div>
-<section id="this-week">
-<h2><span class="section-number">3.1. </span>This Week<a class="headerlink" href="#this-week" title="Permalink to this headline">#</a></h2>
-<p><strong>Before class</strong> read the <a class="reference internal" href="functions_notes.html"><span class="doc std std-doc">notes</span></a> and complete the embedded exercises.</p>
-<p><strong>During class</strong> work through the <a class="reference internal" href="functions.html"><span class="doc std std-doc">workshop</span></a>.</p>
-<p><strong>During and after class</strong> complete the <span class="xref myst">exercises</span>.</p>
 </section>
-<div class="toctree-wrapper compound">
 </div>
+<div class="exercise admonition" id="exercise_3_7">
+
+<p class="admonition-title"><span class="caption-number">Exercise 3.7 </span></p>
+<section id="exercise-content">
+<p>Define a function <code class="docutils literal notranslate"><span class="pre">collatz_number</span></code> that returns the Collatz Number of <code class="docutils literal notranslate"><span class="pre">n</span></code>. Your function should use the function <code class="docutils literal notranslate"><span class="pre">collatz_op</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">collatz_number</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">while</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="c1"># Replace with your code to</span>
+        <span class="c1"># calculate the Collatz number</span>
+
+    <span class="k">return</span> <span class="n">num</span>
+</pre></div>
+</div>
+</section>
+</div>
+<p>The <a class="reference external" href="https://en.wikipedia.org/wiki/Collatz_conjecture">Wikipedia article</a> for the Collatz Conjecture contains <a class="reference external" href="https://en.wikipedia.org/wiki/Collatz_conjecture#/media/File:Collatz5.svg">a graph</a> of the first <span class="math notranslate nohighlight">\(100\)</span> Collatz Numbers.</p>
+<div class="exercise admonition" id="exercise_3_8">
+
+<p class="admonition-title"><span class="caption-number">Exercise 3.8 </span></p>
+<section id="exercise-content">
+<p>Create an array containing the first <span class="math notranslate nohighlight">\(100\)</span> Collatz numbers. Then plot a line graph like the one in the Wikipedia article.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">collatz_numbers</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+
+<span class="c1"># For i from 0 to 99</span>
+<span class="c1">#   set the value of collatz_numbers[i]</span>
+
+<span class="c1"># plot a line graph of collatz_numbers</span>
+</pre></div>
+</div>
+</section>
+</div>
+</section>
+<section id="investigating-the-sir-model">
+<h2>Investigating the SIR Model<a class="headerlink" href="#investigating-the-sir-model" title="Permalink to this headline">#</a></h2>
+<p>In the previous tutorial, we wrote code that simulated the spread of an epdemic using the SIR model. We were able to investigate how the spread of the epidemic was influenced by parameters of the model - recovery rate <span class="math notranslate nohighlight">\(a\)</span> and infection rate <span class="math notranslate nohighlight">\(b\)</span>.</p>
+<div class="math notranslate nohighlight" id="equation-sir-equations-2">
+<span class="eqno">(3.1)<a class="headerlink" href="#equation-sir-equations-2" title="Permalink to this equation">#</a></span>\[\begin{split}\begin{align}S_{i+1} &amp;= S_i - bS_iI_i\\
+I_{i+1} &amp;= I_i + bS_iI_i - aI_i.\end{align}\end{split}\]</div>
+<p>Through policy interventions, the Government can influence the value of the parameter <span class="math notranslate nohighlight">\(b\)</span>. The government would like to understand how the value of <span class="math notranslate nohighlight">\(b\)</span> affects the peak number of infections.</p>
+<div class="exercise admonition" id="exercise_3_9">
+
+<p class="admonition-title"><span class="caption-number">Exercise 3.9 </span></p>
+<section id="exercise-content">
+<p>Complete the code below so that it simulates the epidemic for 100 days using the parameter values <span class="math notranslate nohighlight">\(a = 0.1\)</span> and <span class="math notranslate nohighlight">\(b = 0.00005\)</span>, and initial populations <span class="math notranslate nohighlight">\(S_0 = 20000\)</span> and <span class="math notranslate nohighlight">\(I_0 = 100\)</span>. You can reuse your code from last week’s exercise.</p>
+<p>Then use the <code class="docutils literal notranslate"><span class="pre">numpy</span></code> function <code class="docutils literal notranslate"><span class="pre">np.max</span></code> to calculate peak infections (the maximum value of the array <code class="docutils literal notranslate"><span class="pre">I</span></code>).</p>
+<p>Change the value of the parameter <code class="docutils literal notranslate"><span class="pre">b</span></code> and (by inspecting the graph of <code class="docutils literal notranslate"><span class="pre">I</span></code>) check that your calculated value of peak infections is correct.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">n_days</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mf">0.1</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mf">0.00005</span>
+
+<span class="c1"># your code here</span>
+</pre></div>
+</div>
+</section>
+</div>
+<p>Next, we’d like to produce a graph which shows how peak infections varies with the value of the infection rate parameter <code class="docutils literal notranslate"><span class="pre">b</span></code>. To do this, we will write a function <code class="docutils literal notranslate"><span class="pre">max_infected(a,</span> <span class="pre">b)</span></code> which calculates and returns the peak infections.</p>
+<div class="exercise admonition" id="exercise_3_10">
+
+<p class="admonition-title"><span class="caption-number">Exercise 3.10 </span></p>
+<section id="exercise-content">
+<ol class="arabic simple">
+<li><p>Write a function <code class="docutils literal notranslate"><span class="pre">max_infected(a,</span> <span class="pre">b)</span></code> which calculates and returns the maximum number of infected people over the course of the epidemic given parameter values <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code>. Check that your function returns the expected values for <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">0.1</span></code> and various values of <code class="docutils literal notranslate"><span class="pre">b</span></code>.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">np.linspace</span></code> to create an array <code class="docutils literal notranslate"><span class="pre">b_array</span></code> which contains a sequence of <code class="docutils literal notranslate"><span class="pre">10</span></code> evenly spaced numbers from  <code class="docutils literal notranslate"><span class="pre">0</span></code> to <code class="docutils literal notranslate"><span class="pre">0.00005</span></code></p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">np.zeros</span></code> to create an empty array <code class="docutils literal notranslate"><span class="pre">peak_infections</span></code> of length <code class="docutils literal notranslate"><span class="pre">10</span></code>.</p></li>
+<li><p>Use a loop to set the value of <code class="docutils literal notranslate"><span class="pre">peak_infections</span></code> for each value of <code class="docutils literal notranslate"><span class="pre">b</span></code> in <code class="docutils literal notranslate"><span class="pre">b_array</span></code>.</p></li>
+<li><p>Finally, create a plot to show how peak infections vary with infection rate.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">max_infected</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="c1"># Run the simulation and calculate</span>
+    <span class="c1"># the peak number of infections</span>
+
+<span class="n">b_array</span> <span class="o">=</span> <span class="c1"># your code here</span>
+<span class="n">peak_infections</span> <span class="o">=</span> <span class="c1"># your code here</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="c1"># Calculate the peak number of infections</span>
+    <span class="c1"># for the given value of b</span>
+
+<span class="c1"># Create a plot of peak infections against b</span>
+
+</pre></div>
+</div>
+</section>
+</div>
+</section>
+<section id="taking-it-further">
+<h2>Taking it Further<a class="headerlink" href="#taking-it-further" title="Permalink to this headline">#</a></h2>
+<p>As well as the peak number of infected people, the government is interested in the <em>total</em> amount of medical care that will be required over the course of the epidemic. Assuming that each day, every infected person has an equal and independent probability of requiring medical care, then the total cost of medical care will be proportional to the sum of the number of infected people over all days. We call this the <em>infected person-days</em> and is simply the sum values in the array <code class="docutils literal notranslate"><span class="pre">I</span></code>.</p>
+<div class="exercise admonition" id="exercise_3_11">
+
+<p class="admonition-title"><span class="caption-number">Exercise 3.11 </span></p>
+<section id="exercise-content">
+<p>Write a function <code class="docutils literal notranslate"><span class="pre">total_infected(a,</span> <span class="pre">b)</span></code> which calculates and returns the total number of infected person-days for the duration of the epidemic.</p>
+<p>Then, plot the total number of infections against <span class="math notranslate nohighlight">\(b\)</span> for values between <span class="math notranslate nohighlight">\(0\)</span> and <span class="math notranslate nohighlight">\(0.00005\)</span>.</p>
+</section>
+</div>
+<p>Through public policy interventions such as vaccinations, the infection rate parameter <span class="math notranslate nohighlight">\(b\)</span> can be reduced. However such interventions are costly. Goverment analysts estimate that the cost (in thousands of pounds) of interventions are given by the following formula:</p>
+<div class="math notranslate nohighlight">
+\[ \mathrm{intervention~cost} = \frac{1}{5b} - 2000\]</div>
+<p>where <span class="math notranslate nohighlight">\(b\)</span> is the desired infection parameter.</p>
+<p>Likewise, the cost of providing medical care (in thousands of pounds) is:</p>
+<div class="math notranslate nohighlight">
+\[ \mathrm{medical~cost} = I\]</div>
+<p>where <span class="math notranslate nohighlight">\(I\)</span> is the total number infected person-days.</p>
+<div class="exercise admonition" id="exercise_3_12">
+
+<p class="admonition-title"><span class="caption-number">Exercise 3.12 </span></p>
+<section id="exercise-content">
+<p>Calculate arrays <code class="docutils literal notranslate"><span class="pre">intervention_cost</span></code>, <code class="docutils literal notranslate"><span class="pre">medical_cost</span></code> containing the intervention and medical costs respectively over the range of <code class="docutils literal notranslate"><span class="pre">b</span></code> from <span class="math notranslate nohighlight">\(0\)</span> to <span class="math notranslate nohighlight">\(0.0005\)</span>. Assume <span class="math notranslate nohighlight">\(a = 0.1\)</span></p>
+<p>Calculate an array <code class="docutils literal notranslate"><span class="pre">total_cost</span></code> which is the sum of the intervention and medical costs.</p>
+<p>Plot all three on the same axes. Roughly what value of <code class="docutils literal notranslate"><span class="pre">b</span></code> minimises the total cost?</p>
+</section>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -435,22 +556,13 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../rate_equations/rate_equations_extra_solutions.html"
+       href="functions_notes.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Solutions</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="functions_notes.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title"><span class="section-number">3.2. </span>Functions</p>
       </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div></div>
   
@@ -470,7 +582,9 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#this-week">3.1. This Week</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-collatz-problem-revisited">The Collatz Problem Revisited</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#investigating-the-sir-model">Investigating the SIR Model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#taking-it-further">Taking it Further</a></li>
 </ul>
   </nav></div>
 
