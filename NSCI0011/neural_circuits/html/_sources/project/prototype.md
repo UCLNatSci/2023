@@ -2,6 +2,7 @@
 
 Submit your answers to the following questions to the 'Prototype' link in the Assessments section of Moodle.
 
+(prototype_part_1)=
 ## Part 1: Background
 
 The list `x` is the adjacency list of an undirected graph:
@@ -26,6 +27,9 @@ Write Python code to determine the answers to the following questions.
 
 Submit your answers to Part 1 as a single `.py` file.
 
+ **[5 marks]**
+
+(prototype_part_2)=
 ## Part 2: Prototype
 
 ### Step 1
@@ -34,9 +38,13 @@ The provided file `sample_neural_circuit.csv` defines the graph of a sample neur
 
 Generate a NetworkX object representing the directed graph, then use NetworkX to plot a network diagram of the graph.
 
+ **[3 marks]**
+
 ### Step 2
 
 Write Python code to generate the two [degree distributions](https://mathinsight.org/degree_distribution) of a general directed graph. Then plot histograms of the in-degree and out-degree distributions of the sample circuit.
+
+ **[3 marks]**
 
 ### Step 3
 
@@ -50,9 +58,20 @@ Suggested steps:
 
 Plot the motif-frequency spectrum of the sample circuit.
 
+ **[6 marks]**
+
 ### Step 4
 
 Generate a [random graph](https://en.wikipedia.org/wiki/Erd%C5%91s%E2%80%93R%C3%A9nyi_model) with the same number of edges and vertices as the sample circuit. Plot its two degree histograms and its motif frequency spectrum.
+
+ **[3 marks]**
+
+## What to submit
+
+1. For {ref}`prototype_part_1` submit a single `.py` file.
+2. For {ref}`prototype_part_2` submit code file(s) and documentation, ideally as a single `.zip` file (in Windows: right click, *Send to > Compressed (zipped) folder*). Key functions should be documented, and you should include clear instructions so that the reader can easily execute and verify your code. You do not need to separately include code outputs, because your code should produce the outputs when executed.
+
+There are 30 marks available for this submission: 5 marks for implementation/technique, 5 marks for documentation and 20 marks for results/objectives as detailed above (see marking scheme on Moodle).
 
 
 

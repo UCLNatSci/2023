@@ -324,6 +324,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4">7.2.4. Step 4</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-to-submit">7.3. What to submit</a></li>
 </ul>
             </nav>
         </div>
@@ -339,7 +340,7 @@ document.write(`
 <h1><span class="section-number">7. </span>Prototype<a class="headerlink" href="#prototype" title="Permalink to this headline">#</a></h1>
 <p>Submit your answers to the following questions to the ‘Prototype’ link in the Assessments section of Moodle.</p>
 <section id="part-1-background">
-<h2><span class="section-number">7.1. </span>Part 1: Background<a class="headerlink" href="#part-1-background" title="Permalink to this headline">#</a></h2>
+<span id="prototype-part-1"></span><h2><span class="section-number">7.1. </span>Part 1: Background<a class="headerlink" href="#part-1-background" title="Permalink to this headline">#</a></h2>
 <p>The list <code class="docutils literal notranslate"><span class="pre">x</span></code> is the adjacency list of an undirected graph:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
     <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="p">[</span><span class="mi">14</span><span class="p">,</span> <span class="mi">11</span><span class="p">],</span> <span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="p">[],</span> <span class="p">[</span><span class="mi">15</span><span class="p">,</span> <span class="mi">11</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span>
@@ -353,17 +354,20 @@ document.write(`
 <p>4. Determine all connected components in the graph (full marks if you use a technique which would work for <em>any</em> undirected graph regardless of size).</p>
 <p><em>NB while it might be possible to answer these questions using pen and paper, you should determine your answers using Python code and the computational techniques studied in class. Full marks will be given for answers which use techniques which could work for an undirected graph of ANY size (not just <code class="docutils literal notranslate"><span class="pre">x</span></code>). You should include sufficient text (in the form of Python comments) to explain how your code determines the answer to each question.</em></p>
 <p>Submit your answers to Part 1 as a single <code class="docutils literal notranslate"><span class="pre">.py</span></code> file.</p>
+<p><strong>[5 marks]</strong></p>
 </section>
 <section id="part-2-prototype">
-<h2><span class="section-number">7.2. </span>Part 2: Prototype<a class="headerlink" href="#part-2-prototype" title="Permalink to this headline">#</a></h2>
+<span id="prototype-part-2"></span><h2><span class="section-number">7.2. </span>Part 2: Prototype<a class="headerlink" href="#part-2-prototype" title="Permalink to this headline">#</a></h2>
 <section id="step-1">
 <h3><span class="section-number">7.2.1. </span>Step 1<a class="headerlink" href="#step-1" title="Permalink to this headline">#</a></h3>
 <p>The provided file <code class="docutils literal notranslate"><span class="pre">sample_neural_circuit.csv</span></code> defines the graph of a sample neural circuit, where each row represents a synapse connecting two neurons from <code class="docutils literal notranslate"><span class="pre">bodyId_pre</span></code> to <code class="docutils literal notranslate"><span class="pre">bodyId_post</span></code>.</p>
 <p>Generate a NetworkX object representing the directed graph, then use NetworkX to plot a network diagram of the graph.</p>
+<p><strong>[3 marks]</strong></p>
 </section>
 <section id="step-2">
 <h3><span class="section-number">7.2.2. </span>Step 2<a class="headerlink" href="#step-2" title="Permalink to this headline">#</a></h3>
 <p>Write Python code to generate the two <a class="reference external" href="https://mathinsight.org/degree_distribution">degree distributions</a> of a general directed graph. Then plot histograms of the in-degree and out-degree distributions of the sample circuit.</p>
+<p><strong>[3 marks]</strong></p>
 </section>
 <section id="step-3">
 <h3><span class="section-number">7.2.3. </span>Step 3<a class="headerlink" href="#step-3" title="Permalink to this headline">#</a></h3>
@@ -375,11 +379,21 @@ document.write(`
 <li><p>Write a function <code class="docutils literal notranslate"><span class="pre">motif_spectrum(G)</span></code> which samples all order-3 subgraphs of <code class="docutils literal notranslate"><span class="pre">G</span></code>, determines the motif number of each, then returns the motif frequency spectrum.</p></li>
 </ol>
 <p>Plot the motif-frequency spectrum of the sample circuit.</p>
+<p><strong>[6 marks]</strong></p>
 </section>
 <section id="step-4">
 <h3><span class="section-number">7.2.4. </span>Step 4<a class="headerlink" href="#step-4" title="Permalink to this headline">#</a></h3>
 <p>Generate a <a class="reference external" href="https://en.wikipedia.org/wiki/Erd%C5%91s%E2%80%93R%C3%A9nyi_model">random graph</a> with the same number of edges and vertices as the sample circuit. Plot its two degree histograms and its motif frequency spectrum.</p>
+<p><strong>[3 marks]</strong></p>
 </section>
+</section>
+<section id="what-to-submit">
+<h2><span class="section-number">7.3. </span>What to submit<a class="headerlink" href="#what-to-submit" title="Permalink to this headline">#</a></h2>
+<ol class="arabic simple">
+<li><p>For <a class="reference internal" href="#prototype-part-1"><span class="std std-ref">Part 1: Background</span></a> submit a single <code class="docutils literal notranslate"><span class="pre">.py</span></code> file.</p></li>
+<li><p>For <a class="reference internal" href="#prototype-part-2"><span class="std std-ref">Part 2: Prototype</span></a> submit code file(s) and documentation, ideally as a single <code class="docutils literal notranslate"><span class="pre">.zip</span></code> file (in Windows: right click, <em>Send to &gt; Compressed (zipped) folder</em>). Key functions should be documented, and you should include clear instructions so that the reader can easily execute and verify your code. You do not need to separately include code outputs, because your code should produce the outputs when executed.</p></li>
+</ol>
+<p>There are 30 marks available for this submission: 5 marks for implementation/technique, 5 marks for documentation and 20 marks for results/objectives as detailed above (see marking scheme on Moodle).</p>
 </section>
 </section>
 
@@ -449,6 +463,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4">7.2.4. Step 4</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-to-submit">7.3. What to submit</a></li>
 </ul>
   </nav></div>
 
