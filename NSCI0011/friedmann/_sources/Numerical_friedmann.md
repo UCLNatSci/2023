@@ -6,7 +6,7 @@ For the simplest solutions, with $k = \lambda = 0$, using equation of state $P =
 ```{math}
 \dot{a}^2 &= \frac{\rho\,a^2}{3} \\
 \ddot{a} &= -\frac{\rho \,a}{6} (1+3w) \\
-\dot{\rho} &= -\frac{\dot{a}}{a}\rho\,(1+w)
+\dot{\rho} &= -3\frac{\dot{a}}{a}\rho\,(1+w)
 ```
 
 If we use the third equation, then we can find:
@@ -41,7 +41,7 @@ This sort of form is most useful for numerically solving the system, because it 
 1\. In our system, the ODE equations look like:
 ```{math}
 \dot{a} &= \sqrt{\frac{\rho}{3}}a \\
-\dot{\rho} &= -\frac{\dot{a}}{a}\rho\,(1+w)
+\dot{\rho} &= -3\frac{\dot{a}}{a}\rho\,(1+w)
 ```
 
 Input these into a Python code and solve for the values of $w = 0,\, \frac{1}{3}$ - check these against the analytical solutions.  Plot $a(t)$ vs $t$ and aso $\rho(t)$ vs $t$.  
