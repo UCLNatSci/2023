@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Introduction &#8212; Friedmann Equation Modelling</title>
+    <title>6. Getting started on the project &#8212; Friedmann Equation Modelling</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -54,7 +54,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="1. The Friedmann Equations" href="Equations.html" />
+    <link rel="prev" title="5. Looking at scalar fields" href="Scalar_fields.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -108,8 +108,8 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="bd-toc-item active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1 current active">
-                <a class="reference internal" href="#">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
                     Introduction
                 </a>
             </li>
@@ -131,7 +131,7 @@ const thebe_selector_output = ".output, .cell_output"
   Project Material
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="Methods.html">
    2. Friedmann Equation Methods
@@ -152,8 +152,8 @@ const thebe_selector_output = ".output, .cell_output"
    5. Looking at scalar fields
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Project_Proper.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    6. Getting started on the project
   </a>
  </li>
@@ -247,7 +247,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FProject_Proper.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -275,7 +275,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="_sources/intro.md"
+        <a href="_sources/Project_Proper.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -312,23 +312,70 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#recap">
+   6.1. Recap
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#equations-of-motion">
+   6.2. Equations of Motion
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Introduction</h1>
+                <h1>Getting started on the project</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#recap">
+   6.1. Recap
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#equations-of-motion">
+   6.2. Equations of Motion
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -336,23 +383,30 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="introduction">
-<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h1>
-<p>The Friedmann equations are a set of equations in <em>physical</em> cosmology that govern the expansion of space in homogeneous and isotropic models of the universe within the context of general relativity.</p>
-<p>They were first derived by Alexander Friedmann in 1922 from Einstein’s field equations of gravitation for the Friedmann–Lemaître–Robertson–Walker metric and a perfect fluid with a given mass density <span class="math notranslate nohighlight">\(\rho\)</span> and pressure <span class="math notranslate nohighlight">\(P\)</span>.</p>
-<p>The Friedmann equations form the basis of the <span class="math notranslate nohighlight">\(\Lambda\)</span>CDM model, which posits that the universe is filled with:</p>
-<figure class="align-default" id="makeup">
-<img alt="_images/makeup.jpeg" src="_images/makeup.jpeg" />
-<figcaption>
-<p><span class="caption-number">Fig. 1 </span><span class="caption-text">The makeup of the energy-matter content of the universe, as found from the Planck satellite data.</span><a class="headerlink" href="#makeup" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
-<p>Solving these equations can pose some analytial (and numerical) difficulties, because of the non-linear term in the first equation and the fact that there are several functions - although these are at least just ODE’s in time.</p>
-<p>In this project we will look at different approaches taken to solving this system, both analytical and numerical.</p>
-<div class="toctree-wrapper compound">
+  <section class="tex2jax_ignore mathjax_ignore" id="getting-started-on-the-project">
+<h1><span class="section-number">6. </span>Getting started on the project<a class="headerlink" href="#getting-started-on-the-project" title="Permalink to this headline">#</a></h1>
+<section id="recap">
+<h2><span class="section-number">6.1. </span>Recap<a class="headerlink" href="#recap" title="Permalink to this headline">#</a></h2>
+<p>We have used a variey of methods, including dynamical systems ideas, to try and solve some simplified (and the more increasingly complicated) Friedmann equations.</p>
+<p>Now you need to decide which methods you will employ to find solutions to the equations and hence find different univdrse behaviours.</p>
+</section>
+<section id="equations-of-motion">
+<h2><span class="section-number">6.2. </span>Equations of Motion<a class="headerlink" href="#equations-of-motion" title="Permalink to this headline">#</a></h2>
+<p>We can think about a few different tracks in which to solve this system of equations, for the Friedmann equations theselves, employing an equation of state, we find these can combined together and written as a second order ODE:</p>
+<div class="math notranslate nohighlight">
+\[\ddot{a} = -\frac{1+3w}{2a}\left( \dot{a}^2 + k\right) + \frac{1}{2}a\Lambda (1+w)\]</div>
+<p>Likewise given the scalar field follows:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\ddot{\phi} + 3 H\dot{\phi} + + \frac{\partial V}{\partial \phi} &amp;= 0 \\
+ \dot{\phi}^2 - 6H^2  + 2V &amp;= 0\end{split}\]</div>
+<p>We can use this to find solutions of <span class="math notranslate nohighlight">\(\phi\)</span> based on values of <span class="math notranslate nohighlight">\(H\)</span> and then solve this system to find <span class="math notranslate nohighlight">\(a(t)\)</span>.</p>
+<div class="admonition-tasks-for-weeks-5-10 admonition">
+<p class="admonition-title">Tasks for Weeks 5-10</p>
+<p>1. Make sure that we have completed all of the exercises from weeks 2-4, the codes and equations you find are <em>useful</em>!</p>
+<p>2. Pick an approach - the friedmann system or the scalar field system, start making assumptions about different values and getting solutions out.</p>
+<p>3. Choose a paramter space to explore - e.g. if we vary <span class="math notranslate nohighlight">\(w\)</span> or <span class="math notranslate nohighlight">\(k\)</span> or <span class="math notranslate nohighlight">\(\Lambda\)</span>, what is the effect on <span class="math notranslate nohighlight">\(a(t)\)</span>.  A systematic exploration of these sorts of parameters is a good outcome for this project!</p>
 </div>
-<div class="toctree-wrapper compound">
-</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -382,12 +436,12 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='right-next' id="next-link" href="Equations.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">1. </span>The Friedmann Equations</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+    <a class='left-prev' id="prev-link" href="Scalar_fields.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">5. </span>Looking at scalar fields</p>
+        </div>
     </a>
 </div>
             </footer>
