@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Solutions &#8212; Scientific Computing Workbook</title>
   
@@ -46,11 +46,16 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -67,7 +72,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="3.4. Exercises" href="functions_extra.html" />
     <link rel="prev" title="3.3. Workshop 3: Functions" href="functions.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -216,6 +221,8 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../cellular_automata/cellular_automata_intro.html">5. Cellular Automata</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../cellular_automata/cellular_automata_notes.html">5.2. Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cellular_automata/cellular_automata.html">5.3. Workshop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cellular_automata/cellular_automata_extra.html">5.4. Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -398,7 +405,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="solutions">
-<h1>Solutions<a class="headerlink" href="#solutions" title="Permalink to this headline">#</a></h1>
+<h1>Solutions<a class="headerlink" href="#solutions" title="Permalink to this heading">#</a></h1>
 <div class="solution admonition" id="functions/functions_solutions-solution-0">
 
 <p class="admonition-title">Solution to<a class="reference internal" href="functions.html#exercise_3_6"> Exercise 3.6</a></p>
@@ -495,10 +502,18 @@ The Collatz Number of 6 is  9
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Collatz Number&#39;)
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span>\<span class="n">ipykernel_16544</span>\<span class="mf">3394894053.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> 
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">collatz_numbers</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> 
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;numpy&#39;
 </pre></div>
 </div>
-<img alt="../_images/c870992cc956316361fcc433576ba177ad3812c95ca224cb2ae1d4f3d990840e.png" src="../_images/c870992cc956316361fcc433576ba177ad3812c95ca224cb2ae1d4f3d990840e.png" />
 </div>
 </div>
 <div class="solution admonition" id="functions/functions_solutions-solution-3">
@@ -543,12 +558,6 @@ The Collatz Number of 6 is  9
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>For infection rate 5e-05 infections peak at 14873.5610390745 cases.
-</pre></div>
-</div>
-<img alt="../_images/fbfc3efd61f01b7fb70ca517e2257b7f296476812305188b1e63d76fa577fbfc.png" src="../_images/fbfc3efd61f01b7fb70ca517e2257b7f296476812305188b1e63d76fa577fbfc.png" />
-</div>
 </div>
 <p>Looking at the graph, infections peak at around <span class="math notranslate nohighlight">\(15000\)</span> cases, which is similar to what we find frpom <code class="docutils literal notranslate"><span class="pre">np.max</span></code>. Let’s check for another value of <span class="math notranslate nohighlight">\(b\)</span>.</p>
 <div class="cell docutils container">
@@ -585,12 +594,6 @@ The Collatz Number of 6 is  9
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;For infection rate&#39;</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="s1">&#39;infections peak at&#39;</span><span class="p">,</span> <span class="n">peak_infections</span><span class="p">,</span> <span class="s1">&#39;cases.&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>For infection rate 1e-05 infections peak at 3245.641623687537 cases.
-</pre></div>
-</div>
-<img alt="../_images/09bcde9b2643bc9f65137f0a186231f9d5a166cd3dfa3e2e992c743898b2759e.png" src="../_images/09bcde9b2643bc9f65137f0a186231f9d5a166cd3dfa3e2e992c743898b2759e.png" />
 </div>
 </div>
 <p>This time, both from <code class="docutils literal notranslate"><span class="pre">np.max</span></code> and by visually inspecting the graph we see that the peak number of infections is much lower.</p>
@@ -638,11 +641,6 @@ The Collatz Number of 6 is  9
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>14873.5610390745
-</pre></div>
-</div>
-</div>
 </div>
 <p>returns <span class="math notranslate nohighlight">\(14873\)</span>, as we expect!</p>
 <p>2. Recall from last week that to generate <code class="docutils literal notranslate"><span class="pre">10</span></code> evenly spaced numbers from  <code class="docutils literal notranslate"><span class="pre">0</span></code> to <code class="docutils literal notranslate"><span class="pre">0.00005</span></code> we can use:</p>
@@ -683,12 +681,6 @@ The Collatz Number of 6 is  9
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Peak infection&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Peak infection&#39;)
-</pre></div>
-</div>
-<img alt="../_images/9ab5150ed2ab210034e22bf30e0e6f6b8a4ab5ad7d20f1babc1c0359ded0e37e.png" src="../_images/9ab5150ed2ab210034e22bf30e0e6f6b8a4ab5ad7d20f1babc1c0359ded0e37e.png" />
 </div>
 </div>
 <p>Putting this altogether we have:</p>
@@ -733,12 +725,6 @@ The Collatz Number of 6 is  9
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Peak infection&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Peak infection&#39;)
-</pre></div>
-</div>
-<img alt="../_images/9ab5150ed2ab210034e22bf30e0e6f6b8a4ab5ad7d20f1babc1c0359ded0e37e.png" src="../_images/9ab5150ed2ab210034e22bf30e0e6f6b8a4ab5ad7d20f1babc1c0359ded0e37e.png" />
 </div>
 </div>
 <p>As we expect, as the infection rate grows so does the peak infection!</p>
@@ -788,11 +774,6 @@ I_{i+1} &amp;= 0.\end{align}\end{split}\]</div>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100.0
-</pre></div>
-</div>
-</div>
 </div>
 <p>Now we just need to plot the total infected person-days for different values of <span class="math notranslate nohighlight">\(b\)</span> - just like we did above:</p>
 <div class="cell docutils container">
@@ -814,12 +795,6 @@ I_{i+1} &amp;= 0.\end{align}\end{split}\]</div>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Total infection size&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Total infection size&#39;)
-</pre></div>
-</div>
-<img alt="../_images/cdf41aa32a3621351de8fedd050b86e1a0d46790aa4a0d13f87daf30e497677e.png" src="../_images/cdf41aa32a3621351de8fedd050b86e1a0d46790aa4a0d13f87daf30e497677e.png" />
 </div>
 </div>
 <div class="solution admonition" id="functions/functions_solutions-solution-6">
@@ -858,12 +833,6 @@ I_{i+1} &amp;= 0.\end{align}\end{split}\]</div>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Cost (thousands of £s)&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Cost (thousands of £s)&#39;)
-</pre></div>
-</div>
-<img alt="../_images/0bb977bc9da3ce6dca90d089b2ec2deded6f01773f6782bb23b392bf543f3e7b.png" src="../_images/0bb977bc9da3ce6dca90d089b2ec2deded6f01773f6782bb23b392bf543f3e7b.png" />
 </div>
 </div>
 <p>Examining the graph, we can see that costs are minimised when <span class="math notranslate nohighlight">\(b \approx 5 \times 10^{-6}\)</span>.</p>

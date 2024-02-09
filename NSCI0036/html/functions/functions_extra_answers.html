@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Solutions &#8212; Scientific Computing Workbook</title>
   
@@ -46,11 +46,16 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -65,7 +70,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="4. Modelling Space" href="../2d_arrays/2d_arrays_intro.html" />
     <link rel="prev" title="Solutions (3.13)" href="functions_homework_answers.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -214,6 +219,8 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../cellular_automata/cellular_automata_intro.html">5. Cellular Automata</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../cellular_automata/cellular_automata_notes.html">5.2. Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cellular_automata/cellular_automata.html">5.3. Workshop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cellular_automata/cellular_automata_extra.html">5.4. Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -406,7 +413,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="solutions">
-<h1>Solutions<a class="headerlink" href="#solutions" title="Permalink to this headline">#</a></h1>
+<h1>Solutions<a class="headerlink" href="#solutions" title="Permalink to this heading">#</a></h1>
 <div class="solution admonition" id="functions/functions_extra_answers-solution-0">
 
 <p class="admonition-title">Solution to<a class="reference internal" href="functions_extra.html#functions_extra_primes"> Exercise 3.14</a></p>
@@ -463,11 +470,11 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x257cb2c7cc8&gt;]
 </pre></div>
 </div>
-<img alt="../_images/5ceaac3d912fa1be9f4f9f8a9ef16ba2b4fefd3554332b3378263b1dba80263d.png" src="../_images/5ceaac3d912fa1be9f4f9f8a9ef16ba2b4fefd3554332b3378263b1dba80263d.png" />
+<img alt="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/5ceaac3d912fa1be9f4f9f8a9ef16ba2b4fefd3554332b3378263b1dba80263d.png" src="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/5ceaac3d912fa1be9f4f9f8a9ef16ba2b4fefd3554332b3378263b1dba80263d.png" />
 </div>
 </div>
 <section id="comments">
-<h2>Comments<a class="headerlink" href="#comments" title="Permalink to this headline">#</a></h2>
+<h2>Comments<a class="headerlink" href="#comments" title="Permalink to this heading">#</a></h2>
 <p>1. The function <code class="docutils literal notranslate"><span class="pre">is_divisible</span></code> is only one line. Perhaps it would better to integrate this code directly into the <code class="docutils literal notranslate"><span class="pre">number_of_primes</span></code> function, although I think including a separate function makes the code clear and easy to understand.<br />
 2. Another way to write the <code class="docutils literal notranslate"><span class="pre">is_prime</span></code> function, making use of the fact that the <code class="docutils literal notranslate"><span class="pre">return</span></code> statement causes the function to exit immediately (even in the middle of a loop):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">is_prime</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
@@ -492,7 +499,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x257cb260c08&gt;
 </pre></div>
 </div>
-<img alt="../_images/2806bb00e4513b24ffe4b4bf6871574ad1a2ff809f8d37157b93e2cb6f09f217.png" src="../_images/2806bb00e4513b24ffe4b4bf6871574ad1a2ff809f8d37157b93e2cb6f09f217.png" />
+<img alt="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/2806bb00e4513b24ffe4b4bf6871574ad1a2ff809f8d37157b93e2cb6f09f217.png" src="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/2806bb00e4513b24ffe4b4bf6871574ad1a2ff809f8d37157b93e2cb6f09f217.png" />
 </div>
 </div>
 </section>

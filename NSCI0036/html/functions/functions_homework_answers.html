@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Solutions (3.13) &#8212; Scientific Computing Workbook</title>
   
@@ -46,11 +46,16 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -67,7 +72,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="Solutions" href="functions_extra_answers.html" />
     <link rel="prev" title="3.4. Exercises" href="functions_extra.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -216,6 +221,8 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../cellular_automata/cellular_automata_intro.html">5. Cellular Automata</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../cellular_automata/cellular_automata_notes.html">5.2. Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cellular_automata/cellular_automata.html">5.3. Workshop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cellular_automata/cellular_automata_extra.html">5.4. Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -410,7 +417,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="solutions-3-13">
-<h1>Solutions (3.13)<a class="headerlink" href="#solutions-3-13" title="Permalink to this headline">#</a></h1>
+<h1>Solutions (3.13)<a class="headerlink" href="#solutions-3-13" title="Permalink to this heading">#</a></h1>
 <p>First, to run the simulation we can use the same approach as last week.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -447,14 +454,22 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Concentrations&#39;)
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span>\<span class="n">ipykernel_8560</span>\<span class="mf">2344517770.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># import necessary libraries</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> 
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1"># set up variables and arrays</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;numpy&#39;
 </pre></div>
 </div>
-<img alt="../_images/d12f3077bb3861259d665d0fce17cb630b6b96ed93014a8852de697debcf7c14.png" src="../_images/d12f3077bb3861259d665d0fce17cb630b6b96ed93014a8852de697debcf7c14.png" />
 </div>
 </div>
 <section id="determine-the-steady-state">
-<h2>Determine the steady state<a class="headerlink" href="#determine-the-steady-state" title="Permalink to this headline">#</a></h2>
+<h2>Determine the steady state<a class="headerlink" href="#determine-the-steady-state" title="Permalink to this heading">#</a></h2>
 <p>We are told that the system is in equilibrium after <span class="math notranslate nohighlight">\(1000\)</span> steps (and we can see from the figure that oscillations are not visible after about 600 steps), so to determine the steady state value of <span class="math notranslate nohighlight">\(X\)</span> we just need to check the value of <span class="math notranslate nohighlight">\(X_{1000}\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -470,7 +485,7 @@ document.write(`
 </div>
 </section>
 <section id="turning-into-a-function">
-<h2>Turning into a function<a class="headerlink" href="#turning-into-a-function" title="Permalink to this headline">#</a></h2>
+<h2>Turning into a function<a class="headerlink" href="#turning-into-a-function" title="Permalink to this heading">#</a></h2>
 <p>As we saw in the tutorial, we just need to wrap our existing code in a few extra lines to turn it into a function that can handle lots of values of <span class="math notranslate nohighlight">\(k_4\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -512,7 +527,7 @@ document.write(`
 <p>As we expected!</p>
 </section>
 <section id="explore-behaviour-for-changing-k-4">
-<h2>Explore behaviour for changing <span class="math notranslate nohighlight">\(k_4\)</span><a class="headerlink" href="#explore-behaviour-for-changing-k-4" title="Permalink to this headline">#</a></h2>
+<h2>Explore behaviour for changing <span class="math notranslate nohighlight">\(k_4\)</span><a class="headerlink" href="#explore-behaviour-for-changing-k-4" title="Permalink to this heading">#</a></h2>
 <p>We would like to explore how the steady state value of <span class="math notranslate nohighlight">\(X\)</span> changes for values of <span class="math notranslate nohighlight">\(k_4\)</span> between <span class="math notranslate nohighlight">\(0\)</span> and <span class="math notranslate nohighlight">\(0.3\)</span>. We did something similar in the tutorial, so we can modify our existing code:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -538,7 +553,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Steady state value&#39;)
 </pre></div>
 </div>
-<img alt="../_images/7a1a3c8d602662817c8268a140ceeb32dbf1df3d99162672026c1a337c027416.png" src="../_images/7a1a3c8d602662817c8268a140ceeb32dbf1df3d99162672026c1a337c027416.png" />
+<img alt="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/7a1a3c8d602662817c8268a140ceeb32dbf1df3d99162672026c1a337c027416.png" src="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/7a1a3c8d602662817c8268a140ceeb32dbf1df3d99162672026c1a337c027416.png" />
 </div>
 </div>
 <p>We can see that as <span class="math notranslate nohighlight">\(k_4\)</span> increases from <span class="math notranslate nohighlight">\(0\)</span> to <span class="math notranslate nohighlight">\(0.2\)</span>, the steady state value also gradually increases. When <span class="math notranslate nohighlight">\(k_4\)</span> is larger than <span class="math notranslate nohighlight">\(0.2\)</span> the steady state value appears to oscillates rapidly. This is because for values of <span class="math notranslate nohighlight">\(k_4\)</span> above about <span class="math notranslate nohighlight">\(0.2\)</span>, the system doesn’t reach a steady state.</p>
@@ -586,10 +601,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x170948e18c8&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1cd42a83508&gt;
 </pre></div>
 </div>
-<img alt="../_images/67d2461bf0575a2d6ebc083d65cab2d1a3a5771d06796bce721dfec2b8c4f5f6.png" src="../_images/67d2461bf0575a2d6ebc083d65cab2d1a3a5771d06796bce721dfec2b8c4f5f6.png" />
+<img alt="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/67d2461bf0575a2d6ebc083d65cab2d1a3a5771d06796bce721dfec2b8c4f5f6.png" src="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/67d2461bf0575a2d6ebc083d65cab2d1a3a5771d06796bce721dfec2b8c4f5f6.png" />
 </div>
 </div>
 </section>
