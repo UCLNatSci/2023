@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>Solution (2.16) &#8212; Scientific Computing Workbook</title>
   
@@ -46,16 +46,11 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
-    <script>let toggleHintShow = 'Click to show';</script>
-    <script>let toggleHintHide = 'Click to hide';</script>
-    <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -72,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="Solutions" href="rate_equations_extra_solutions.html" />
     <link rel="prev" title="2.4. Exercises" href="rate_equations_extra.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:language" content="None"/>
   </head>
   
   
@@ -415,7 +410,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="solution-2-16">
-<h1>Solution (2.16)<a class="headerlink" href="#solution-2-16" title="Permalink to this heading">#</a></h1>
+<h1>Solution (2.16)<a class="headerlink" href="#solution-2-16" title="Permalink to this headline">#</a></h1>
 <div class="solution admonition" id="rate_equations/rate_equations_homework_answers-solution-0">
 
 <p class="admonition-title">Solution to<a class="reference internal" href="rate_equations_extra.html#rate_equations_BZ_reaction"> Exercise 2.16</a></p>
@@ -464,23 +459,16 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span>\<span class="n">ipykernel_16400</span>\<span class="mf">2121065057.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># import necessary libraries</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> 
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1"># set up variables and arrays</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;numpy&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Y concentration&#39;)
 </pre></div>
 </div>
+<img alt="../_images/27c6321bcb021a0afad4ad9c2ba99c7ad146babb11e4a024815e96151cac1225.png" src="../_images/27c6321bcb021a0afad4ad9c2ba99c7ad146babb11e4a024815e96151cac1225.png" />
+<img alt="../_images/8cab4cca2fc32e42a14190fcf275ccd4f93d0292b5d46577db7f437889276701.png" src="../_images/8cab4cca2fc32e42a14190fcf275ccd4f93d0292b5d46577db7f437889276701.png" />
 </div>
 </div>
 <p>Note that how we have used <code class="docutils literal notranslate"><span class="pre">plt.plot(X,</span> <span class="pre">label=&quot;X&quot;)</span></code> and <code class="docutils literal notranslate"><span class="pre">plt.legend()</span></code> to add a legend to the plot.</p>
 <section id="experiment-with-k-1">
-<h2>Experiment with <span class="math notranslate nohighlight">\(k_1\)</span><a class="headerlink" href="#experiment-with-k-1" title="Permalink to this heading">#</a></h2>
+<h2>Experiment with <span class="math notranslate nohighlight">\(k_1\)</span><a class="headerlink" href="#experiment-with-k-1" title="Permalink to this headline">#</a></h2>
 <p>We can use <code class="docutils literal notranslate"><span class="pre">np.linspace</span></code> to test a few different values for <span class="math notranslate nohighlight">\(k_1\)</span>. Let’s try the interval <span class="math notranslate nohighlight">\([0, 0.3]\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -511,58 +499,26 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\emma9\AppData\Local\Temp\ipykernel_16876\2089901663.py:9: RuntimeWarning: overflow encountered in double_scalars
-  X[i+1] = X[i] + k1 - k2*X[i] + k3*X[i]**2*Y[i]
-C:\Users\emma9\AppData\Local\Temp\ipykernel_16876\2089901663.py:10: RuntimeWarning: overflow encountered in double_scalars
-  Y[i+1] = Y[i] + k4*X[i] - k3*X[i]**2*Y[i]
-C:\Users\emma9\AppData\Local\Temp\ipykernel_16876\2089901663.py:9: RuntimeWarning: invalid value encountered in double_scalars
-  X[i+1] = X[i] + k1 - k2*X[i] + k3*X[i]**2*Y[i]
-C:\Users\emma9\AppData\Local\Temp\ipykernel_16876\2089901663.py:10: RuntimeWarning: invalid value encountered in double_scalars
-  Y[i+1] = Y[i] + k4*X[i] - k3*X[i]**2*Y[i]
-C:\Users\emma9\AppData\Local\Temp\ipykernel_16876\2089901663.py:12: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`).
-  plt.figure(figsize=(5,5))
-</pre></div>
-</div>
-<img alt="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/ce7c58785c1c40f8fa6d2dd9c50037d49674390730c26f0aaad9a68518637404.png" src="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/ce7c58785c1c40f8fa6d2dd9c50037d49674390730c26f0aaad9a68518637404.png" />
-<img alt="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/393177b4ccdce829bc759172298e5726aef8f4e621bf9b68364a33e7b560fb67.png" src="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/393177b4ccdce829bc759172298e5726aef8f4e621bf9b68364a33e7b560fb67.png" />
-<img alt="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/d9bc1807e655cd8e4a9279f89d8f0c7303582d0fc8f8ce3008711cd547a0ffe2.png" src="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/d9bc1807e655cd8e4a9279f89d8f0c7303582d0fc8f8ce3008711cd547a0ffe2.png" />
-<img alt="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/c78be8594d18e26b5a4407971a7afc4aaae027576c3256d5f26dc0ba0b90ec9c.png" src="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/c78be8594d18e26b5a4407971a7afc4aaae027576c3256d5f26dc0ba0b90ec9c.png" />
-<img alt="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/d4e72bfc1affdf89f643f956600b4adc9235acd29c6fefd7d83a821f477ce73a.png" src="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/d4e72bfc1affdf89f643f956600b4adc9235acd29c6fefd7d83a821f477ce73a.png" />
-<img alt="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/609c19d339ee7d0f09cd037d2daf0134d75c2910f9e0b9c310b00361cb567fad.png" src="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/609c19d339ee7d0f09cd037d2daf0134d75c2910f9e0b9c310b00361cb567fad.png" />
-<img alt="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/f45ddde7bf88632eb93099054345c798ea7cdafc7f88d3c2af971f25dfe305fd.png" src="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/f45ddde7bf88632eb93099054345c798ea7cdafc7f88d3c2af971f25dfe305fd.png" />
-<img alt="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/0eadc4740f4563100d64cb342fbd4a02576e1ad032dfb4d593af898a65da0e4c.png" src="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/0eadc4740f4563100d64cb342fbd4a02576e1ad032dfb4d593af898a65da0e4c.png" />
-<img alt="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/5d94213a3b1410954f78eda1b36019b3b91d9dfd155d31603f401a627dc2aa3d.png" src="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/5d94213a3b1410954f78eda1b36019b3b91d9dfd155d31603f401a627dc2aa3d.png" />
-<img alt="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/a1785c745baf9bdd072dca9c5a0b15af3df2680abe317c149f101d6e3fcd4139.png" src="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/a1785c745baf9bdd072dca9c5a0b15af3df2680abe317c149f101d6e3fcd4139.png" />
-<img alt="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/f74c499b355f30a2907be886bf2144d7429537676290806babe4f83ab5876944.png" src="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/f74c499b355f30a2907be886bf2144d7429537676290806babe4f83ab5876944.png" />
-<img alt="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/714ed4c33afa50e72a9e702663bd6aff3c55b8dfb2be8b5dc1e7b544c4272b02.png" src="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/714ed4c33afa50e72a9e702663bd6aff3c55b8dfb2be8b5dc1e7b544c4272b02.png" />
-<img alt="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/588b86e96fabcaeaf81b036aa3c70990d7b809244d7fc443e40ffa51fb37f584.png" src="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/588b86e96fabcaeaf81b036aa3c70990d7b809244d7fc443e40ffa51fb37f584.png" />
-<img alt="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/e88db08088df26358d24ffab42fd9d1d39c3579318fe53865b85b2d3637bbc61.png" src="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/e88db08088df26358d24ffab42fd9d1d39c3579318fe53865b85b2d3637bbc61.png" />
-<img alt="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/ab108c2215f6a7c23ffd09015e7044383980660bfaae88a125f61c7debdcd662.png" src="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/ab108c2215f6a7c23ffd09015e7044383980660bfaae88a125f61c7debdcd662.png" />
-<img alt="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/04ef1646d7337c774e67305270eefe7137a5ec4a3369ab59f22241773bef1939.png" src="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/04ef1646d7337c774e67305270eefe7137a5ec4a3369ab59f22241773bef1939.png" />
-<img alt="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/5c2b96913411d2426049ca7be1b1e7c1ba5ff5fdc8547c85a49cebe4022d7628.png" src="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/5c2b96913411d2426049ca7be1b1e7c1ba5ff5fdc8547c85a49cebe4022d7628.png" />
-<img alt="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/a33830d099c8fc0026460195257d53c9de8eea420527523a5fbc7f749548d756.png" src="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/a33830d099c8fc0026460195257d53c9de8eea420527523a5fbc7f749548d756.png" />
-<img alt="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/628d828d00c7270af20cf2289f418b62ab3f585eaef6e309b85afdaa4034c8b7.png" src="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/628d828d00c7270af20cf2289f418b62ab3f585eaef6e309b85afdaa4034c8b7.png" />
-<img alt="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/64dd4f45156c83055cac6ffae743dc6eee1d63df46d7f23d86d4fcc96d37bce3.png" src="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/64dd4f45156c83055cac6ffae743dc6eee1d63df46d7f23d86d4fcc96d37bce3.png" />
-<img alt="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/1d8b009ba8d68e48daa99ae0122f774cbd153b90c3dd4f66394933b28c5ae663.png" src="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/1d8b009ba8d68e48daa99ae0122f774cbd153b90c3dd4f66394933b28c5ae663.png" />
-<img alt="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/a5ef43593a36203941384abd36ef661f1d4b7dee51271e760b1ae3626623040f.png" src="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/a5ef43593a36203941384abd36ef661f1d4b7dee51271e760b1ae3626623040f.png" />
-<img alt="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/159a6b6d25bd35f6ec1d4451527753169afc83d6e6a15cd406c2810f6872d4d5.png" src="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/159a6b6d25bd35f6ec1d4451527753169afc83d6e6a15cd406c2810f6872d4d5.png" />
-<img alt="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/43bedc5c039d812dfdfd692d3c5aee1339bbba127ce809468f5c3e3db359d4e3.png" src="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/43bedc5c039d812dfdfd692d3c5aee1339bbba127ce809468f5c3e3db359d4e3.png" />
-<img alt="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/d9f67f1e3c01b24b4ddfefb69ac246fe3782d90beb7f8863a676b9b68fa7e01a.png" src="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/d9f67f1e3c01b24b4ddfefb69ac246fe3782d90beb7f8863a676b9b68fa7e01a.png" />
-<img alt="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/1c2942b1697f5844bd8b387f64deef3db6b87a6b2365363611f562262c0e2322.png" src="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/1c2942b1697f5844bd8b387f64deef3db6b87a6b2365363611f562262c0e2322.png" />
-<img alt="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/727d439c33b20718e51b8ba471ffc2ce6657abb8f641e2cca955779a93978587.png" src="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/727d439c33b20718e51b8ba471ffc2ce6657abb8f641e2cca955779a93978587.png" />
-<img alt="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/653f45d98e03ce86f778ae82dca54e68ef8b716fe3094ac594f28e997693ac30.png" src="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/653f45d98e03ce86f778ae82dca54e68ef8b716fe3094ac594f28e997693ac30.png" />
-<img alt="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/b67d8a7c52a70b5df22ec4812a1b2adc65e04dcc5d8c9a3d11c6070b80b0f81c.png" src="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/b67d8a7c52a70b5df22ec4812a1b2adc65e04dcc5d8c9a3d11c6070b80b0f81c.png" />
-<img alt="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/da7d4e1adbd97f3879254ee9f2d83bdc9a9a015010a28e5a6aae67b05481f567.png" src="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/da7d4e1adbd97f3879254ee9f2d83bdc9a9a015010a28e5a6aae67b05481f567.png" />
-<img alt="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/e6ee898bb4956de67302304fdfb3e4ad1ac1d0e0d10f87992106408c722cce72.png" src="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/e6ee898bb4956de67302304fdfb3e4ad1ac1d0e0d10f87992106408c722cce72.png" />
-<img alt="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/6ffb610856ba87e82ba9fc163ceea1396858652326e817750c37dcd0d730e226.png" src="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/6ffb610856ba87e82ba9fc163ceea1396858652326e817750c37dcd0d730e226.png" />
-<img alt="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/e145fa296a8bb25a4edc6db1d559aeb728c7b8972d92e28720f09cbd1da49ed4.png" src="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/e145fa296a8bb25a4edc6db1d559aeb728c7b8972d92e28720f09cbd1da49ed4.png" />
-<img alt="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/024503dd2474182a1567eebb62716249f49cd3612309c16acdaf53a86a0553c0.png" src="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/024503dd2474182a1567eebb62716249f49cd3612309c16acdaf53a86a0553c0.png" />
-<img alt="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/fb98baeb3e025cc44cf435d7606279583efc053068e8d91afdf9a88a887bacb9.png" src="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/fb98baeb3e025cc44cf435d7606279583efc053068e8d91afdf9a88a887bacb9.png" />
-<img alt="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/e26e5fa8c5fa63fb7f1d804445c53b149ac4f1be5cc06ca1456ab7c91a672769.png" src="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/e26e5fa8c5fa63fb7f1d804445c53b149ac4f1be5cc06ca1456ab7c91a672769.png" />
-<img alt="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/e9355e8f89c267ffcb8d9961c55a953d8eb7caab8a484be4c3349cecd0a0877f.png" src="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/e9355e8f89c267ffcb8d9961c55a953d8eb7caab8a484be4c3349cecd0a0877f.png" />
-<img alt="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/4e19fab102a2c0b2c8c370e592122166ae42cb6a16c272e4146d4ebcdc7a6922.png" src="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/4e19fab102a2c0b2c8c370e592122166ae42cb6a16c272e4146d4ebcdc7a6922.png" />
-<img alt="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/af4ae9f566094152220400ef0df25256a62efa0b15c61d176a86f657058605c6.png" src="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/af4ae9f566094152220400ef0df25256a62efa0b15c61d176a86f657058605c6.png" />
-<img alt="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/0ef41dc024e8967ae711fe81bfee9bbab1d4b8cd7a90b56cb60cf84ae37df51f.png" src="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/0ef41dc024e8967ae711fe81bfee9bbab1d4b8cd7a90b56cb60cf84ae37df51f.png" />
+<img alt="../_images/9b00139817f95c9750aa686fe3b327dcc685d013e9319b389ed2df147e538753.png" src="../_images/9b00139817f95c9750aa686fe3b327dcc685d013e9319b389ed2df147e538753.png" />
+<img alt="../_images/1b13c1f85af068066c5a7852e8fe19a26689c5b70043449cf04f5fbc7c7d1ce5.png" src="../_images/1b13c1f85af068066c5a7852e8fe19a26689c5b70043449cf04f5fbc7c7d1ce5.png" />
+<img alt="../_images/d92ded4e2fa62cedb21455e3e50bae1ac1bd1822ec816ce7b505a307eca20607.png" src="../_images/d92ded4e2fa62cedb21455e3e50bae1ac1bd1822ec816ce7b505a307eca20607.png" />
+<img alt="../_images/243f5287ab9f8bfd7a2258094aa7b873abf2611bd2e0256a81926e55aa38a812.png" src="../_images/243f5287ab9f8bfd7a2258094aa7b873abf2611bd2e0256a81926e55aa38a812.png" />
+<img alt="../_images/89f5ff43e8a078be527bd828f4bd35a99450a0eb3e9199a2e15b7ed5347b8c7d.png" src="../_images/89f5ff43e8a078be527bd828f4bd35a99450a0eb3e9199a2e15b7ed5347b8c7d.png" />
+<img alt="../_images/4553bc0b30cc0e473fe8b8ba93f936171d4361ebce243f65d5f03f284937f9d7.png" src="../_images/4553bc0b30cc0e473fe8b8ba93f936171d4361ebce243f65d5f03f284937f9d7.png" />
+<img alt="../_images/cd06def0c2b4f958da4f0b41c4d7fc4bba8b80f25127aa8402b0aac9635333fd.png" src="../_images/cd06def0c2b4f958da4f0b41c4d7fc4bba8b80f25127aa8402b0aac9635333fd.png" />
+<img alt="../_images/32e946b95b54bce802fcd10cddc6176a1245f62624732150d4b3a508bdad2d96.png" src="../_images/32e946b95b54bce802fcd10cddc6176a1245f62624732150d4b3a508bdad2d96.png" />
+<img alt="../_images/1c645f3f3cd38c4307479dea9ab14905ab7d0d3ee237c0e94332c20a763aac1b.png" src="../_images/1c645f3f3cd38c4307479dea9ab14905ab7d0d3ee237c0e94332c20a763aac1b.png" />
+<img alt="../_images/ecc80a3547834953196265d3e22f36e2a3793f2887c0faf80f1b51619dc2e368.png" src="../_images/ecc80a3547834953196265d3e22f36e2a3793f2887c0faf80f1b51619dc2e368.png" />
+<img alt="../_images/61381a465f6f3e44e25ce5e09e162481566d9689e56bed74a99b662ba1231404.png" src="../_images/61381a465f6f3e44e25ce5e09e162481566d9689e56bed74a99b662ba1231404.png" />
+<img alt="../_images/c06eda860c275245cab916d0c832ac9d6a4fa1a146dbab6697b444b4d7085c43.png" src="../_images/c06eda860c275245cab916d0c832ac9d6a4fa1a146dbab6697b444b4d7085c43.png" />
+<img alt="../_images/ef73d6a6aa318d93c4b6fdcc06f59b855951941b686dca3236a41f22c7c1a173.png" src="../_images/ef73d6a6aa318d93c4b6fdcc06f59b855951941b686dca3236a41f22c7c1a173.png" />
+<img alt="../_images/3dd27a7de1d7e354fa4d8e47188c137ac6690a0d9c3ed37224bb2c6ec358d9f6.png" src="../_images/3dd27a7de1d7e354fa4d8e47188c137ac6690a0d9c3ed37224bb2c6ec358d9f6.png" />
+<img alt="../_images/262da56fbc9bf06c8be471ec55d2ae1ea26b5323f81bfdfd6f9c837c47f1c3bc.png" src="../_images/262da56fbc9bf06c8be471ec55d2ae1ea26b5323f81bfdfd6f9c837c47f1c3bc.png" />
+<img alt="../_images/42fcade20609c59ff9aaaeea364d7852c8d212bd6f876c7c39e0ce41cc829557.png" src="../_images/42fcade20609c59ff9aaaeea364d7852c8d212bd6f876c7c39e0ce41cc829557.png" />
+<img alt="../_images/6687ceddac1e87a44dad4f3085b7eb986ff39e1af5519aff2286c89be9363fb9.png" src="../_images/6687ceddac1e87a44dad4f3085b7eb986ff39e1af5519aff2286c89be9363fb9.png" />
+<img alt="../_images/9e92118189e7202c63d50e18bb5acbad891a39a245542665c95fc94a14be5ed1.png" src="../_images/9e92118189e7202c63d50e18bb5acbad891a39a245542665c95fc94a14be5ed1.png" />
+<img alt="../_images/52e234a9ba6ee3f09a13f109e5b3cbf91b2c76470bc8a01ff588b6894292424b.png" src="../_images/52e234a9ba6ee3f09a13f109e5b3cbf91b2c76470bc8a01ff588b6894292424b.png" />
+<img alt="../_images/ae79bd6a407d4413a01d807e54245eb3dba44701c75ff4badd620430ef3a7109.png" src="../_images/ae79bd6a407d4413a01d807e54245eb3dba44701c75ff4badd620430ef3a7109.png" />
 </div>
 </div>
 <p>We see oscillations first appear when <span class="math notranslate nohighlight">\(k_1 \approx 0.079\)</span>, these continue until <span class="math notranslate nohighlight">\(k_1 \approx 0.25\)</span> when <span class="math notranslate nohighlight">\(X\)</span> stops oscillating.</p>

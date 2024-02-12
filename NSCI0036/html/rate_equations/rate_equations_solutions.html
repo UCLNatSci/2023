@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>Solutions &#8212; Scientific Computing Workbook</title>
   
@@ -46,16 +46,11 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
-    <script>let toggleHintShow = 'Click to show';</script>
-    <script>let toggleHintHide = 'Click to hide';</script>
-    <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -72,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="2.4. Exercises" href="rate_equations_extra.html" />
     <link rel="prev" title="2.3. Workshop 2: Modelling Change" href="rate_equations.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:language" content="None"/>
   </head>
   
   
@@ -405,22 +400,11 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="solutions">
-<h1>Solutions<a class="headerlink" href="#solutions" title="Permalink to this heading">#</a></h1>
+<h1>Solutions<a class="headerlink" href="#solutions" title="Permalink to this headline">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span>\<span class="n">ipykernel_1344</span>\<span class="mf">550901145.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;numpy&#39;
 </pre></div>
 </div>
 </div>
@@ -447,10 +431,19 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x: [ 10.          11.          12.1         13.31        14.641
-  16.1051     -25.28       -22.72       -15.104       -2.944
-  12.2368      28.0064      41.32864     49.0496      48.504832
-  38.150144    18.0944896   -9.5911936  -40.89577472 -70.28211712]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x: [10.  0.  0.  0.  0.]
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">IndexError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span>\<span class="n">ipykernel_18604</span>\<span class="mf">3670759407.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> 
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+<span class="ne">----&gt; </span><span class="mi">7</span>     <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="mf">0.1</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> 
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x:&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+
+<span class="ne">IndexError</span>: index 5 is out of bounds for axis 0 with size 5
 </pre></div>
 </div>
 </div>
@@ -519,7 +512,7 @@ But <code class="docutils literal notranslate"><span class="pre">x</span></code>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x2af3bf7ec08&gt;]
 </pre></div>
 </div>
-<img alt="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/7259825008f2ac6c4eecf6fb653ffd39a809b3ff77aac34abf0a3f8bb089be14.png" src="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/7259825008f2ac6c4eecf6fb653ffd39a809b3ff77aac34abf0a3f8bb089be14.png" />
+<img alt="../_images/7259825008f2ac6c4eecf6fb653ffd39a809b3ff77aac34abf0a3f8bb089be14.png" src="../_images/7259825008f2ac6c4eecf6fb653ffd39a809b3ff77aac34abf0a3f8bb089be14.png" />
 </div>
 </div>
 <div class="solution admonition" id="rate_equations/rate_equations_solutions-solution-3">
@@ -557,7 +550,7 @@ and so on…</p></li>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Infected population&#39;)
 </pre></div>
 </div>
-<img alt="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/66add630a05db2645d485cc76c41d699ae28a1c9ac0a5d320421d1d16a53e4da.png" src="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/66add630a05db2645d485cc76c41d699ae28a1c9ac0a5d320421d1d16a53e4da.png" />
+<img alt="../_images/66add630a05db2645d485cc76c41d699ae28a1c9ac0a5d320421d1d16a53e4da.png" src="../_images/66add630a05db2645d485cc76c41d699ae28a1c9ac0a5d320421d1d16a53e4da.png" />
 </div>
 </div>
 <div class="solution admonition" id="rate_equations/rate_equations_solutions-solution-4">
@@ -596,7 +589,7 @@ and so on…</p></li>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Population&#39;)
 </pre></div>
 </div>
-<img alt="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/fbfc3efd61f01b7fb70ca517e2257b7f296476812305188b1e63d76fa577fbfc.png" src="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/fbfc3efd61f01b7fb70ca517e2257b7f296476812305188b1e63d76fa577fbfc.png" />
+<img alt="../_images/fbfc3efd61f01b7fb70ca517e2257b7f296476812305188b1e63d76fa577fbfc.png" src="../_images/fbfc3efd61f01b7fb70ca517e2257b7f296476812305188b1e63d76fa577fbfc.png" />
 </div>
 </div>
 <div class="solution admonition" id="rate_equations/rate_equations_solutions-solution-5">
@@ -637,7 +630,7 @@ and so on…</p></li>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;5e-06&#39;)
 </pre></div>
 </div>
-<img alt="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/bd361086f6504eb2f3766199fd55233487b383e341edbafd290efd520866e437.png" src="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/bd361086f6504eb2f3766199fd55233487b383e341edbafd290efd520866e437.png" />
+<img alt="../_images/bd361086f6504eb2f3766199fd55233487b383e341edbafd290efd520866e437.png" src="../_images/bd361086f6504eb2f3766199fd55233487b383e341edbafd290efd520866e437.png" />
 </div>
 </div>
 <p>One way to plot multiple solutions on the same plot is to use a loop as below. Note that we have also added a legend.</p>
@@ -678,7 +671,7 @@ and so on…</p></li>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x2af43a20c08&gt;
 </pre></div>
 </div>
-<img alt="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/e9a4930b8a588dbd749667c87d4e3b1ed5f016a68fd2ccbe41a133731e9a0158.png" src="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/e9a4930b8a588dbd749667c87d4e3b1ed5f016a68fd2ccbe41a133731e9a0158.png" />
+<img alt="../_images/e9a4930b8a588dbd749667c87d4e3b1ed5f016a68fd2ccbe41a133731e9a0158.png" src="../_images/e9a4930b8a588dbd749667c87d4e3b1ed5f016a68fd2ccbe41a133731e9a0158.png" />
 </div>
 </div>
 <div class="solution admonition" id="rate_equations/rate_equations_solutions-solution-6">
@@ -726,7 +719,7 @@ and so on…</p></li>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Cannonball trajectory&#39;)
 </pre></div>
 </div>
-<img alt="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/fdee365653378493480d5494a42e76c4a5881003e16718e25554cfcf86d1d09f.png" src="/wsl$/Ubuntu/home/pete/github/NSCI0036/book/_build/jupyter_execute/fdee365653378493480d5494a42e76c4a5881003e16718e25554cfcf86d1d09f.png" />
+<img alt="../_images/fdee365653378493480d5494a42e76c4a5881003e16718e25554cfcf86d1d09f.png" src="../_images/fdee365653378493480d5494a42e76c4a5881003e16718e25554cfcf86d1d09f.png" />
 </div>
 </div>
 </section>

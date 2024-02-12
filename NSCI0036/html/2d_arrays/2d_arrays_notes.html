@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>4.2. Modelling Space &#8212; Scientific Computing Workbook</title>
   
@@ -46,16 +46,11 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
-    <script>let toggleHintShow = 'Click to show';</script>
-    <script>let toggleHintHide = 'Click to hide';</script>
-    <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -72,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="4.3. Workshop 4: Modelling Space" href="2d_arrays.html" />
     <link rel="prev" title="4. Modelling Space" href="2d_arrays_intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:language" content="None"/>
   </head>
   
   
@@ -420,7 +415,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="modelling-space">
-<h1><span class="section-number">4.2. </span>Modelling Space<a class="headerlink" href="#modelling-space" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">4.2. </span>Modelling Space<a class="headerlink" href="#modelling-space" title="Permalink to this headline">#</a></h1>
 <p>Recall that a <code class="docutils literal notranslate"><span class="pre">numpy</span></code> array is a data type used for storing a sequence of numerical values. The following code creates an array containing the values 5, 7, 4, 5:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -440,7 +435,7 @@ document.write(`
 </div>
 <p>The array <code class="docutils literal notranslate"><span class="pre">x</span></code> is a <strong>one-dimensional</strong> array since the elements are organised in a single row and a single index is required to access each element <code class="docutils literal notranslate"><span class="pre">x[i]</span></code>.</p>
 <section id="two-dimensional-arrays">
-<h2>Two-dimensional Arrays<a class="headerlink" href="#two-dimensional-arrays" title="Permalink to this heading">#</a></h2>
+<h2>Two-dimensional Arrays<a class="headerlink" href="#two-dimensional-arrays" title="Permalink to this headline">#</a></h2>
 <p>A two-dimensional array is similar to a one-dimensional array, but it can be visualised as a grid (or table) with rows and columns (<a class="reference internal" href="#d-array-fig"><span class="std std-numref">Fig. 4.1</span></a>).</p>
 <figure class="align-default" id="d-array-fig">
 <a class="reference internal image-reference" href="../_images/2d_array.png"><img alt="../_images/2d_array.png" src="../_images/2d_array.png" style="height: 200px;" /></a>
@@ -513,7 +508,7 @@ document.write(`
 </div>
 </section>
 <section id="slicing">
-<h2>Slicing<a class="headerlink" href="#slicing" title="Permalink to this heading">#</a></h2>
+<h2>Slicing<a class="headerlink" href="#slicing" title="Permalink to this headline">#</a></h2>
 <p>Use a colon <code class="docutils literal notranslate"><span class="pre">:</span></code> in place of a row or column index in order to extract an entire row or column from an array.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -571,7 +566,7 @@ document.write(`
 </figure>
 </section>
 <section id="array-functions">
-<h2>Array functions<a class="headerlink" href="#array-functions" title="Permalink to this heading">#</a></h2>
+<h2>Array functions<a class="headerlink" href="#array-functions" title="Permalink to this headline">#</a></h2>
 <p>To create a 2-dimensional array filled with zeros, use the function <code class="docutils literal notranslate"><span class="pre">np.zeros((n,</span> <span class="pre">m))</span></code>, where <code class="docutils literal notranslate"><span class="pre">n</span></code> is the number of rows and <code class="docutils literal notranslate"><span class="pre">m</span></code> is the number of columns. Note that we have to use two pairs of brackets in this case.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -658,7 +653,7 @@ cols: 17
 </div>
 </section>
 <section id="nested-loops">
-<h2>Nested Loops<a class="headerlink" href="#nested-loops" title="Permalink to this heading">#</a></h2>
+<h2>Nested Loops<a class="headerlink" href="#nested-loops" title="Permalink to this headline">#</a></h2>
 <p>For loops may be <strong>nested</strong> by placing one inside another. The following example repeats the inner loop 4 times for each pass through the outer loop, resulting in a total of 20 iterations.</p>
 <p>Note that we must use distinct iterator variables <code class="docutils literal notranslate"><span class="pre">i</span></code> and <code class="docutils literal notranslate"><span class="pre">j</span></code> for the outer and inner loops.</p>
 <div class="cell docutils container">
@@ -734,7 +729,7 @@ cols: 17
 </div>
 </section>
 <section id="creating-and-building-arrays">
-<h2>Creating and Building Arrays<a class="headerlink" href="#creating-and-building-arrays" title="Permalink to this heading">#</a></h2>
+<h2>Creating and Building Arrays<a class="headerlink" href="#creating-and-building-arrays" title="Permalink to this headline">#</a></h2>
 <p>Arrays are fixed-size, which means that once created we can’t add extra elements. A common pattern when working with arrays is to firstly create an emtpy array of the ultimate size, then to gradually fill it with values.</p>
 <p>Suppose we would like to create a 5 by 5 array whose elements are the sum of the row and column numbers. First, let’s create an empty array with 5 rows and 5 columns.</p>
 <div class="cell docutils container">
@@ -831,7 +826,7 @@ In the first array, the element at row <code class="docutils literal notranslate
 </div>
 </section>
 <section id="vector-operations">
-<h2>Vector Operations<a class="headerlink" href="#vector-operations" title="Permalink to this heading">#</a></h2>
+<h2>Vector Operations<a class="headerlink" href="#vector-operations" title="Permalink to this headline">#</a></h2>
 <p>Arrays support <strong>vector operations</strong>. These allow us to perform operations on every item in the array simultaneously, without having to use a loop. For example, to add <code class="docutils literal notranslate"><span class="pre">10</span></code> to every element in an array:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">

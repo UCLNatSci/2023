@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>5.3. Cellular Automata &#8212; Scientific Computing Workbook</title>
   
@@ -46,16 +46,11 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
-    <script>let toggleHintShow = 'Click to show';</script>
-    <script>let toggleHintHide = 'Click to hide';</script>
-    <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -72,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="5.4. Exercises" href="cellular_automata_extra.html" />
     <link rel="prev" title="5.2. Cellular Automata" href="cellular_automata_notes.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:language" content="None"/>
   </head>
   
   
@@ -416,7 +411,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="cellular-automata">
-<h1><span class="section-number">5.3. </span>Cellular Automata<a class="headerlink" href="#cellular-automata" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">5.3. </span>Cellular Automata<a class="headerlink" href="#cellular-automata" title="Permalink to this headline">#</a></h1>
 <p>A cellular automaton is a collection of cells on a rectangular grid that evolves through a number of discrete time steps according to a set of rules based on the states of neighbouring cells. The rules are then applied iteratively for as many time steps as desired.</p>
 <p>You will investigate a cellular automaton model as part of your group project.</p>
 <figure class="align-default" id="epidemic-fig">
@@ -426,9 +421,15 @@ document.write(`
 </figcaption>
 </figure>
 <section id="diffusion-model">
-<h2>Diffusion Model<a class="headerlink" href="#diffusion-model" title="Permalink to this heading">#</a></h2>
-<p>Diffusion is the movement of a substance from an area of high concentration to an area of lower concentration. For example, suppose we have an 2-dimensional region which is initially empty except for a square region at the centre where we inject a high concentration of a chemical. As time progresses, the chemical gradually diffuses throughout the region until the concentration is everywhere equal (<code class="xref std std-numref docutils literal notranslate"><span class="pre">diffusion-fig</span></code>).</p>
-<p>We can model this using a 2-dimensional array representing the concentration at each point in space (<code class="xref std std-numref docutils literal notranslate"><span class="pre">diffusion-fig</span></code>). At each timestep, the concentration <span class="math notranslate nohighlight">\(x_{i,j}\)</span> at each point changes as the chemical flows between the 8 immediate neighbouring cells.</p>
+<h2>Diffusion Model<a class="headerlink" href="#diffusion-model" title="Permalink to this headline">#</a></h2>
+<p>Diffusion is the movement of a substance from an area of high concentration to an area of lower concentration. For example, suppose we have an 2-dimensional region which is initially empty except for a square region at the centre where we inject a high concentration of a chemical. As time progresses, the chemical gradually diffuses throughout the region until the concentration is everywhere equal (<a class="reference internal" href="#diffusion-fig"><span class="std std-numref">Fig. 5.3</span></a>).</p>
+<figure class="align-default" id="diffusion-fig" style="width: 600px">
+<img alt="../_images/e9b21ff46706e4ee0b5c3f32a27ae5954a5a168eae86e6a0063491f884ad251c.png" src="../_images/e9b21ff46706e4ee0b5c3f32a27ae5954a5a168eae86e6a0063491f884ad251c.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 5.3 </span><span class="caption-text">A chemical introduced into the centre of a square region (left) gradually diffuses across the region. Eventually the chemical would be distributed evenly throughout the region.</span><a class="headerlink" href="#diffusion-fig" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>We can model this using a 2-dimensional array representing the concentration at each point in space (<a class="reference internal" href="#diffusion-fig"><span class="std std-numref">Fig. 5.3</span></a>). At each timestep, the concentration <span class="math notranslate nohighlight">\(x_{i,j}\)</span> at each point changes as the chemical flows between the 8 immediate neighbouring cells.</p>
 <p>We can construct a (very crude) model of diffusion using 2d averaging. In this model, we repeatedly apply a moving average, so that at each timestep the concentration of cell <code class="docutils literal notranslate"><span class="pre">x[i,j]</span></code> is replaced by the average of the 9 cells in the 3 by 3 subarray centred at <code class="docutils literal notranslate"><span class="pre">i,j</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -452,21 +453,21 @@ document.write(`
 
 <p class="admonition-title"><span class="caption-number">Exercise 5.3 </span></p>
 <section id="exercise-content">
-<p>Build a simulation model similar to <code class="xref std std-numref docutils literal notranslate"><span class="pre">diffusion-fig</span></code>. First create an square array whose elements are zero everywhere except for a square of cells in the centre. Then repeatedly apply the function <code class="docutils literal notranslate"><span class="pre">moving_average_2d</span></code>. Use <code class="docutils literal notranslate"><span class="pre">imshow</span></code> to plot the array at each timestep.</p>
-<p>Experiment with different arrays sizes. Can you achieve a result that looks like <code class="xref std std-numref docutils literal notranslate"><span class="pre">diffusion-fig</span></code>?</p>
+<p>Build a simulation model similar to <a class="reference internal" href="#diffusion-fig"><span class="std std-numref">Fig. 5.3</span></a>. First create an square array whose elements are zero everywhere except for a square of cells in the centre. Then repeatedly apply the function <code class="docutils literal notranslate"><span class="pre">moving_average_2d</span></code>. Use <code class="docutils literal notranslate"><span class="pre">imshow</span></code> to plot the array at each timestep.</p>
+<p>Experiment with different arrays sizes. Can you achieve a result that looks like <a class="reference internal" href="#diffusion-fig"><span class="std std-numref">Fig. 5.3</span></a>?</p>
 </section>
 </div>
 </section>
 <section id="conway-s-game-of-life">
-<span id="conway-game-of-life"></span><h2>Conway’s Game of Life<a class="headerlink" href="#conway-s-game-of-life" title="Permalink to this heading">#</a></h2>
-<p>The <a class="reference external" href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">Game of Life</a> is a simple cellular automaton devised by mathematician John Conway in 1970. The automaton mimics the dynamical evolution of “life-forms” existing in the grid of cells <a class="reference internal" href="#game-of-life-fig"><span class="std std-numref">Fig. 5.3</span></a> shows an example evolution of the Game of Life.</p>
+<span id="conway-game-of-life"></span><h2>Conway’s Game of Life<a class="headerlink" href="#conway-s-game-of-life" title="Permalink to this headline">#</a></h2>
+<p>The <a class="reference external" href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">Game of Life</a> is a simple cellular automaton devised by mathematician John Conway in 1970. The automaton mimics the dynamical evolution of “life-forms” existing in the grid of cells <a class="reference internal" href="#game-of-life-fig"><span class="std std-numref">Fig. 5.4</span></a> shows an example evolution of the Game of Life.</p>
 <figure class="align-default" id="game-of-life-fig">
 <a class="reference internal image-reference" href="../_images/GOL.gif"><img alt="../_images/GOL.gif" src="../_images/GOL.gif" style="height: 300px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 5.3 </span><span class="caption-text">The Game of Life is an example of a 2-dimensional cellular automaton.</span><a class="headerlink" href="#game-of-life-fig" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 5.4 </span><span class="caption-text">The Game of Life is an example of a 2-dimensional cellular automaton.</span><a class="headerlink" href="#game-of-life-fig" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>The rules of Conway’s Game of Life are given below, and an example of two iterations of the Game are shown in <a class="reference internal" href="#game-of-life-2-iterations-fig"><span class="std std-numref">Fig. 5.4</span></a>.</p>
+<p>The rules of Conway’s Game of Life are given below, and an example of two iterations of the Game are shown in <a class="reference internal" href="#game-of-life-2-iterations-fig"><span class="std std-numref">Fig. 5.5</span></a>.</p>
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
 <div class="sd-card-title sd-font-weight-bold docutils">
@@ -485,14 +486,14 @@ d. any dead cell with exactly three live neighbours becomes alive, and otherwise
 <figure class="align-default" id="game-of-life-2-iterations-fig">
 <a class="reference internal image-reference" href="../_images/game_of_life_example.png"><img alt="../_images/game_of_life_example.png" src="../_images/game_of_life_example.png" style="height: 150px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 5.4 </span><span class="caption-text">An initial configuration of cells (left) and two iterations of the Game of Life (centre and right).</span><a class="headerlink" href="#game-of-life-2-iterations-fig" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 5.5 </span><span class="caption-text">An initial configuration of cells (left) and two iterations of the Game of Life (centre and right).</span><a class="headerlink" href="#game-of-life-2-iterations-fig" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="exercise admonition" id="exercise_5_4">
 
 <p class="admonition-title"><span class="caption-number">Exercise 5.4 </span></p>
 <section id="exercise-content">
-<p>What would the next iteration of the Game of Life in <a class="reference internal" href="#game-of-life-2-iterations-fig"><span class="std std-numref">Fig. 5.4</span></a> look like?</p>
+<p>What would the next iteration of the Game of Life in <a class="reference internal" href="#game-of-life-2-iterations-fig"><span class="std std-numref">Fig. 5.5</span></a> look like?</p>
 <p>Using pseudocode, sketch an algorithm for calculating one iteration of the Game of Life.</p>
 </section>
 </div>
@@ -531,13 +532,7 @@ d. any dead cell with exactly three live neighbours becomes alive, and otherwise
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>grid1:
-[[0. 0. 0. 0. 0.]
- [0. 0. 0. 0. 0.]
- [0. 0. 0. 0. 0.]
- [0. 0. 0. 0. 0.]
- [0. 0. 0. 0. 0.]]
-grid2:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>grid0:
 [[0. 0. 0. 0. 0.]
  [0. 0. 0. 0. 0.]
  [0. 0. 0. 0. 0.]
@@ -551,8 +546,8 @@ grid2:
 
 <p class="admonition-title"><span class="caption-number">Exercise 5.5 </span></p>
 <section id="exercise-content">
-<p>1. Complete the function <code class="docutils literal notranslate"><span class="pre">count_neighbours(x,</span> <span class="pre">i,</span> <span class="pre">j)</span></code> so that it returns the total number of live neighbours of cell <code class="docutils literal notranslate"><span class="pre">i</span></code>, <code class="docutils literal notranslate"><span class="pre">j</span></code>. Test that the function works by setting <code class="docutils literal notranslate"><span class="pre">grid0</span></code> to the initial configuration in <a class="reference internal" href="#game-of-life-2-iterations-fig"><span class="std std-numref">Fig. 5.4</span></a> and checking your function gives the expected result for various values of <code class="docutils literal notranslate"><span class="pre">i</span></code> and <code class="docutils literal notranslate"><span class="pre">j</span></code>.</p>
-<p>2. Complete the function <code class="docutils literal notranslate"><span class="pre">advance(x)</span></code> so that it returns the array after applying the rules of the Game of Life simulation. Test the function by applying it to the initial configuration in <a class="reference internal" href="#game-of-life-2-iterations-fig"><span class="std std-numref">Fig. 5.4</span></a>.</p>
+<p>1. Complete the function <code class="docutils literal notranslate"><span class="pre">count_neighbours(x,</span> <span class="pre">i,</span> <span class="pre">j)</span></code> so that it returns the total number of live neighbours of cell <code class="docutils literal notranslate"><span class="pre">i</span></code>, <code class="docutils literal notranslate"><span class="pre">j</span></code>. Test that the function works by setting <code class="docutils literal notranslate"><span class="pre">grid0</span></code> to the initial configuration in <a class="reference internal" href="#game-of-life-2-iterations-fig"><span class="std std-numref">Fig. 5.5</span></a> and checking your function gives the expected result for various values of <code class="docutils literal notranslate"><span class="pre">i</span></code> and <code class="docutils literal notranslate"><span class="pre">j</span></code>.</p>
+<p>2. Complete the function <code class="docutils literal notranslate"><span class="pre">advance(x)</span></code> so that it returns the array after applying the rules of the Game of Life simulation. Test the function by applying it to the initial configuration in <a class="reference internal" href="#game-of-life-2-iterations-fig"><span class="std std-numref">Fig. 5.5</span></a>.</p>
 <p>3. By repeatedly calling <code class="docutils literal notranslate"><span class="pre">advance</span></code>, execute the simulation for 10 or more steps, using <code class="docutils literal notranslate"><span class="pre">imshow</span></code> to display the array at each step. Check that your simulation works by comparing to an <a class="reference external" href="https://academo.org/demos/conways-game-of-life/">online Game of Life simulator</a>.</p>
 </section>
 </div>
