@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Epidemics &#8212; Scientific Computing Workbook</title>
+    <title>Modules &#8212; Scientific Computing Workbook</title>
   
   
   
@@ -59,13 +59,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'projects/epidemics/project_brief_epidemics';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'projects/modules/Modules';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Neurospheres" href="../neurosphere/project_brief_neurosphere.html" />
-    <link rel="prev" title="Project Briefs" href="../projects.html" />
+    <link rel="next" title="Figures" href="../figures.html" />
+    <link rel="prev" title="Useful Stuff" href="../useful_stuff.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -224,13 +222,13 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Projects</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../projects_about.html">About the Project</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../projects.html">Project Briefs</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Epidemics</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../projects.html">Project Briefs</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../epidemics/project_brief_epidemics.html">Epidemics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../neurosphere/project_brief_neurosphere.html">Neurospheres</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../useful_stuff.html">Useful Stuff</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../modules/Modules.html">Modules</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../useful_stuff.html">Useful Stuff</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Modules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../figures.html">Figures</a></li>
 </ul>
 </li>
@@ -288,7 +286,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/projects/epidemics/project_brief_epidemics.ipynb" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/projects/modules/Modules.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onBinder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -319,7 +317,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../_sources/projects/epidemics/project_brief_epidemics.ipynb" target="_blank"
+      <li><a href="../../_sources/projects/modules/Modules.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -401,7 +399,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Epidemics</h1>
+    <h1>Modules</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -411,11 +409,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background">Background</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simplified-model">Simplified Model</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#seiqr-model">SEIQR Model</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#starter-code">Starter Code</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modularising-code">Modularising Code</a></li>
 </ul>
             </nav>
         </div>
@@ -427,118 +421,69 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="epidemics">
-<h1>Epidemics<a class="headerlink" href="#epidemics" title="Permalink to this headline">#</a></h1>
-<section id="background">
-<h2>Background<a class="headerlink" href="#background" title="Permalink to this headline">#</a></h2>
-<p>In this project you will develop a simulation which models the spread of a viral infection through a population. Individuals in the population are assumed to be distributed in a grid of cells which might represent a geographical area such as a city or country, and are assigned various states which describe their exposure to the virus. As the simulation progresses, individuals transition between states according to probabilistic rules (see <a class="reference internal" href="#fig-project-epidemic"><span class="std std-numref">Fig. 1</span></a>).</p>
-<figure class="align-default" id="fig-project-epidemic">
-<a class="reference internal image-reference" href="../../_images/sample_epidemic.png"><img alt="../../_images/sample_epidemic.png" src="../../_images/sample_epidemic.png" style="width: 800px;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Simulation results for the spread of the infection in a population. The colour of each cell represents its state of infection. Reprinted from <span id="id1">[<a class="reference internal" href="#id5" title="Sayantari Ghosh and Saumik Bhattacharya. Computational model on covid-19 pandemic using probabilistic cellular automata. SN Computer Science, 2(3):230, 2021.">Ghosh and Bhattacharya, 2021</a>]</span>.</span><a class="headerlink" href="#fig-project-epidemic" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
-</section>
-<section id="simplified-model">
-<h2>Simplified Model<a class="headerlink" href="#simplified-model" title="Permalink to this headline">#</a></h2>
-<p><a class="reference internal" href="#epidemic-fig"><span class="std std-numref">Fig. 2</span></a> shows the results of a simple SIR model of infection on a 6 by 6 grid. Each cell represents an individual in one of three states: Susceptible (S), Infected (I) or Recovered (R). Initially all cells are in the susceptible state except one infected individual. At each timestep, each cell changes state according to the following rules:</p>
-<ul class="simple">
-<li><p>A cell in state S which has at least one neighbouring cell in state I changes to state I with probability <span class="math notranslate nohighlight">\(p=0.25\)</span>, otherwise remains in state S;</p></li>
-<li><p>A cell in state I changes to state R with probability <span class="math notranslate nohighlight">\(q=0.25\)</span>, otherwise remains in state I;</p></li>
-<li><p>A cell in state R remains in state R.</p></li>
-</ul>
-<p>In this simulation, we use the definition of a <a class="reference external" href="https://en.wikipedia.org/wiki/Moore_neighborhood">Moore neighbourhood</a> consisting of a cell and each of its eight immediate surrounding neighbours.</p>
-<figure class="align-default" id="epidemic-fig" style="width: 800px">
-<img alt="../../_images/52364e33ad59ef846b83b7c748f791e3af8af70337cb8427f4271e99d4f0fa7f.png" src="../../_images/52364e33ad59ef846b83b7c748f791e3af8af70337cb8427f4271e99d4f0fa7f.png" />
-<figcaption>
-<p><span class="caption-number">Fig. 2 </span><span class="caption-text">The results of an SIR epidemic simulation on a 6 by 6 grid (left) and total populations of susceptible, infected and recovered individuals over the timecourse of the simulation (right).</span><a class="headerlink" href="#epidemic-fig" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
-</section>
-<section id="seiqr-model">
-<h2>SEIQR Model<a class="headerlink" href="#seiqr-model" title="Permalink to this headline">#</a></h2>
-<p>A more sophisticated model of infection might include more states and more complicated update rules such as the SEIQR model which extends the SIR model to include Exposed (E) and Quarantined (Q) states and time-dependent update rules <span id="id2">[<a class="reference internal" href="#id5" title="Sayantari Ghosh and Saumik Bhattacharya. Computational model on covid-19 pandemic using probabilistic cellular automata. SN Computer Science, 2(3):230, 2021.">Ghosh and Bhattacharya, 2021</a>]</span>.</p>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="head"><p>State</p></th>
-<th class="head"><p>Description</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>S</p></td>
-<td><p>Susceptible</p></td>
-</tr>
-<tr class="row-odd"><td><p>E</p></td>
-<td><p>Exposed and asymptomatically infected</p></td>
-</tr>
-<tr class="row-even"><td><p>I</p></td>
-<td><p>Infected, but not yet quarantined</p></td>
-</tr>
-<tr class="row-odd"><td><p>Q</p></td>
-<td><p>Quarantined</p></td>
-</tr>
-<tr class="row-even"><td><p>R</p></td>
-<td><p>Recovered</p></td>
-</tr>
-</tbody>
-</table>
-<figure class="align-default" id="fig-project-epidemic-seiqr">
-<a class="reference internal image-reference" href="../../_images/SEIQR.png"><img alt="../../_images/SEIQR.png" src="../../_images/SEIQR.png" style="height: 200px;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 3 </span><span class="caption-text">The state transitions in the SEIQR epidemic model. Reprinted from <span id="id3">[<a class="reference internal" href="#id5" title="Sayantari Ghosh and Saumik Bhattacharya. Computational model on covid-19 pandemic using probabilistic cellular automata. SN Computer Science, 2(3):230, 2021.">Ghosh and Bhattacharya, 2021</a>]</span>.</span><a class="headerlink" href="#fig-project-epidemic-seiqr" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
-</section>
-<section id="starter-code">
-<h2>Starter Code<a class="headerlink" href="#starter-code" title="Permalink to this headline">#</a></h2>
-<p>The following code performs a simulation of susceptible and infected individuals (i.e. excluding recovery).</p>
-<div class="cell tag_remove-output docutils container">
+  <section class="tex2jax_ignore mathjax_ignore" id="modules">
+<h1>Modules<a class="headerlink" href="#modules" title="Permalink to this headline">#</a></h1>
+<p>A <strong>module</strong> is a file with a <code class="docutils literal notranslate"><span class="pre">.py</span></code> extension which contains Python code. The code can be <strong>imported</strong> from the module using the Python <code class="docutils literal notranslate"><span class="pre">import</span></code> statement.</p>
+<p>First, create a new file called <code class="docutils literal notranslate"><span class="pre">turtle.py</span></code> and paste in the following code:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># function definitions</span>
+
+<span class="k">def</span> <span class="nf">start</span><span class="p">():</span>
+    <span class="n">state</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">state</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">state</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+    
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+    
+<span class="k">def</span> <span class="nf">draw_forward</span><span class="p">(</span><span class="n">dis</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">state</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">state</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">angle</span> <span class="o">=</span> <span class="n">state</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">state</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">dis</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
+    <span class="n">state</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="n">dis</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">state</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="p">[</span><span class="n">y</span><span class="p">,</span> <span class="n">state</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    
+<span class="k">def</span> <span class="nf">rotate_left</span><span class="p">(</span><span class="n">theta</span><span class="p">):</span>
+    <span class="n">state</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">state</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">theta</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">180</span>
+    
+<span class="n">state</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>This defines a module called <code class="docutils literal notranslate"><span class="pre">turtle</span></code>.</p>
+<p>Next, create a notebook (with <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> extension) and enter the following code. The <code class="docutils literal notranslate"><span class="pre">py</span></code> file and the <code class="docutils literal notranslate"><span class="pre">ipynb</span></code> files must be in the same folder.</p>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-
-<span class="c1"># This function takes an n x n array and returns</span>
-<span class="c1"># a new array after applying the state transition rules</span>
-<span class="k">def</span> <span class="nf">advance</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">p</span><span class="p">):</span>
-    <span class="n">result</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span>
-    <span class="c1"># loop over all cells in grid (except border cells)</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
-        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
-            <span class="c1"># determine the number of infected neighbours of cell i,j</span>
-            <span class="n">num_infected_neighbours</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">grid</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="n">j</span><span class="o">+</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
-            <span class="c1"># if cell i,j is susceptible and has at least one infected neighbour,</span>
-            <span class="c1"># it becomes infected with probability p</span>
-            <span class="k">if</span> <span class="n">grid</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-                <span class="k">if</span> <span class="n">num_infected_neighbours</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">p</span><span class="p">:</span>
-                    <span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
-                <span class="k">else</span><span class="p">:</span>
-                    <span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
-            <span class="c1"># if cell i,j is infected it remains infected</span>
-            <span class="k">elif</span> <span class="n">grid</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-                <span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
-    <span class="k">return</span> <span class="n">result</span>
-
-<span class="c1"># run simulation</span>
-
-<span class="n">grid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
-<span class="n">grid</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Initial state</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">grid</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
-    <span class="n">grid</span> <span class="o">=</span> <span class="n">advance</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Iteration&quot;</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>  <span class="n">grid</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">turtle</span>
 </pre></div>
 </div>
 </div>
 </div>
-</section>
-<section id="references">
-<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
-<div class="docutils container" id="id4">
-<dl class="citation">
-<dt class="label" id="id5"><span class="brackets">GB21</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id2">2</a>,<a href="#id3">3</a>)</span></dt>
-<dd><p>Sayantari Ghosh and Saumik Bhattacharya. Computational model on covid-19 pandemic using probabilistic cellular automata. <em>SN Computer Science</em>, 2(3):230, 2021.</p>
-</dd>
-</dl>
+<p>This statement imports the module <code class="docutils literal notranslate"><span class="pre">turtle</span></code> which is defined in the file <code class="docutils literal notranslate"><span class="pre">turtle.py</span></code> contained in the same folder as the notebook. When the Python interpreter executes this statement, it reads and executes the code contained in the file.</p>
+<p>Any functions or variables defined in the module <code class="docutils literal notranslate"><span class="pre">turtle</span></code> can now be accessed from this notebook using the prefix <code class="docutils literal notranslate"><span class="pre">turtle.</span></code>. For example, the function <code class="docutils literal notranslate"><span class="pre">start()</span></code> defined in <code class="docutils literal notranslate"><span class="pre">turtle.py</span></code> can be called using <code class="docutils literal notranslate"><span class="pre">turtle.start()</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">turtle</span><span class="o">.</span><span class="n">start</span><span class="p">()</span> <span class="c1"># call start function defined in turtle.py</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">draw_forward</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># call draw_forward function defined in turtle.py</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/02998f0bc8b31104225fdf1f4e71957f591115acf8a8103defaab8cc682765df.png" src="../../_images/02998f0bc8b31104225fdf1f4e71957f591115acf8a8103defaab8cc682765df.png" />
+</div>
+</div>
+<section id="modularising-code">
+<h2>Modularising Code<a class="headerlink" href="#modularising-code" title="Permalink to this headline">#</a></h2>
+<p>Modules are useful for breaking a large program into smaller parts. For example, the <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> file could contain only code suitable for presentation, with other code relegated to functions defined in <code class="docutils literal notranslate"><span class="pre">.py</span></code> files.</p>
+<p>Because functions must be imported before being used, it is common practice to gather together all <code class="docutils literal notranslate"><span class="pre">import</span></code> statements at the top of the notebook file.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">turtle</span>
+
+<span class="c1"># rest of code goes here...</span>
+</pre></div>
 </div>
 </section>
 </section>
@@ -556,7 +501,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./projects\epidemics"
+            path: "./projects\modules"
         },
         predefinedOutput: true
     }
@@ -575,20 +520,20 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../projects.html"
+       href="../useful_stuff.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Project Briefs</p>
+        <p class="prev-next-title">Useful Stuff</p>
       </div>
     </a>
     <a class="right-next"
-       href="../neurosphere/project_brief_neurosphere.html"
+       href="../figures.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Neurospheres</p>
+        <p class="prev-next-title">Figures</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -610,11 +555,7 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background">Background</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simplified-model">Simplified Model</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#seiqr-model">SEIQR Model</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#starter-code">Starter Code</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modularising-code">Modularising Code</a></li>
 </ul>
   </nav></div>
 
